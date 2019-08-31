@@ -21,7 +21,9 @@ section.WhoWeAre{
 }
 
 #who_we_are_image_top {
-    margin: 0 auto 10px auto;
+    margin: 40px auto 10px 0px;
+    position: absolute;
+    left: 13%;
     height: 400px;
     width: 300px;
     background-position: center;
@@ -31,8 +33,11 @@ section.WhoWeAre{
 }
 
 #who_we_are_image_bottom {
-    margin: 0 auto 0 auto;
-    height: 400px;
+    margin: 0px auto 10px 0;
+    position: absolute;
+    top: 1034px;
+    left: 13%;
+    height: 123.4px;
     width: 300px;
     background-position: center;
     background-repeat: no-repeat;

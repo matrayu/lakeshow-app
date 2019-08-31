@@ -1,0 +1,68 @@
+section.WhatWeOffer{
+    display: flex;
+    height: 600px;
+    background-color: #552583;
+    margin-top: -22px;
+}
+
+.WhatWeOffer.title__bg {
+    position: absolute;
+    margin: 0 auto 0 auto;
+    padding-right: 20px;
+    text-align: right;
+    width: 50%;
+    background: #FDB927;
+    left: 0;
+    top: 1250px;
+}
+
+.WhatWeOffer.left__container {
+    height: 100%;
+}
+
+.WhatWeOffer.right__container {
+    height: 100%;
+}
+
+.offers__container {
+    display: block;
+}
+
+.offer__grp {
+    display: flex;
+    text-align: left;
+    padding: 0;
+    padding: 65px 35px 0 85px;
+    margin: 12px 0 0 0;
+}
+
+.offer>h2 {
+    color: #FDB927;
+    margin-bottom: 5px;
+}
+
+.offer>p {
+    color: white;
+}
+
+.offer.image {
+    width: 100px;
+    height: 100px;
+    background-color: #FDB927;
+    margin-right: 20px;
+}
+
+.offer.text_grp {
+    width: 50%;
+}
+
+
+
+#WhatWeOffer_bk_img {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    opacity: .5;
+    background-image: url('../../images/LakeshowTickets/2018-1004_DSC7120.jpg')
+}

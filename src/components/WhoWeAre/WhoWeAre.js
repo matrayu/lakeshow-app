@@ -16,9 +16,7 @@ class WhoWeAre extends Component {
                             <p id='who_we_are_p'>Eu mollit amet pariatur ad. Adipisicing ut nisi nulla consectetur ipsum. Do pariatur duis eiusmod eu irure reprehenderit mollit aliquip enim. Consectetur officia velit ex duis sit excepteur excepteur.</p>
                         </div>
                     </div>
-                    
                 </div>
-                
             </section>
         )
     }
