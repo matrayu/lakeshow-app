@@ -1,0 +1,56 @@
+.HomeHero.bg_image {
+    height: 600px;
+    filter: blur(2px);
+    -webkit-filter: blur(2px);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-left: -40px;
+    background-image: url(/static/media/MVIMG_20171027_211957.4234c2ad.jpg);
+}
+
+.HomeHero.bg_text_block{
+    display: block;
+    position: absolute;
+    margin: 0 auto 0 auto;
+    text-align: center;
+    width: 70%;
+    background: #FDB927;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0%);
+}
+
+.HomeHero.text__grouping {
+    color: #552583;
+    padding: 20px;
+    opacity: 1;
+}
+
+.HomeHero>h1{
+    font-size: 60px;
+    font-weight: bold;
+    margin: 10px;
+}
+
+.HomeHero>p{
+    font-size: 24px;
+}
+
+.HomeHero>button {
+    color: white;
+    text-align: center;
+    background: #552583;
+    width: 200px;
+    padding: 10px;
+    font-size: 30px;
+    border-radius: 6px;
+    position: absolute;
+    top: 410px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.HomeHero.container {
+    background-color: #FDB927;
+}

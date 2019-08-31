@@ -1,0 +1,66 @@
+section.UpcomingGames{
+    display: flex;
+    height: 600px;
+    background-color: #FDB927;
+}
+
+.UpcomingGames.title__bg {
+    margin: 0 auto 0 auto;
+    text-align: left;
+    background: #552583;
+    position: absolute;
+    right: 0;
+    top: 1860px;
+    width: 50%;
+}
+
+.UpcomingGames>h1 {
+    color: #FDB927;
+    padding-left: 20px;
+    font-weight: bold;
+}
+
+.UpcomingGames.container {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.UpcomingGames.grp {
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+    padding: 0;
+    padding: 65px 35px 0 0;
+    margin: 12px 0 0 13%;
+}
+
+.UpcomingGames.image {
+    width: 100px;
+    height: 100px;
+    background-color: #552583;
+    margin-right: 20px;
+}
+
+.UpcomingGames>h2 {
+    color: #552583;
+    font-size: 24px;
+    margin-bottom: 7px;
+}
+
+.UpcomingGames>p {
+    color: white;
+    font-size: 14px;
+}
+
+#UpcomingGames_bk_img {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    opacity: .5;
+    background-image: url('../../images/LakeshowTickets/2018-1004_DSC7294.jpg')
+}
+
+
+

@@ -13,11 +13,6 @@ function App() {
     <main className='App'>
       <HomeSplash />
       <div className='container'>
-{/*         <img src={page1} alt='page1' />
-        <img src={page2} alt='page2' />
-        <img src={page3} alt='page3' />
-        <img src={page4} alt='page4' />
-        <img src={page5} alt='page5' /> */}
       </div>
     </main>
   );
