@@ -13,7 +13,7 @@ export default class SignupForm extends Component {
                         id="username"
                         name="username"
                         type="text"
-                        placeholder="Enter username"
+                        placeholder="Username"
                         /* value={props.username}
                         onChange={props.handleChange} */
                         required
@@ -25,7 +25,7 @@ export default class SignupForm extends Component {
                         id="email"
                         name="email"
                         type="email"
-                        placeholder="Enter email"
+                        placeholder="Email address"
                         /* value={props.email}
                         onChange={props.handleChange} */
                     />
@@ -36,7 +36,7 @@ export default class SignupForm extends Component {
                         id="password"
                         name="password"
                         type="password"
-                        placeholder="Enter password"
+                        placeholder="Password"
                         /* value={props.password}
                         onChange={props.handleChange} */
                     /> 
