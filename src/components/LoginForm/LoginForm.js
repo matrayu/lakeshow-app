@@ -15,7 +15,7 @@ class LoginForm extends Component {
                         id="username"
                         name="username"
                         type="text"
-                        placeholder="Enter username"
+                        placeholder="Username"
                         /* value={state.username} */
                         /* onChange={this.handleChange} */
                     />
@@ -26,7 +26,7 @@ class LoginForm extends Component {
                         id="password"
                         name="password"
                         type="password"
-                        placeholder="Enter password"
+                        placeholder="Password"
                         /* value={state.password}
                         onChange={this.handleChange} */
                     />
