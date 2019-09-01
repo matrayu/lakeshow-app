@@ -10,7 +10,7 @@ class HomeFooter extends Component {
                     <h1>Get The Game You Want</h1>
                     <div className='HomeFooter btn_grp'>
                         <button>Find Tickets</button>
-                        <button>Sign In</button>
+                        <button><a href='/login'>Log In</a></button>
                     </div>
                 </div>
             </section>

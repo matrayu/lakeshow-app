@@ -4,7 +4,6 @@ import WhoWeAre from '../WhoWeAre/WhoWeAre'
 import WhatWeOffer from '../WhatWeOffer/WhatWeOffer'
 import UpcomingGames from '../UpcomingGames/UpcomingGames'
 import HomeFooter from '../HomeFooter/HomeFooter'
-//import { Link } from 'react-router-dom';
 
 import './HomeSplash.css'
 

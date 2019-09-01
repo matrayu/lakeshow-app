@@ -1,21 +1,23 @@
-import React from 'react';
-import './App.css';
-/* import page1 from './images/1.png';
-import page2 from './images/2.png';
-import page3 from './images/3.png';
-import page4 from './images/4.png';
-import page5 from './images/5.png'; */
+import React, { Component } from 'react';
+import { Route, Switch } from 'react-router-dom';
 import HomeSplash from './components/HomeSplash/HomeSplash'
+import LoginPage from './routes/LoginPage/LoginPage'
+import SignupPage from './routes/SignupPage/SignupPage'
 
+import './App.css';
 
-function App() {
-  return (
-    <main className='App'>
-      <HomeSplash />
-      <div className='container'>
-      </div>
-    </main>
-  );
+class App extends Component {
+  render() {
+    return (
+      <main className='App'>
+        <Switch>
+          <Route exact path={'/'} component={HomeSplash} />
+          <Route path={'/login'} component={LoginPage} />
+          <Route path={'/signup'} component={SignupPage} />
+        </Switch>
+      </main>
+    )
+  }
 }
 
 export default App;

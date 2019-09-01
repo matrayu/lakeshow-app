@@ -1,0 +1,29 @@
+.form.entries {
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0 10px 0;
+}
+
+.form-control {
+    height: 40px;
+    margin: 15px 0;
+}
+
+.forgot-pw {
+    text-align: right;
+    margin-top: -19px;
+}
+
+.form__btns {
+    display: flex;
+    flex-direction: row;
+}
+
+.form__btns>button {
+    flex: 1 1;
+    color: 552583;
+    padding: 15px;
+    background-color: #FDB927;
+    border-radius: 5px;
+    margin: 25px 5px 25px 5px;
+}
