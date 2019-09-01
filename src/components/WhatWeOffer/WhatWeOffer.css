@@ -10,7 +10,7 @@ section.WhatWeOffer{
     margin: 0 auto 0 auto;
     padding-right: 20px;
     text-align: right;
-    width: 50%;
+    width: 42%;
     background: #FDB927;
     left: 0;
     top: 1250px;
@@ -34,6 +34,11 @@ section.WhatWeOffer{
     padding: 0;
     padding: 65px 35px 0 85px;
     margin: 12px 0 0 0;
+}
+
+.WhatWeOffer>h1 {
+    color: white;
+    font-weight: bold;
 }
 
 .offer>h2 {
