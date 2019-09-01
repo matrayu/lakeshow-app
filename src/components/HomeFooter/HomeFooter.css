@@ -10,8 +10,9 @@
     background-repeat: no-repeat;
     background-size: cover;
     margin-left: -40px;
-    opacity: 0.3;
+    opacity: 0.5;
     background-image: url('../../images/LakeshowTickets/2018-1004_221255.jpg');
+    background-color: #552583;
 }
 
 .get_tickets.container {
@@ -21,26 +22,28 @@
     top: 2500px;
     right: 25%;
     text-align: center;
+    border-radius: 0 20px 0 20px;
 }
 
-.HomeFooter.btn_grp{
+.HomeFooter.form__btns{
     color: white;
     text-align: center;
-    background-color: #FDB927;
+    background-color: #552583;
 }
 
-.HomeFooter>button {
+.get_tickets>button {
     width: 25%;
     margin: 0 50px 50px 50px;
     padding: 10px;
     font-size: 20px;
     border-radius: 6px;
     background-color: #552583;
+    color: white;
 }
 
 .get_tickets>h1 {
     font-size: 40px;
     font-weight: bold;
     padding: 46px;
-    color: #552583;
+    color: white;
 }
