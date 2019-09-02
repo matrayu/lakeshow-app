@@ -1,0 +1,10 @@
+.TicketsPage {
+    margin: 0;
+    background: #FDB927;
+}
+
+.TicketsPage.search_functions {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}

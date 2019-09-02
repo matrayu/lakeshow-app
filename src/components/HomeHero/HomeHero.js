@@ -15,7 +15,7 @@ class HomeHero extends Component {
                         </div>
                     </div>
                     <div className='HomeHero btn'>
-                        <button>Find Tickets</button>
+                        <button><a href='/tickets'>Find Tickets</a></button>
                     </div>
                 </div>
             </section>

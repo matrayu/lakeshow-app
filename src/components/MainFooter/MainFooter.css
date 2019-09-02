@@ -1,0 +1,9 @@
+.MainFooter {
+    height: 70px;
+    background: #FDB927;
+    text-align: center;
+}
+
+.MainFooter>p {
+    padding-top: 25px;;
+}

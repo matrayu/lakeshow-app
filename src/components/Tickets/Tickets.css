@@ -1,0 +1,44 @@
+.Tickets {
+    min-height: 500px;
+    background: #FDB927;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin: 0;
+    padding: 30px;
+    flex-wrap: wrap;
+}
+
+.game__container {
+    margin: 20px;
+    background: white;
+    max-height: 200px;
+    min-width: 250px;
+}
+
+.game__image {
+    margin: 5px auto;
+    background: #552583;
+    width: 80%;
+    height: 100px;
+}
+
+.game__info {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.game__meta {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 15px;
+}
+
+.game__title {
+    margin: 10px 0;
+}
+
+
+
