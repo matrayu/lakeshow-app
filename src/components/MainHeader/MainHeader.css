@@ -1,9 +1,9 @@
 .MainHeader {
-    background: #FDB927;
+    background: white;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    height: 100px;
+    height: 70px;
 }
 
 .MainHeader>a {

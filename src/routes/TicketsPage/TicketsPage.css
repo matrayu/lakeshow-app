@@ -1,6 +1,7 @@
 .TicketsPage {
     margin: 0;
     background: #FDB927;
+    padding: 9px;
 }
 
 .TicketsPage.search_functions {
