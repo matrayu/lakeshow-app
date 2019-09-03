@@ -1,0 +1,52 @@
+import React, {Component} from 'react';
+
+import './Seats.css'
+
+class Seats extends Component {
+    render() {
+        return(
+            <div className='Seats'>
+
+                <div className="responsive">
+                    <div className="gallery">
+                        <a target="_blank" href='https://via.placeholder.com/600'>
+                            <img src='https://via.placeholder.com/600' alt="Seat Image 1" width="600" height="400"></img>
+                        </a>
+                        <div className="desc">Add a description of the image here</div>
+                    </div>
+                </div>
+
+                <div className="responsive">
+                    <div className="gallery">
+                        <a target="_blank" href="https://via.placeholder.com/600">
+                            <img src="https://via.placeholder.com/600" alt="Seat Image 2" width="600" height="400"></img>
+                        </a>
+                        <div className="desc">Add a description of the image here</div>
+                    </div>
+                </div>
+
+                <div className="responsive">
+                    <div className="gallery">
+                        <a target="_blank" href="https://via.placeholder.com/600">
+                            <img src="https://via.placeholder.com/600" alt="Seat Image 3" width="600" height="400"></img>
+                        </a>
+                        <div className="desc">Add a description of the image here</div>
+                    </div>
+                </div>
+
+                <div className="responsive">
+                    <div className="gallery">
+                        <a target="_blank" href="https://via.placeholder.com/600">
+                            <img src="https://via.placeholder.com/600" alt="Seat Image 4" width="600" height="400"></img>
+                        </a>
+                        <div className="desc">Add a description of the image here</div>
+                    </div>
+                </div>
+
+                <div className="clearfix"></div>
+            </div>
+        )
+    }
+}
+
+export default Seats;

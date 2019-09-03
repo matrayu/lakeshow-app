@@ -1,0 +1,11 @@
+.SeatsPage {
+    background: #FDB927;
+}
+
+.SeatsPage.main_text {
+    padding: 20px;
+}
+
+.SeatsPage>h2 {
+    font-size: 30px;
+}

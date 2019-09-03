@@ -6,9 +6,6 @@ export default class SignupPage extends Component {
     render() {
         return (
             <div className='SignupPage'>
-                <header className='form__header'>
-                    <a href='/'>Lakeshow Tickets</a>
-                </header>
                 <div className='SignupPage form_container'>
                     <h2>Sign Up</h2>
                     <SignupForm />

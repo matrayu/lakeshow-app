@@ -8,7 +8,6 @@ export default class TicketsPage extends Component {
     render() {
         return (
             <React.Fragment>
-                <MainHeader />
                 <div className='TicketsPage'>
                     <div className='TicketsPage container'>
                         <div className='TicketsPage search_functions'>
@@ -28,7 +27,6 @@ export default class TicketsPage extends Component {
                         </section>
                     </div>
                 </div>
-                <MainFooter /> 
             </React.Fragment>
         )
     }

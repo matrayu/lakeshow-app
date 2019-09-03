@@ -21,6 +21,9 @@
     background: #552583;
     width: 80%;
     height: 100px;
+    background-image: url(https://via.placeholder.com/600);
+    background-position: center;
+    background-size: cover;
 }
 
 .game__info {
