@@ -1,0 +1,85 @@
+.Ticket {
+    display: flex;
+    flex-direction: row;
+    background-color: #FDB927;
+    height: 600px;
+}
+
+.Ticket__image {
+    flex: 1;
+    background-image: url(https://via.placeholder.com/400);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.Ticket__data {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+}
+
+.Ticket__data__container {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    height: 200px;
+    background-color: grey;
+    margin: 10px auto;
+}
+
+.Ticket__data__container>h2 {
+    font-size: 30px;
+}
+
+.Ticket__data__meta_text>p {
+    font-size: 16px;
+}
+
+.add_to_cart>button{
+    width: 90%;
+    height: 50px;
+    color: white;
+    background-color: #552583;
+    border-radius: 10px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.pricing {
+    margin: 0;
+}
+
+.pricing_container {
+    background-color: white;
+    
+}
+
+.flex {
+    display: flex;
+}
+
+.f1 {
+    flex: 1
+}
+
+.f2 {
+    flex: 2
+}
+
+.f3 {
+    flex: 3
+}
+
+.f4 {
+    flex: 4
+}
+
+.fd_row {
+    flex-direction: row;
+}
+
+.fd_col {
+    flex-direction: column;
+}
+
