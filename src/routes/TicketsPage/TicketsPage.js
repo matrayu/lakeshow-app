@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
 import Tickets from '../../components/Tickets/Tickets'
-import MainHeader from '../../components/MainHeader/MainHeader'
-import MainFooter from '../../components/MainFooter/MainFooter'
-import './TicketsPage.css';
+
+import './TicketsPage.css'
 
 export default class TicketsPage extends Component {
     render() {
