@@ -7,16 +7,18 @@ class Tickets extends Component {
     render() {
         return(
             <div className='Tickets'>
-                <div className='game__container'>
-                    <div className='game__image'></div>
-                    <div className='game__info'>
-                        <p className='game__title'>Lakers vs Houston Rockets</p>
-                        <div className='game__meta'>
-                            <p>2 Tickets</p>
-                            <p>$150.00</p>
+                <a href='/ticket'>
+                    <div className='game__container'>
+                        <div className='game__image'></div>
+                        <div className='game__info'>
+                            <p className='game__title'>Lakers vs Houston Rockets</p>
+                            <div className='game__meta'>
+                                <p>2 Tickets</p>
+                                <p>$150.00</p>
+                            </div>
                         </div>
                     </div>
-                </div>
+                </a>
 
                 <div className='game__container'>
                     <div className='game__image'></div>
