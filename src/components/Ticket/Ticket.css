@@ -1,85 +1,111 @@
 .Ticket {
-    display: flex;
-    flex-direction: row;
-    background-color: #FDB927;
-    height: 600px;
+  display: flex;
+  flex-direction: row;
+  background-color: #fdb927;
+  height: 600px;
+  padding: 10px 50px;
 }
 
 .Ticket__image {
-    flex: 1;
-    background-image: url(https://via.placeholder.com/400);
-    background-repeat: no-repeat;
-    background-position: center;
+  flex: 1;
+  background-image: url(https://via.placeholder.com/400);
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .Ticket__data {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    margin: 0 auto;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin: 75px auto;
+  background-color: white;
 }
 
 .Ticket__data__container {
-    width: 90%;
-    display: flex;
-    flex-direction: column;
-    height: 200px;
-    background-color: grey;
-    margin: 10px auto;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  /* height: 200px; */
+  /* background-color: grey; */
+  margin: 20px;
 }
 
-.Ticket__data__container>h2 {
-    font-size: 30px;
+.Ticket__data__container > h2 {
+  font-size: 30px;
+  margin: 10px 10px;
 }
 
-.Ticket__data__meta_text>p {
-    font-size: 16px;
+.Ticket__data__meta_text > p {
+  font-size: 17px;
+  margin: 0 10px;
 }
 
-.add_to_cart>button{
-    width: 90%;
-    height: 50px;
-    color: white;
-    background-color: #552583;
-    border-radius: 10px;
-    text-align: center;
-    margin: 0 auto;
+.add_to_cart > button {
+  width: 95%;
+  height: 30px;
+  color: white;
+  background-color: #552583;
+  border-radius: 10px;
+  text-align: center;
+  margin: 0 auto;
 }
 
 .pricing {
-    margin: 0;
+  justify-content: space-around;
 }
 
 .pricing_container {
-    background-color: white;
-    
+  width: 48%;
 }
 
 .flex {
-    display: flex;
+  display: flex;
 }
-
 .f1 {
-    flex: 1
+  flex: 1;
 }
-
 .f2 {
-    flex: 2
+  flex: 2;
 }
-
 .f3 {
-    flex: 3
+  flex: 3;
 }
-
 .f4 {
-    flex: 4
+  flex: 4;
 }
-
 .fd_row {
-    flex-direction: row;
+  flex-direction: row;
 }
-
 .fd_col {
-    flex-direction: column;
+  flex-direction: column;
 }
 
+.pricing_container > h3 {
+  margin: auto 5px;
+  font-size: 40px;
+}
+
+.pricing_container > p {
+  font-size: 18px;
+  margin: auto 5px;
+}
+
+.pricing_container.info {
+  margin: auto 5px;
+}
+
+.sub_section {
+  margin: auto 20px;
+}
+
+hr {
+  display: block;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  margin-left: auto;
+  margin-right: auto;
+  border-style: solid;
+  border-width: 2px;
+  width: 80%;
+  border-color: #fdb927;
+}
