@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
-import HomeSplash from './components/HomeSplash/HomeSplash'
-import LoginPage from './routes/LoginPage/LoginPage'
-import SignupPage from './routes/SignupPage/SignupPage'
-import TicketsPage from './routes/TicketsPage/TicketsPage';
-import SeatsPage from './routes/SeatsPage/SeatsPage';
-import MainHeader from './components/MainHeader/MainHeader';
-import MainFooter from './components/MainFooter/MainFooter';
-import TicketPage from './routes/TicketPage/TicketPage';
-import NotFoundPage from './routes/NotFoundPage/NotFoundPage';
+import HomeSplash from '../HomeSplash/HomeSplash'
+import LoginPage from '../../routes/LoginPage/LoginPage'
+import SignupPage from '../../routes/SignupPage/SignupPage'
+import TicketsPage from '../../routes/TicketsPage/TicketsPage';
+import SeatsPage from '../../routes/SeatsPage/SeatsPage';
+import MainHeader from '../MainHeader/MainHeader';
+import MainFooter from '../MainFooter/MainFooter';
+import TicketPage from '../../routes/TicketPage/TicketPage';
+import NotFoundPage from '../../routes/NotFoundPage/NotFoundPage';
 import { withRouter } from "react-router";
 import './App.css';
 
