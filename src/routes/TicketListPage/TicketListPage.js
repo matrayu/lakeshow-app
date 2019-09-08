@@ -23,7 +23,9 @@ export default class TicketListPage extends Component {
                 <div className='TicketListPage'>
                     <div className='TicketListPage container'>
                         <div className='TicketListPage search_functions'>
-                            <input type="text" placeholder="Search.."></input>
+                            <div>
+                                <input type="text" placeholder="Search.."></input>
+                            </div>
                             <div className='sort_by'>
                                 Sort By:
                                 <select>

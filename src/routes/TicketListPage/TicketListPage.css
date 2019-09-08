@@ -11,5 +11,9 @@
 .TicketListPage.search_functions {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    /* margin: 0 30px; */
+}
+
+div.search_functions, div.search_functions > * {
+    margin: 0 40px;
 }

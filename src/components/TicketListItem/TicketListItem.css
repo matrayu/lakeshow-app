@@ -15,9 +15,12 @@
     align-items: center;
     margin: 20px;
     background: white;
-    max-height: 300px;
+    max-height: 328px;
     min-width: 400px;
+    min-height: 260px;
     padding: 8px;
+    border-radius: 10px;
+    border: 4px solid #552583;
 }
 
 /* .game__image {

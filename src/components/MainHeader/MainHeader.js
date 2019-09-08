@@ -7,7 +7,9 @@ export default class MainHeader extends Component {
             <header className='MainHeader'>
                 <a href='/'>
                     <div className='site_identity'>
-                        <div className='lakeshow_logo'>LOGO</div>
+                        <div className='lakeshow_logo'>
+                            <img src='../MainHeader/Lakeshow_Logo_Transparent.png' alt='Lakeshow Tickets Logo'></img>
+                        </div>
                         <h1>Lakeshow Tickets</h1>
                     </div>
                 </a>
@@ -25,4 +27,4 @@ export default class MainHeader extends Component {
         )
     }
 }
-    
+
