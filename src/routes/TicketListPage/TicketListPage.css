@@ -1,0 +1,15 @@
+.TicketListPage {
+    margin: 0;
+    background: #FDB927;
+    padding: 9px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.TicketListPage.search_functions {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}

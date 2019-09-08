@@ -1,15 +1,28 @@
 import React, { Component } from 'react'
-import Tickets from '../../components/Tickets/Tickets'
+import TicketListItem from '../../components/TicketListItem/TicketListItem'
+import TicketDataContext from '../../contexts/TicketDataContext'
 
-import './TicketsPage.css'
+import './TicketListPage.css'
 
-export default class TicketsPage extends Component {
+export default class TicketListPage extends Component {
+    static contextType = TicketDataContext
+
+    renderTickets() {
+        const { ticketData = [] } = this.context
+        return ticketData.map(ticket =>
+            <TicketListItem 
+                key={ticket.id}
+                ticket={ticket}
+            />
+        )
+    }
+
     render() {
         return (
             <React.Fragment>
-                <div className='TicketsPage'>
-                    <div className='TicketsPage container'>
-                        <div className='TicketsPage search_functions'>
+                <div className='TicketListPage'>
+                    <div className='TicketListPage container'>
+                        <div className='TicketListPage search_functions'>
                             <input type="text" placeholder="Search.."></input>
                             <div className='sort_by'>
                                 Sort By:
@@ -21,8 +34,8 @@ export default class TicketsPage extends Component {
                                 </select>
                             </div>
                         </div>
-                        <section className='TicketsPage results'>
-                            <Tickets />
+                        <section className='TicketListPage results'>
+                            {this.renderTickets()}
                         </section>
                     </div>
                 </div>

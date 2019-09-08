@@ -3,7 +3,7 @@ import { Route, Switch } from 'react-router-dom';
 import HomeSplash from '../HomeSplash/HomeSplash'
 import LoginPage from '../../routes/LoginPage/LoginPage'
 import SignupPage from '../../routes/SignupPage/SignupPage'
-import TicketsPage from '../../routes/TicketsPage/TicketsPage';
+import TicketListPage from '../../routes/TicketListPage/TicketListPage';
 import SeatsPage from '../../routes/SeatsPage/SeatsPage';
 import MainHeader from '../MainHeader/MainHeader';
 import MainFooter from '../MainFooter/MainFooter';
@@ -24,7 +24,7 @@ class App extends Component {
           <Route exact path={'/'} component={HomeSplash} />
           <Route path={'/login'} component={LoginPage} />
           <Route path={'/signup'} component={SignupPage} />
-          <Route path={'/tickets'} component={TicketsPage} />
+          <Route path={'/tickets'} component={TicketListPage} />
           <Route path={'/seats'} component={SeatsPage} />
           <Route path={'/ticket'} component={TicketPage} />
           <Route component={NotFoundPage} />

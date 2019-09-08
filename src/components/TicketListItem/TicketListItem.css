@@ -1,5 +1,4 @@
-.Tickets {
-    min-height: 500px;
+.TicketListItem {
     background: #FDB927;
     display: flex;
     flex-direction: row;
@@ -10,21 +9,30 @@
 }
 
 .game__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     margin: 20px;
     background: white;
-    max-height: 200px;
-    min-width: 250px;
+    max-height: 300px;
+    min-width: 400px;
     padding: 8px;
 }
 
-.game__image {
+/* .game__image {
     margin: 5px auto;
     background: #552583;
     width: 80%;
     height: 100px;
-    background-image: url(https://via.placeholder.com/600);
     background-position: center;
     background-size: cover;
+} */
+
+.game__container>img {
+    /* margin: 4px 108px; */
+    /* height: 100px; */
+    width: 150px;
 }
 
 .game__info {
