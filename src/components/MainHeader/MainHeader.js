@@ -8,9 +8,9 @@ export default class MainHeader extends Component {
                 <a href='/'>
                     <div className='site_identity'>
                         <div className='lakeshow_logo'>
-                            <img src='../MainHeader/Lakeshow_Logo_Transparent.png' alt='Lakeshow Tickets Logo'></img>
+                            <img src='https://raw.githubusercontent.com/matrayu/lakeshow-app/static_version/src/images/LakeshowLogo.png?token=AKXPMWGA4GKXGRMBNSPW7LK5OSHFY' alt='Lakeshow Tickets Logo' width="150" height="150"></img>
                         </div>
-                        <h1>Lakeshow Tickets</h1>
+                        <h1></h1>
                     </div>
                 </a>
                 <nav className='MainHeader nav_options'>
