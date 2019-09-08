@@ -47,5 +47,41 @@ div.desc {
     clear: both;
 }
 
+.seat1 {
+    background-image: url('https://photos.smugmug.com/Lakeshow-Tickets/i-kn6tRNt/0/d0fc4c63/XL/2018-1004_DSC7120-XL.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 420px;
+}
+
+.seat2 {
+    background-image: url('https://photos.smugmug.com/Lakeshow-Tickets/i-GQ63NzK/0/bb20676f/X3/2018-1004_192007-X3.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 420px;
+}
+
+.seat3 {
+    background-image: url('https://photos.smugmug.com/Lakeshow-Tickets/i-rQPgrgs/0/34c0fd93/X2/2018-1004_193129-Pano-X2.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 420px;
+}
+
+.seat4 {
+    background-image: url('https://photos.smugmug.com/Lakeshow-Tickets/i-t2jTzp8/0/045abd95/X3/2018-1004_DSC7294-X3.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 420px;
+}
+
 
 

@@ -8,6 +8,7 @@ import SeatsPage from '../../routes/SeatsPage/SeatsPage';
 import MainHeader from '../MainHeader/MainHeader';
 import MainFooter from '../MainFooter/MainFooter';
 import TicketPage from '../../routes/TicketPage/TicketPage';
+import FaqPage from '../../routes/FaqPage/FaqPage'
 import NotFoundPage from '../../routes/NotFoundPage/NotFoundPage';
 import { withRouter } from "react-router";
 import './App.css';
@@ -27,6 +28,7 @@ class App extends Component {
           <Route path={'/tickets'} component={TicketListPage} />
           <Route path={'/seats'} component={SeatsPage} />
           <Route path={'/ticket'} component={TicketPage} />
+          <Route path={'/faq'} component={FaqPage} />
           <Route component={NotFoundPage} />
         </Switch>
         <MainFooter />

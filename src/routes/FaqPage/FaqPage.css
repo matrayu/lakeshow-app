@@ -1,0 +1,26 @@
+.FaqPage {
+    margin: 30px; 
+}
+
+.FaqPage_container>h2 {
+    font-size: 35px;
+    text-align: center;
+}
+
+.FaqPage.questions {
+    margin: 30px 10%;
+    padding: 5%;
+    background-color: #FDB927;
+    border-radius: 20px;
+}
+
+.FaqPage.questions>h4 {
+    font-size: 30px;
+    color: #552583;
+    font-weight: bold;
+}
+
+.FaqPage.questions>p {
+    font-size: 20px;
+    margin-bottom: 30px;
+}

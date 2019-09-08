@@ -3,7 +3,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    height: 150px;
+    height: 107px;
 }
 
 .MainHeader>a {
@@ -25,8 +25,12 @@
 
 .lakeshow_logo {
     background: white;
-    width: 50px;
-    height: 50px;
+    width: 300px;
+    height: 86px;
+    background-image: url('https://photos.smugmug.com/photos/i-S62mzmH/0/S/i-S62mzmH-S.png');
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
 .nav_options {
@@ -34,7 +38,7 @@
     margin: auto 0;
     padding: 0;
     overflow: hidden;
-    background-color: #FDB927;
+    /* background-color: #FDB927; */
     height: 50px;
 }
 
@@ -52,10 +56,6 @@ li a {
 
 li a:hover {
     background-color: white;
-}
-
-.lakeshow_logo {
-    margin: -80px 10px;
 }
 
 
