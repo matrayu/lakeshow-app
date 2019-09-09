@@ -8,13 +8,17 @@ import "./TicketPage.css";
 let moment = require("moment");
 
 export default class TicketPage extends Component {
+
   static defaultProps = {
     match: { params: {} }
   };
 
   static contextType = TicketDataContext;
 
+  
+
   renderTicket() {
+    
     const ticketId = this.props.location.pathname.split("/ticket/");
     const ticket = this.context.ticketData[ticketId[1] - 1];
     return (
@@ -25,6 +29,7 @@ export default class TicketPage extends Component {
   }
 
   render() {
+    
     let content = this.renderTicket();
     return (
       <React.Fragment>
@@ -35,8 +40,32 @@ export default class TicketPage extends Component {
   }
 }
 
+
+
 function TicketContent({ ticketInfo }) {
+  const addToCart = () => {
+    console.log('added to cart')
+    let cart = localStorage.getItem('cart')
+      ? JSON.parse(localStorage.getItem('cart'))
+      : {};
+  
+    let id = ticketInfo.id.toString();
+  
+    cart[id] = (cart[id]
+      ? cart[id]
+      : 0
+    );
+
+    let qty = cart[id] + parseInt(ticketInfo.quantity);
+    cart[id] = qty
+
+    console.log(qty)
+  
+    localStorage.setItem('cart', JSON.stringify(cart))
+  }
+
   const date = moment(ticketInfo.dates, "YYYY-MM-DD").format("dddd, MMMM Do YYYY");
+
   return <> 
         <div className="Ticket">
             <div className="Ticket__image_container">
@@ -88,7 +117,7 @@ function TicketContent({ ticketInfo }) {
                 <hr />
 
                 <div className="Ticket__data__container add_to_cart">
-                    <button>Add To Cart</button>
+                    <button onClick={addToCart}>Add To Cart</button>
                 </div>
             </div>
         </div>

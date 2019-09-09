@@ -2,24 +2,45 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Tickets } from '../../contexts/seedData';
 import CartItem from '../../components/CartItem/CartItem';
+import TicketDataContext from "../../contexts/TicketDataContext";
 
 export default class Cart extends React.Component {
     constructor(props) {
         super(props);
         this.state = { products: [], total: 0 }
     }
+
+    static contextType = TicketDataContext;
     
-    /* componentDidMount() {
+    componentDidMount() {
         let cart = localStorage.getItem('cart');
         if (!cart) return; 
-        getCartProducts(cart).then((products) => {
-            let total = 0;
-            for (var i = 0; i < products.length; i++) {
-                total += products[i].price * products[i].qty;
-            }
-            this.setState({ products, total });
+        
+        let products = this.context.ticketData
+
+        let cartProducts = [], id = null
+
+        let properties = cart.split(', ');
+        let obj = {};
+        properties.forEach(function(property) {
+            let tup = property.split(':');
+            obj[tup[0]] = tup[1];
         });
-    } */
+
+        console.log(obj)
+
+        for (let i = 0; i < products.length; i++) {
+            id = products[i].id.toString();
+            if (cart.hasOwnProperty(1)) {
+                //console.log(id)
+                products[i].qty = cart[id]
+                cartProducts.push(products[i]);
+            }
+        }
+        //console.log(cartProducts)
+        return cartProducts
+            
+    };
 
     removeFromCart = (product) => {
         let products = this.state.products.filter((item) => item.id !== product.id);
