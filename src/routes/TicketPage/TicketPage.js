@@ -56,10 +56,13 @@ function TicketContent({ ticketInfo }) {
       : 0
     );
 
-    let qty = cart[id] + parseInt(ticketInfo.quantity);
-    cart[id] = qty
+    
 
-    console.log(qty)
+    //hard coding quantity to 2. if this needs to be dynamic
+    //change to 'qty'
+    //let qty = cart[id] + parseInt(ticketInfo.quantity);
+    
+    cart[id] = 2
   
     localStorage.setItem('cart', JSON.stringify(cart))
   }
@@ -88,12 +91,12 @@ function TicketContent({ ticketInfo }) {
                     <div className="pricing_container flex fd_row">
                         <div className="pricing_info flex fd_col">
                             <h4>Our Price</h4>  
-                            <h3>{ticketInfo.price}</h3>
+                            <h3>${ticketInfo.price}</h3>
                             <p>No Fees OR Taxes</p>
                         </div>
                         <div className="pricing_info flex fd_col">
                             <h4>Stubhub</h4>
-                            <h3>{ticketInfo.compPrice}</h3>
+                            <h3>${ticketInfo.compPrice}</h3>
                             <p>+ Fees / + Taxes</p>
                         </div>
                     </div>

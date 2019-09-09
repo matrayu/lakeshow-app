@@ -13,7 +13,7 @@
 }
 
 .site_identity{
-    margin: auto 20px auto 13%;
+    margin: auto auto;
     min-width: 250px;
     display: flex;
     flex-direction: row;

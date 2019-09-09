@@ -10,6 +10,7 @@ import MainFooter from '../MainFooter/MainFooter';
 import TicketPage from '../../routes/TicketPage/TicketPage';
 import FaqPage from '../../routes/FaqPage/FaqPage'
 import CartPage from '../../routes/CartPage/CartPage'
+import CheckoutPage from '../../routes/CheckoutPage/CheckoutPage'
 import NotFoundPage from '../../routes/NotFoundPage/NotFoundPage';
 import { withRouter } from "react-router";
 import './App.css';
@@ -31,6 +32,7 @@ class App extends Component {
           <Route path={'/ticket/:ticketId'} component={TicketPage} />
           <Route path={'/faq'} component={FaqPage} />
           <Route path={'/cart'} component={CartPage} />
+          <Route path={'/checkout'} component={CheckoutPage} />
           <Route component={NotFoundPage} />
         </Switch>
         <MainFooter />

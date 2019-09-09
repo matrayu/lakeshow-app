@@ -15,7 +15,7 @@ class TicketListItem extends Component {
                         <div className='game__meta'>
                             <p>{ticket.dates}</p>
                             <p>2 Tickets</p>
-                            <p>{ticket.price}</p>
+                            <p>${ticket.price}</p>
                         </div>
                     </div>
                 </div>

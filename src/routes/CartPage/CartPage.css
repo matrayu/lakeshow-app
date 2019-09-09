@@ -1,0 +1,10 @@
+.CartPage {
+    margin: 0 10px;
+    min-width: 281px;
+}
+
+.text-warning {
+    text-align: center;
+    font-size: 20px;
+    margin: 50px 0;
+}

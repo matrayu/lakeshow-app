@@ -1,5 +1,6 @@
 import React from 'react';
 import TicketDataContext from "../../contexts/TicketDataContext";
+import './CartItem.css'
 
 
 export default class CartItem extends React.Component {
@@ -11,17 +12,16 @@ export default class CartItem extends React.Component {
     static contextType = TicketDataContext;
     
     render(){
-        const {ticketData} = this.context;
+        const { product } = this.props
         
         return (
-            <div className="card" style={{ marginBottom: "10px"}}>
-                <div className="card-body">
-                <h4 className="card-title">Ticket Name</h4>
-                <h5 className="card-text"><small>price: </small>$300</h5>
-                <span className="card-text text-success">
-                    <small>Quantity: </small>2</span>
-                <button className="btn btn-sm btn-warning float-right" 
-                    /* onClick={() => this.props.remove(product)} */>Remove from cart</button>
+            <div className="CartItem" style={{ marginBottom: "10px"}}>
+                <div className="CartItem-body">
+                    <h4 className="CartItem-title text-primary">{product.name}</h4>
+                    <h5 className="CartItem-text"><small>Price: $</small>{product.price}</h5>
+                    <span className="CartItem-text text-success">
+                        <small>Quantity: </small>2</span>
+                    <button className="btn btn-sm btn-warning float-right" onClick={() => this.props.remove(product)}>Remove</button>
                 </div>
             </div>
         )
