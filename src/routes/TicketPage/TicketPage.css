@@ -1,0 +1,189 @@
+.Ticket {
+    display: flex;
+    flex-direction: row;
+    /* height: 600px; */
+    border-top: 10px solid #FDB927;
+    border-bottom: 10px solid #FDB927;
+    /* padding: 0 38px; */
+    min-width: 332px;
+}
+
+.Ticket__image_container {
+    width: 50%;
+}
+
+.Ticket__image {
+    background-image: url(https://via.placeholder.com/400);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    height: 100%;
+    margin-left: 40px;
+}
+
+.Ticket__data {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto 30px auto;
+    background-color: white;
+}
+
+.Ticket__data__container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    /* height: 200px; */
+    /* background-color: grey; */
+    margin: 20px;
+}
+
+.main_text > h2 {
+    font-size: 30px;
+    font-weight: bold;
+    margin: 10px auto;
+}
+
+.Ticket__data__meta_text {
+    justify-content: space-between;
+}
+
+.Ticket__data__meta_text > p {
+    font-size: 17px;
+    margin: 0 10px;
+}
+
+.pricing_container {
+    text-align: center;
+    justify-content: space-evenly;
+    width: -webkit-fill-available;
+}
+
+
+
+.pricing_info> h4 {
+    font-size: 26px;
+}
+
+.add_to_cart > button {
+    width: 90%;
+    height: 30px;
+    color: white;
+    background-color: #552583;
+    border-radius: 10px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+
+
+/* .pricing_container {
+width: 48%;
+} */
+
+.flex {
+    display: flex;
+}
+.f1 {
+    flex: 1;
+}
+.f2 {
+    flex: 2;
+}
+.f3 {
+    flex: 3;
+}
+.f4 {
+    flex: 4;
+}
+.fd_row {
+    flex-direction: row;
+}
+.fd_col {
+    flex-direction: column;
+}
+
+.pricing_info > h3 {
+    margin: auto 5px;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.pricing_info > p {
+    font-size: 18px;
+    margin: auto 5px;
+}
+
+/* .pricing_info {
+margin: auto 5px;
+} */
+
+.sub_section {
+    margin: auto 20px;
+}
+
+.section3 {
+    text-align: center;
+}
+
+.section3.sub_section {
+    font-size: 20px;
+    text-align: center;
+}
+
+.quantity {
+    justify-content: center;
+}
+
+hr {
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: solid;
+    border-width: 2px;
+    width: 80%;
+    border-color: #fdb927;
+}
+
+
+@media screen and (max-width: 960px) {
+    .Ticket {
+        flex-direction: column;
+        padding: 0;
+    }
+
+    .Ticket__image_container {
+        height: 300px;
+        width: auto;
+    }
+
+    .Ticket__image {
+        background-repeat: no-repeat;
+        background-position: center;
+        height: 75%;
+        background-size: contain;
+        margin: 20px auto;
+    }
+
+    .pricing_container {
+        text-align: center;
+        justify-content: space-evenly;
+        width: -webkit-fill-available;
+    }
+
+    .pricing_info>h3 {
+        font-size: 30px;
+        font-weight: bold;
+    }
+
+    .pricing_info>p {
+        font-size: 12px;
+    }
+
+    .pricing_info {
+        width: 150px;
+        text-align: center;
+    }
+}
+  

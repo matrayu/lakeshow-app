@@ -27,7 +27,7 @@ class App extends Component {
           <Route path={'/signup'} component={SignupPage} />
           <Route path={'/tickets'} component={TicketListPage} />
           <Route path={'/seats'} component={SeatsPage} />
-          <Route path={'/ticket'} component={TicketPage} />
+          <Route path={'/ticket/:ticketId'} component={TicketPage} />
           <Route path={'/faq'} component={FaqPage} />
           <Route component={NotFoundPage} />
         </Switch>

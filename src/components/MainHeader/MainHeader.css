@@ -1,9 +1,11 @@
 .MainHeader {
+    min-width: 320px;
     background: white;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
-    height: 107px;
+    height: 128px;
+    align-items: center;
 }
 
 .MainHeader>a {
@@ -56,6 +58,19 @@ li a {
 
 li a:hover {
     background-color: white;
+}
+
+
+@media screen and (max-width: 760px) {
+    .MainHeader{
+        flex-direction: column;
+        justify-content: center;
+        height: 128px
+    }
+
+    li {
+        margin: 0 -4px;
+    }
 }
 
 
