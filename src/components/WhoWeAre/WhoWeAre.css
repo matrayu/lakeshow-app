@@ -67,3 +67,32 @@ section.WhoWeAre{
 }
 
 
+@media screen and (max-width: 560px) {
+    #who_we_are_image_top {
+        display: none;
+        margin: 30px 0;
+        position: absolute;
+        left: 0;
+        height: 500px;
+        width: 400px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        opacity: .3;
+    }
+    
+    #who_we_are_image_bottom {
+        display: none;
+    }
+
+    .WhoWeAre.title__bg {
+        position: absolute;
+        margin: 0 auto 0 auto;
+        text-align: left;
+        width: 80%;
+        background: #552583;
+        right: 0;
+        top: 712px;
+    }
+
+}

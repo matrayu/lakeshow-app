@@ -55,3 +55,13 @@
 .HomeHero.container {
     background-color: #FDB927;
 }
+
+@media screen and (max-width: 560px) {
+    .HomeHero>h1{
+        font-size: 11vw;
+    }
+
+    .HomeHero>p{
+        font-size: 6vw;
+    }
+}

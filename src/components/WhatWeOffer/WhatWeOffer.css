@@ -21,6 +21,7 @@ section.WhatWeOffer{
 }
 
 .WhatWeOffer.right__container {
+    /* width: 50%; */
     height: 100%;
 }
 
@@ -71,3 +72,37 @@ section.WhatWeOffer{
     opacity: .5;
     background-image: url('../../images/LakeshowTickets/2018-1004_DSC7120.jpg')
 }
+
+/* @media screen and (max-width: 560px) {
+    .WhatWeOffer.title__bg {
+        width: 80%;
+    }
+
+    #WhatWeOffer_bk_img {
+        display: none;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 100%;
+        opacity: .5;
+        background-image: url('../../images/LakeshowTickets/2018-1004_DSC7120.jpg')
+    }
+
+    .WhatWeOffer.right__container {
+        width: 100%;
+    }
+
+    .offer__grp {
+        margin: 22px 0 0 0;
+        padding: 0;
+    }
+
+    .offers__container {
+        margin: 0px 13px;
+        padding-top: 164px;
+    }
+
+    .WhatWeOffer.title__bg {
+        top: 1205px;
+    }
+} */
