@@ -9,7 +9,7 @@ class WhatWeOffer extends Component {
                         <div id='WhatWeOffer_bk_img'></div>
                         <div className='WhatWeOffer title__bg'>
                             <div className='WhatWeOffer text_grp'>
-                                <h1>What We Offer</h1>
+                                <h1 className='splash_title'>What We Offer</h1>
                             </div>
                         </div>
                     </div>

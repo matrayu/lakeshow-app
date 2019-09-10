@@ -40,7 +40,7 @@ class UpcomingGames extends Component {
                 <div className='UpcomingGames right__container'>
                     <div id='UpcomingGames_bk_img'></div>
                     <div className='UpcomingGames title__bg'>
-                        <h1>Upcoming Games</h1>
+                        <h1 className='splash_title'>Upcoming Games</h1>
                     </div>
                 </div>
             </section>

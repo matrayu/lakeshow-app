@@ -32,9 +32,8 @@ section.WhatWeOffer{
 .offer__grp {
     display: flex;
     text-align: left;
-    padding: 0;
-    padding: 65px 35px 0 85px;
-    margin: 12px 0 0 0;
+    padding: 11px 19px 0 36px;
+    margin: 60px 0;
 }
 
 .WhatWeOffer>h1 {
