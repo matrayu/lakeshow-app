@@ -73,7 +73,7 @@ section.WhatWeOffer{
     background-image: url('../../images/LakeshowTickets/2018-1004_DSC7120.jpg')
 }
 
-/* @media screen and (max-width: 560px) {
+@media screen and (max-width: 560px) {
     .WhatWeOffer.title__bg {
         width: 80%;
     }
@@ -90,6 +90,11 @@ section.WhatWeOffer{
 
     .WhatWeOffer.right__container {
         width: 100%;
+        margin: -5px 0 0 10px;
+    }
+
+    .WhatWeOffer.left__container {
+        width: 0;
     }
 
     .offer__grp {
@@ -105,4 +110,4 @@ section.WhatWeOffer{
     .WhatWeOffer.title__bg {
         top: 1205px;
     }
-} */
+}

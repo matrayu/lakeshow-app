@@ -13,7 +13,7 @@ class WhatWeOffer extends Component {
                             </div>
                         </div>
                     </div>
-                    <div className='right__container'>
+                    <div className='WhatWeOffer right__container'>
                         <div className='offers__container'>
                             <div className='offer__grp'>
                                 <div className='offer image'></div>

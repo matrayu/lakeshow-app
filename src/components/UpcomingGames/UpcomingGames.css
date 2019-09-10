@@ -23,6 +23,8 @@ section.UpcomingGames{
 .UpcomingGames.container {
     display: flex;
     flex-direction: column;
+    margin: 0 auto;
+    width: 80%;
     
 }
 
@@ -31,8 +33,12 @@ section.UpcomingGames{
     flex-direction: row;
     text-align: left;
     padding: 0;
-    padding: 65px 35px 0 0;
-    margin: 12px 0 0 13%;
+    padding: 60px 15px 0 0;
+    margin: 5px 0 0 0px;
+}
+
+.UpcomingGames.text__grp {
+    margin-right: 5px;
 }
 
 .UpcomingGames.image {
@@ -60,6 +66,43 @@ section.UpcomingGames{
     height: 100%;
     opacity: .5;
     background-image: url('../../images/LakeshowTickets/2018-1004_DSC7294.jpg')
+}
+
+@media screen and (max-width: 560px) {
+    #UpcomingGames_bk_img {
+        display: none;
+    }
+    
+    .UpcomingGames.title__bg {
+        top: 1793px;
+        width: 80%;
+    }
+
+    .UpcomingGames.left__container {
+        width: 100%;
+    }
+
+    .UpcomingGames.right__container {
+        width: 0;
+    }
+
+    .UpcomingGames.container {
+        display: flex;
+        flex-direction: column;
+        margin-top: 176px;
+        
+    }
+
+    .UpcomingGames.grp {
+        padding: 5px;
+        margin: 6px 0;
+        flex-direction: row-reverse;
+        text-align: right;
+    }
+    .UpcomingGames.image {
+        margin-left: 10px;
+        margin-right: 6px;
+    }
 }
 
 

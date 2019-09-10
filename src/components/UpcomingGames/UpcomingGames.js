@@ -5,7 +5,7 @@ class UpcomingGames extends Component {
     render() {
         return (
             <section className='UpcomingGames'>
-                <div className='left__container'>
+                <div className='UpcomingGames left__container'>
                     <div className='UpcomingGames container'>
                         <div className='UpcomingGames grp'>
                             <div className='UpcomingGames image'></div>
@@ -37,7 +37,7 @@ class UpcomingGames extends Component {
                     </div>
                     <div className='image__bottom'></div>
                 </div>
-                <div className='right__container'>
+                <div className='UpcomingGames right__container'>
                     <div id='UpcomingGames_bk_img'></div>
                     <div className='UpcomingGames title__bg'>
                         <h1>Upcoming Games</h1>
