@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Tickets } from '../../contexts/seedData';
 import CartItem from '../../components/CartItem/CartItem';
-import TicketDataContext from '../../contexts/TicketDataContext';
+import TicketContext from '../../contexts/TicketContext';
 
 import './CartPage.css';
 
@@ -12,7 +12,7 @@ export default class Cart extends React.Component {
         this.state = { products: [], total: 0 }
     }
 
-    static contextType = TicketDataContext;
+    static contextType = TicketContext;
     
     componentDidMount() {
         let cart = JSON.parse(localStorage.getItem('cart'));

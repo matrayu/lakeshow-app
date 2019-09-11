@@ -1,5 +1,5 @@
 import React from 'react';
-import TicketDataContext from "../../contexts/TicketDataContext";
+import TicketContext from "../../contexts/TicketContext";
 import './CartItem.css'
 
 
@@ -9,7 +9,7 @@ export default class CartItem extends React.Component {
         this.state = {quantity: 1}
     }
 
-    static contextType = TicketDataContext;
+    static contextType = TicketContext;
     
     render(){
         const { product } = this.props

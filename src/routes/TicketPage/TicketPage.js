@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import TicketDataContext from "../../contexts/TicketDataContext";
+import TicketContext from "../../contexts/TicketContext";
 
 /* import OtherGamesBar from '../../components/OtherGamesBar/OtherGamesBar'; */
 
@@ -8,13 +8,13 @@ import "./TicketPage.css";
 let moment = require("moment");
 
 export default class TicketPage extends Component {
-
   static defaultProps = {
     match: { params: {} }
   };
 
-  static contextType = TicketDataContext;
+  static contextType = TicketContext;
 
+  
   
 
   renderTicket() {
