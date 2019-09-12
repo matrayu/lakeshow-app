@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import tickets from './seedData';
+import tickets from './seedData'
 
 const TicketListContext = React.createContext({
   ticketList: [],
@@ -8,15 +8,16 @@ const TicketListContext = React.createContext({
   clearError: () => {},
   setTicketList: () => {},
 })
+
 export default TicketListContext
 
 export class TicketListProvider extends Component {
   state = {
-    ticketList: [],
+    ticketList: tickets,
     error: null,
   };
 
-  setThingList = ticketList => {
+  setTicketList = ticketList => {
     this.setState({ ticketList })
   }
 

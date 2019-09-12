@@ -5,7 +5,6 @@ import './TicketListItem.css'
 class TicketListItem extends Component {
     render() {
         const { ticket } = this.props
-        console.log(ticket)
         return (
             <Link to={`/ticket/${ticket.id}`} className='TicketListItem'>
                 <div className='game__container'>

@@ -17,9 +17,14 @@ import './App.css';
 
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      tickets: null
+    };
+  }
 
   render() {
-    console.log(this.props.location.pathname)
     return (
       <main className='App'>
         {(this.props.location.pathname === '/') ? '' : <MainHeader />}

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import TicketContext from "../../contexts/TicketContext";
+import tickets from '../../contexts/seedData'
 
 /* import OtherGamesBar from '../../components/OtherGamesBar/OtherGamesBar'; */
 
@@ -14,13 +15,23 @@ export default class TicketPage extends Component {
 
   static contextType = TicketContext;
 
-  
+
+  componentDidMount() {
+    const { ticketId } = this.props.match.params
+    const ticket = tickets[ticketId-1]
+    this.context.setTicket(ticket)
+    this.context.clearError()
+  }
+
+  componentWillUnmount() {
+    this.context.clearTicket()
+  }
   
 
   renderTicket() {
-    
-    const ticketId = this.props.location.pathname.split("/ticket/");
-    const ticket = this.context.ticketData[ticketId[1] - 1];
+    const { ticket } = this.context
+    /* const ticketId = this.props.location.pathname.split("/ticket/");
+    const ticket = this.context.ticketData[ticketId[1] - 1]; */
     return (
       <>
         <TicketContent ticketInfo={ticket} />

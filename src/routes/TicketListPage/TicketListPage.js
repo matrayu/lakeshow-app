@@ -1,23 +1,22 @@
 import React, { Component } from 'react'
 import TicketListItem from '../../components/TicketListItem/TicketListItem'
-import TicketContext from '../../contexts/TicketContext'
+import TicketListContext from '../../contexts/TicketListContext'
+import tickets from '../../contexts/seedData'
 
 import './TicketListPage.css'
 
 export default class TicketListPage extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            list: []
-        }
-    }
-    static contextType = TicketContext
+    static contextType = TicketListContext
 
+    componentDidMount() {
+        this.context.clearError()
+        console.log(this.context)
+    }
 
 
     renderTickets() {
-        const { ticketData = [] } = this.context
-        return ticketData.map(ticket =>
+        const { ticketList = [] } = this.context
+        return ticketList.map(ticket =>
             <TicketListItem 
                 key={ticket.id}
                 ticket={ticket}
