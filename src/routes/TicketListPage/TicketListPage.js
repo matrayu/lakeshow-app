@@ -6,17 +6,18 @@ import tickets from '../../contexts/seedData'
 import './TicketListPage.css'
 
 export default class TicketListPage extends Component {
+
     static contextType = TicketListContext
 
     componentDidMount() {
         this.context.clearError()
+        this.context.setFilteredList(tickets)
         console.log(this.context)
     }
 
-
     renderTickets() {
-        const { ticketList = [] } = this.context
-        return ticketList.map(ticket =>
+        const { filteredList = [] } = this.context
+        return filteredList.map(ticket =>
             <TicketListItem 
                 key={ticket.id}
                 ticket={ticket}
@@ -24,15 +25,51 @@ export default class TicketListPage extends Component {
         )
     }
 
+    handleChange = (e) => {
+        const allTickets = this.context.ticketList
+        let currentList = [];
+		// Variable to hold the filtered list before putting into state
+        let newList = [];
+
+            // If the search bar isn't empty
+        if (e.target.value !== "") {
+                // Assign the original list to currentList
+        currentList = this.context.ticketList;
+
+                // Use .filter() to determine which items should be displayed
+                // based on the search terms
+        newList = currentList.filter(item => {
+                    // change current item to lowercase
+            const lc = item.name.toLowerCase();
+                    // change search term to lowercase
+            const filter = e.target.value.toLowerCase();
+                    // check to see if the current list item includes the search term
+                    // If it does, it will be added to newList. Using lowercase eliminates
+                    // issues with capitalization in search terms and search content
+            return lc.includes(filter)
+        });
+        } else {
+                // If the search bar is empty, set newList to original task list
+                console.log('newlist', allTickets)
+            newList = allTickets;
+        }
+            // Set the filtered state based on what our rules added to newList
+        /* this.setState({
+            filtered: newList
+        }); */
+        this.context.setFilteredList(newList)
+    }
+
     
     render() {
+        console.log(this.context.filteredList)
         return (
             <React.Fragment>
                 <div className='TicketListPage'>
                     <div className='TicketListPage container'>
                         <div className='TicketListPage search_functions'>
                             <div>
-                                <input type="text" className='input' placeholder="Search..."></input>
+                                <input type="text" className='input' placeholder="Search..." onChange={(e) => this.handleChange(e)}></input>
                             </div>
                             <div className='sort_by'>
                                 Sort By:

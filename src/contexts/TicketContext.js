@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import tickets from './seedData';
+//import tickets from './seedData';
 
 export const nullTicket = {
   ticket: {}
