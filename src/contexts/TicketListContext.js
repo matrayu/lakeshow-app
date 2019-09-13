@@ -3,8 +3,10 @@ import tickets from './seedData'
 
 const TicketListContext = React.createContext({
   ticketList: [],
+  sortedValue: null,
   error: null,
   setFilteredList: () => {},
+  setSortedList: () => {},
   setError: () => {},
   clearError: () => {},
   setTicketList: () => {},
@@ -16,6 +18,8 @@ export class TicketListProvider extends Component {
   state = {
     ticketList: tickets,
     filteredList: tickets,
+    sortedList: tickets,
+    sortedValue: "date",
     error: null,
   };
 
@@ -25,6 +29,14 @@ export class TicketListProvider extends Component {
 
   setFilteredList = filteredList => {
     this.setState({ filteredList })
+  }
+
+  setSortedList = sortedList => {
+    this.setState({ sortedList })
+  }
+
+  setSortedValue = sortedValue => {
+    this.setState({ sortedValue })
   }
 
   setError = error => {
@@ -45,6 +57,7 @@ export class TicketListProvider extends Component {
       clearError: this.clearError,
       setTicketList: this.setTicketList,
       setFilteredList: this.setFilteredList,
+      setSortedList: this.setSortedList,
     }
     return (
       <TicketListContext.Provider value={value}>

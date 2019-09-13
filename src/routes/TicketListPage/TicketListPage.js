@@ -12,7 +12,6 @@ export default class TicketListPage extends Component {
     componentDidMount() {
         this.context.clearError()
         this.context.setFilteredList(tickets)
-        console.log(this.context)
     }
 
     renderTickets() {
@@ -60,9 +59,27 @@ export default class TicketListPage extends Component {
         this.context.setFilteredList(newList)
     }
 
+    sortBy = (e) => {
+        let sortby = e.target.value
+        const allTickets = this.context.ticketList
+        if (sortby === 'priceHigh') {
+            allTickets.sort((a, b) => (a.price < b.price) ? 1 : -1) 
+        } else {
+            if (sortby === 'priceLow') {
+                allTickets.sort((a, b) => (a.price > b.price) ? 1 : -1) 
+            } else {
+                if (sortby === 'team') {
+                    allTickets.sort((a, b) => (a.name > b.name) ? 1 : -1)
+                } else {
+                    allTickets.sort((a, b) => (a.dates > b.dates) ? 1 : -1)
+                }
+            }
+        }
+        this.context.setTicketList(allTickets)
+
+    }
     
     render() {
-        console.log(this.context.filteredList)
         return (
             <React.Fragment>
                 <div className='TicketListPage'>
@@ -73,11 +90,11 @@ export default class TicketListPage extends Component {
                             </div>
                             <div className='sort_by'>
                                 Sort By:
-                                <select>
-                                    <option value='date'>Date</option>
-                                    <option value='priceHigh'>Price High to Low</option>
-                                    <option value='priceLow'>Price Low to High</option>
-                                    <option value='team'>Team</option>
+                                <select onChange={(e) => this.sortBy(e)}>
+                                    <option value='date' id='date'>Date</option>
+                                    <option value='priceHigh' id='priceHigh'>Price High to Low</option>
+                                    <option value='priceLow' id='priceLow'>Price Low to High</option>
+                                    <option value='team' id='team'>Team</option>
                                 </select>
                             </div>
                         </div>
