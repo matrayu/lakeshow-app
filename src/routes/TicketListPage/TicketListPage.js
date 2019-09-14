@@ -11,7 +11,8 @@ export default class TicketListPage extends Component {
 
     componentDidMount() {
         this.context.clearError()
-        this.context.setFilteredList(tickets)
+        this.context.setTicketList(tickets)
+        /* this.context.setFilteredList(tickets) */
     }
 
     renderTickets() {

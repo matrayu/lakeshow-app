@@ -1,8 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Tickets } from '../../contexts/seedData';
+//import { Tickets } from '../../contexts/seedData';
 import CartItem from '../../components/CartItem/CartItem';
-import TicketContext from '../../contexts/TicketContext';
+//import TicketContext from '../../contexts/TicketContext';
+import TicketListContext from '../../contexts/TicketListContext';
 
 import './CartPage.css';
 
@@ -12,17 +13,15 @@ export default class Cart extends React.Component {
         this.state = { products: [], total: 0 }
     }
 
-    static contextType = TicketContext;
+    static contextType = TicketListContext;
     
     componentDidMount() {
         let cart = JSON.parse(localStorage.getItem('cart'));
         if (!cart) return;
         
-        let products = this.context.ticketData
+        let products = this.context.ticketList
 
         let cartProducts = [], id = null
-
-        
 
         for (let i = 0; i < products.length; i++) {
             id = products[i].id.toString();
@@ -38,10 +37,8 @@ export default class Cart extends React.Component {
         }
 
         this.setState({ products: cartProducts, total });
-   
     };
-
-
+    
     removeFromCart = (product) => {
         let products = this.state.products.filter((item) => item.id !== product.id);
         let cart = JSON.parse(localStorage.getItem('cart'));

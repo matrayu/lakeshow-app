@@ -1,7 +1,7 @@
 import React from 'react';
 /* import { isAuthenticated, getCartProducts } from '../../repository'; */
-import {  Redirect, Link } from 'react-router-dom';
-import TicketContext from '../../contexts/TicketContext';
+import { Link } from 'react-router-dom';
+import TicketListContext from '../../contexts/TicketListContext';
 import './CheckoutPage.css'
 
 export default class CheckoutPage extends React.Component {
@@ -13,13 +13,13 @@ export default class CheckoutPage extends React.Component {
 		}
     }
     
-    static contextType = TicketContext;
+    static contextType = TicketListContext;
 
 	componentDidMount() {
 		let cart = JSON.parse(localStorage.getItem('cart'));
         if (!cart) return;
         
-        let products = this.context.ticketData
+        let products = this.context.ticketList
 
         let cartProducts = [], id = null
 

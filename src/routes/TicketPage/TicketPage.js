@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import TicketContext from "../../contexts/TicketContext";
-import tickets from '../../contexts/seedData'
+import tickets from '../../contexts/seedData';
+import Popup from 'reactjs-popup';
+import { Link } from 'react-router-dom'
 
 /* import OtherGamesBar from '../../components/OtherGamesBar/OtherGamesBar'; */
 
@@ -23,13 +25,14 @@ export default class TicketPage extends Component {
     this.context.clearError()
   }
 
-  componentWillUnmount() {
+  /* componentWillUnmount() {
     this.context.clearTicket()
-  }
-  
+  } */
 
+  
   renderTicket() {
     const { ticket } = this.context
+    console.log('ticket', ticket)
     /* const ticketId = this.props.location.pathname.split("/ticket/");
     const ticket = this.context.ticketData[ticketId[1] - 1]; */
     return (
@@ -66,15 +69,10 @@ function TicketContent({ ticketInfo }) {
       ? cart[id]
       : 0
     );
-
-    
-
     //hard coding quantity to 2. if this needs to be dynamic
     //change to 'qty'
     //let qty = cart[id] + parseInt(ticketInfo.quantity);
-    
     cart[id] = 2
-  
     localStorage.setItem('cart', JSON.stringify(cart))
   }
 
@@ -131,7 +129,33 @@ function TicketContent({ ticketInfo }) {
                 <hr />
 
                 <div className="Ticket__data__container add_to_cart">
-                    <button onClick={addToCart}>Add To Cart</button>
+                  <button onClick={addToCart}>
+                    {
+                      <Popup trigger={
+                          <button className="button" onClick={addToCart}> 
+                            Add to Cart 
+                          </button>} 
+                        modal>
+                          <div className="modal">
+                            <div className="header"> Yah! Tickets have been added to your cart!</div>
+                            <div className="actions">
+                              <div className='modal_button'>
+                                <Link
+                                  to='/tickets'>
+                                  Find more tickets!
+                                </Link>
+                              </div>
+                              <div className='modal_button'>
+                                <Link
+                                  to='/cart'>
+                                  Checkout
+                                </Link>
+                              </div>
+                            </div>
+                          </div>
+                        </Popup>
+                      }
+                  </button> 
                 </div>
             </div>
         </div>
