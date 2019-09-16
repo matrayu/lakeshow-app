@@ -5,11 +5,13 @@ const TicketListContext = React.createContext({
   ticketList: [],
   sortedValue: null,
   error: null,
+  isLoggedIn: false,
   setFilteredList: () => {},
   setSortedList: () => {},
   setError: () => {},
   clearError: () => {},
   setTicketList: () => {},
+  setLogin: () => {}
 })
 
 export default TicketListContext
@@ -21,7 +23,13 @@ export class TicketListProvider extends Component {
     sortedList: tickets,
     sortedValue: "date",
     error: null,
+    isLoggedIn: false
   };
+
+  setLogin = () => {
+    let log = !this.state.isLoggedIn
+    this.setState({ isLoggedIn: log })
+  }
 
   setTicketList = ticketList => {
     this.setState({ ticketList })
@@ -58,6 +66,7 @@ export class TicketListProvider extends Component {
       setTicketList: this.setTicketList,
       setFilteredList: this.setFilteredList,
       setSortedList: this.setSortedList,
+      setLogin: this.setLogin
     }
     return (
       <TicketListContext.Provider value={value}>
