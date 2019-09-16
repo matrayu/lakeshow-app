@@ -41,7 +41,7 @@ export default class MainHeader extends Component {
                         <li><Link id='tickets' to='/tickets'>Tickets</Link></li>
                         <li><Link id='seats' to='/seats'>Seats</Link></li>
                         <li><Link id='faq' to='/FAQ'>FAQ</Link></li>
-                        <li>{(this.state.loggedIn) ? this.renderLogoutLink() : this.renderLoginLink()}</li>
+                        <li>{TokenService.hasAuthToken() ? this.renderLogoutLink() : this.renderLoginLink()}</li>
                         <li><Link id='cart' to='/cart'>Cart</Link></li>
                     </ul>
                 </nav>

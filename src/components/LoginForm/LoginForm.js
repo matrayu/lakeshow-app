@@ -26,10 +26,6 @@ export default class LoginForm extends Component {
             password: password.value,
         })
         .then(res => {
-            return AuthApiService.getUserData(res.user_id)
-        })
-        .then(res => {
-            this.context.setUserData(res.userData)
             this.context.setLogin()
             username.value = ''
             password.value = ''

@@ -27,6 +27,7 @@ export class TicketListProvider extends Component {
   };
 
   setLogin = () => {
+    console.log('LOGIN')
     let log = !this.state.isLoggedIn
     this.setState({ isLoggedIn: log })
   }

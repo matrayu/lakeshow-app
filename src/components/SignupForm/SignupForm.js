@@ -167,7 +167,8 @@ export default class SignupForm extends Component {
                         onChange={this.handleChange}
                         required
                     />
-                    <div className='error'>{this.state.errorConfirmPass}</div> 
+                    <div className='error'>{this.state.errorConfirmPass}</div>
+                    <div className='error'>{this.state.error}</div>  
                 </div>
                 <div className='form__btns register__btn'>
                     <button className="btn btn-success btn-block">Register</button>

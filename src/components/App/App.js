@@ -38,6 +38,8 @@ class App extends Component {
 
   componentDidMount() {
     IdleService.setIdleCallback(this.logoutFromIdle)
+    IdleService.unRegisterIdleResets()
+    TokenService.clearCallbackBeforeExpiry()
 
     if (TokenService.hasAuthToken()) {
       IdleService.regiserIdleTimerResets()
@@ -47,10 +49,9 @@ class App extends Component {
     }
   }
 
-  componentWillMount() {
-    IdleService.unRegisterIdleResets()
-    TokenService.clearCallbackBeforeExpiry()
-  }
+  /* componentWillMount() {
+    
+  } */
 
   logoutFromIdle = () => {
     TokenService.clearAuthToken()

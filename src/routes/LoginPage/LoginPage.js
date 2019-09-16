@@ -21,7 +21,7 @@ export default class LoginPage extends Component {
         <div className='LoginPage'>
             <div className='LoginPage form_container'>
                 <h2>LogIn</h2>
-                <LoginForm />
+                <LoginForm onLoginSuccess={this.handleLoginSuccess}/>
             </div>
             <div className='form__footer'>
                 <p>Not a member yet? <span><a href="/signup">Sign Up</a></span></p>
