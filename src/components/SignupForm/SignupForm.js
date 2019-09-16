@@ -7,7 +7,7 @@ import './SignupForm.css'
 
 export default class SignupForm extends Component {
     static defaultProps = {
-        onLoginSuccess: () => {}
+        onSignUpSuccess: () => {}
     }
     
     static contextType = TicketListContext
@@ -89,6 +89,11 @@ export default class SignupForm extends Component {
                 errorFullName: null,
                 email: '',
             })
+            const { history } = this.props
+            this.context.setLogin()
+            this.props.onSignUpSuccess()
+            this.context.clearError()
+            history.push('/tickets')
         })
         .catch(res => {
             console.error(res.error)

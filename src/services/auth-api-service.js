@@ -51,22 +51,9 @@ const AuthApiService = {
                 TokenService.queueCallbackBeforeExpiry(() => {
                     AuthApiService.postRefreshToken()
                 })
+                console.log(res)
                 return res
             })
-    },
-
-    getUserData() {
-        return fetch(`${config.API_ENDPOINT}/auth/user`, {
-            method: 'GET',
-            headers: {
-                'authorization': `Bearer ${TokenService.getAuthToken()}`,
-            }
-        })
-        .then(res =>
-            (!res.ok)
-                ? res.json().then(e => Promise.reject(e))
-                : res.json()
-        )
     },
 
     postRefreshToken() {

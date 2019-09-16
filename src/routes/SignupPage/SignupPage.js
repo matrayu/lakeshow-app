@@ -22,7 +22,7 @@ export default class SignupPage extends Component {
             <div className='SignupPage'>
                 <div className='SignupPage form_container'>
                     <h2>Sign Up</h2>
-                    <SignupForm onSubmit={this.handleSubmit}/>
+                    <SignupForm onSignUpSuccess={this.handleLoginSuccess}/>
                 </div>
                 <div className='form__footer'>
                     <p>Already have an account? <span><a href="/login">Log In</a></span></p>
