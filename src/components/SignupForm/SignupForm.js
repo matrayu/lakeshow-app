@@ -29,8 +29,8 @@ export default class SignupForm extends Component {
 
     handleChange = event => {
         const {name, value} = event.target
-        console.log(name)
         this.setState({ [name]: value })
+        
         if (name === 'username') {
             this.setState({ 
                 errorName: HelpersService.checkUsername(value).error })
@@ -51,18 +51,18 @@ export default class SignupForm extends Component {
                     }    
                 }
             }
-        }   
+        }
     }
         
     handleSubmit = event => {
-        let { errorPass, errorConfirmPass, errorFullName, errorEmail, errorName } = this.state
+        //let { errorPass, errorConfirmPass, errorFullName, errorEmail, errorName } = this.state
         event.preventDefault()
-        if (errorConfirmPass === null & errorPass === null & errorFullName === null & errorEmail === null & errorName === null) {
+        /* if (errorConfirmPass === null & errorPass === null & errorFullName === null & errorEmail === null & errorName === null) {
             this.setState({ isValid: true })
         }
         if (!this.state.isValid) {
             return
-        }
+        } */
 
 
         const { email, username, password, full_name } = this.state
