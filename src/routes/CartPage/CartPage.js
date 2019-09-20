@@ -4,14 +4,44 @@ import { Link } from 'react-router-dom';
 import CartItem from '../../components/CartItem/CartItem';
 //import TicketContext from '../../contexts/TicketContext';
 import TicketListContext from '../../contexts/TicketListContext';
+import PaypalExpressBtn from 'react-paypal-express-checkout';
+import Popup from 'reactjs-popup';
 
 import './CartPage.css';
+
+
+// Document on Paypal's currency code: https://developer.paypal.com/docs/classic/api/currency_codes/
+
+    // In order to get production's app-ID, you will have to send your app to Paypal for approval first
+    // For your sandbox Client-ID (after logging into your developer account, please locate the "REST API apps" section, click "Create App" unless you have already done so):
+    //   => https://developer.paypal.com/docs/classic/lifecycle/sb_credentials/
+    // Note: IGNORE the Sandbox test AppID - this is ONLY for Adaptive APIs, NOT REST APIs)
+    // For production app-ID:
+    //   => https://developer.paypal.com/docs/classic/lifecycle/goingLive/
+
+const { PP_CID, PP_CID_PROD } = require('../../config')
+
+const client = {
+	sandbox: PP_CID,
+	production: PP_CID_PROD,
+}
+
+const env = 'sandbox'; // you can set this string to 'production'
 
 export default class Cart extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { products: [], total: 0 }
+        this.state = { 
+            products: [], 
+            total: 0,
+            currency: 'USD',
+            open: false,
+        }
     }
+
+    static defaultProps = {
+        match: { params: {} }
+    };
 
     static contextType = TicketListContext;
     
@@ -53,23 +83,48 @@ export default class Cart extends React.Component {
         this.setState({products: []});
     }
 
-    render() {   
-    const { products, total } =  this.state;
+    goBack = () => {
+        this.props.history.goBack()
+    }
+
+    successfulPayment = () => {
+        this.props.history.push('/success')
+    }
+
+    render() {
+    const { products, total, currency } =  this.state;
+    const onSuccess = (payment) => {
+        console.log("Payment successful!", payment);
+        this.successfulPayment()
+    }
+
+    const onCancel = (data) => {
+        console.log('Payment cancelled!', data);
+        this.setState({ open: true })
+    }
+
+    const onError = (err) => {
+        console.log("Error!", err);
+        // Because the Paypal's main script is loaded asynchronously from "https://www.paypalobjects.com/api/checkout.js"
+        // => sometimes it may take about 0.5 second for everything to get set, or for the button to appear
+    }
+    
         return (
             <div className="CartPage">
                 <h2 className="page_title">Cart</h2>
                 <hr/>
-                {
-                    products.map((product, index) => 
-                        <CartItem product={product} remove={this.removeFromCart} key={index}/>)
-                } 
+                {products.map((product, index) => 
+                    <CartItem 
+                        product={product} 
+                        remove={this.removeFromCart} 
+                        key={index}
+                    />
+                )} 
                 
                 { products.length 
                     ?   <div className='cart_total'>
                             <hr/>
-                            <h4>
-                                <small>Total Amount: </small><span className="float-right text-primary">${total}</span>
-                            </h4>
+                            <h4><small>Total Amount: </small><span className="float-right text-primary">${total}</span> </h4>
                             <hr/>
                         </div>
                     : ''
@@ -77,16 +132,18 @@ export default class Cart extends React.Component {
                 
                 { !products.length 
                     ?   <h3 className="text-warning">Your cart is empty. Let's go add some <span className='purple text-primary'><Link to='/tickets'>tickets!</Link></span></h3>
-
                     :   <div className='cart_action_btns'>
-                            <Link to="/checkout"><button className="btn btn-success float-right text-primary">Checkout</button></Link>
-                            <button className="btn btn-danger float-right" onClick={this.clearCart} 
-                                style={{ marginRight: "10px" }}>Clear Cart</button><br/><br/><br/>
+                            <button onClick={this.goBack}>Go Back</button>
+                            <div className="btn btn-success float-right text-primary">
+                                <PaypalExpressBtn env={env} client={client} currency={currency} total={total} onError={onError} onSuccess={onSuccess} onCancel={onCancel} />
+                            </div>
+                            <Popup open={this.state.open} modal closeOnDocumentClick>
+                                <div className='modal'>
+                                    <div className="cancel_header">Oh no! <br/> It looks like the purchase was canceled.</div>
+                                </div>
+                            </Popup>
                         </div>
                 }
-
-
-                
             </div>
         );
     }

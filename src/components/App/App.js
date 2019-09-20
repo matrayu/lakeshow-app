@@ -17,6 +17,7 @@ import TokenService from '../../services/token-service';
 import AuthApiService from '../../services/auth-api-service';
 import IdleService from '../../services/idle-service.js';
 import TicketListContext from '../../contexts/TicketListContext'
+import PurchaseComplete from '../../routes/PurchaseComplete/PurchaseComplete'
 import './App.css';
 
 
@@ -65,7 +66,7 @@ class App extends Component {
     return (
       <div className='App'>
         <header className='App__header'>
-          {(this.props.location.pathname === '/') ? '' : <MainHeader />}
+          {(this.props.location.pathname === '/' || this.props.location.pathname === '/success') ? '' : <MainHeader />}
         </header>
         <main className='App__main'>
           <Switch>
@@ -78,6 +79,7 @@ class App extends Component {
             <Route path={'/faq'} component={FaqPage} />
             <Route path={'/cart'} component={CartPage} />
             <Route path={'/checkout'} component={CheckoutPage} />
+            <Route path={'/success'} component={PurchaseComplete} />
             <Route component={NotFoundPage} />
           </Switch>
         </main>
