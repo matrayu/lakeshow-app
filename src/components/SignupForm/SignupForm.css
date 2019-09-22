@@ -5,3 +5,9 @@
 .error {
     color: red;
 }
+
+.gender_grp {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}

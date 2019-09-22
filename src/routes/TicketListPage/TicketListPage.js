@@ -1,22 +1,24 @@
 import React, { Component } from 'react'
 import TicketListItem from '../../components/TicketListItem/TicketListItem'
 import TicketListContext from '../../contexts/TicketListContext'
-import tickets from '../../contexts/seedData'
-
+import TicketsApiService from '../../services/tickets-api-service'
 import './TicketListPage.css'
 
 export default class TicketListPage extends Component {
-
     static contextType = TicketListContext
 
     componentDidMount() {
         this.context.clearError()
-        this.context.setTicketList(tickets)
-        /* this.context.setFilteredList(tickets) */
+        TicketsApiService.getTickets()
+            .then(tickets => {
+                console.log('should be tickets', tickets)
+                return this.context.setTicketList(tickets)
+            })
+            .catch(this.context.setError)
     }
 
     renderTickets() {
-        const { filteredList = [] } = this.context
+        const filteredList = this.context.ticketList
         return filteredList.map(ticket =>
             <TicketListItem 
                 key={ticket.id}

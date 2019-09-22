@@ -2,7 +2,7 @@ const HelpersService = {
     checkUsername(name) {
         if (name.length <= 5) {
             return {
-                error: 'Username must be at least 5 characters',
+                error: 'Username must be at least 6 characters',
                 isValid: false
             }
         } else {
@@ -42,9 +42,16 @@ const HelpersService = {
         }
     },
 
-    checkName(name) {
-        if (name.length < 5) {
-            return { error: 'Please enter a valid name' }
+    checkFirstName(first_name) {
+        if (first_name.length < 2) {
+            return { error: 'Please enter a valid first name' }
+        }
+        return { error: null }
+    },
+
+    checkLastName(last_name) {
+        if (last_name.length < 2) {
+            return { error: 'Please enter a valid last name' }
         }
         return { error: null }
     }

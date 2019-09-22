@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import tickets from './seedData'
+//import tickets from './seedData'
 
 const TicketListContext = React.createContext({
   ticketList: [],
@@ -18,9 +18,9 @@ export default TicketListContext
 
 export class TicketListProvider extends Component {
   state = {
-    ticketList: tickets,
-    filteredList: tickets,
-    sortedList: tickets,
+    ticketList: [],
+    filteredList: [],
+    sortedList: [],
     sortedValue: "date",
     error: null,
     isLoggedIn: false
@@ -32,16 +32,16 @@ export class TicketListProvider extends Component {
     this.setState({ isLoggedIn: log })
   }
 
-  setTicketList = ticketList => {
-    this.setState({ ticketList })
+  setTicketList = tickets => {
+    this.setState({ ticketList: tickets })
   }
 
-  setFilteredList = filteredList => {
-    this.setState({ filteredList })
+  setFilteredList = filteredTickets => {
+    this.setState({ filteredList: filteredTickets })
   }
 
-  setSortedList = sortedList => {
-    this.setState({ sortedList })
+  setSortedList = sortedLTickets => {
+    this.setState({ sortedList: sortedLTickets })
   }
 
   setSortedValue = sortedValue => {
@@ -69,6 +69,7 @@ export class TicketListProvider extends Component {
       setSortedList: this.setSortedList,
       setLogin: this.setLogin
     }
+
     return (
       <TicketListContext.Provider value={value}>
         {this.props.children}

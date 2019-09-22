@@ -6,6 +6,7 @@ import CartItem from '../../components/CartItem/CartItem';
 import TicketListContext from '../../contexts/TicketListContext';
 import PaypalExpressBtn from 'react-paypal-express-checkout';
 import Popup from 'reactjs-popup';
+import CheckoutApiService from '../../services/checkout-api-service';
 
 import './CartPage.css';
 
@@ -95,6 +96,7 @@ export default class Cart extends React.Component {
     const { products, total, currency } =  this.state;
     const onSuccess = (payment) => {
         console.log("Payment successful!", payment);
+        CheckoutApiService.postPayment()
         this.successfulPayment()
     }
 
