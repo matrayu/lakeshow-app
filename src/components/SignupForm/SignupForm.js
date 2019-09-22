@@ -34,7 +34,6 @@ export default class SignupForm extends Component {
 
     handleChange = event => {
         const {name, value} = event.target
-        console.log(name, value)
         this.setState({ [name]: value })
         
         if (name === 'username') {
@@ -111,10 +110,9 @@ export default class SignupForm extends Component {
                 errorFirstName: null,
                 errorLastName: null,
             })
-            const { history } = this.props
             this.context.setLogin()
-            this.props.onSignUpSuccess()
             this.context.clearError()
+            this.props.onSignUpSuccess()
         })
         .catch(res => {
             console.error(res.error)

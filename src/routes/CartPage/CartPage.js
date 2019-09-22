@@ -57,6 +57,7 @@ export default class Cart extends React.Component {
         for (let i = 0; i < products.length; i++) {
             id = products[i].id.toString();
             if (cart.hasOwnProperty(id)) {
+                console.log('has own')
                 products[i].qty = cart[id]
                 cartProducts.push(products[i]);
             }
@@ -64,8 +65,12 @@ export default class Cart extends React.Component {
 
         let total = 0;
         for (let i = 0; i < cartProducts.length; i++) {
-            total += cartProducts[i].price * cartProducts[i].qty;
+            let currency = cartProducts[i].list_price_ea
+            let number = Number(currency.replace(/[^0-9.-]+/g,""));
+            total += number * cartProducts[i].qty;
         }
+
+        console.log(cartProducts)
 
         this.setState({ products: cartProducts, total });
     };

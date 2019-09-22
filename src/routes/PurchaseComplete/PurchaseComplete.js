@@ -7,105 +7,47 @@ export default class PurchaseComplete extends Component {
   render() {
     return (
       <section className='PurchaseComplete'>
-        <div class="invoice-box">
-        <table cellpadding="0" cellspacing="0">
-            <tr class="top">
-                <td colspan="2">
-                    <table>
-                        <tr>
-                            <td class="title">
-                                <Link to='/tickets'>
-                                  <img className='invoice_image' src="https://photos.smugmug.com/photos/i-S62mzmH/0/S/i-S62mzmH-S.png" alt='lakeshow tickets'></img>
-                                </Link>
-                            </td>
-                        </tr>
-                    </table>
-                </td>
-            </tr>
-            
-            <tr class="information">
-                <td colspan="2">
-                    <table>
-                        <tr>
-                            <td>
-                                <h2 className='information_header'>All right, your order is confirmed!</h2><br/>
-                                 Your tickets will be emailed shortly. We will be sending them to 'insert email address'.
-                                 If you have any issues at all, please contact us directly at 310-439-9904.
-                            </td>
-                        </tr>
-                    </table>
-                </td>
-            </tr>
-            
-            <tr class="heading">
-                <td>
-                    Payment Method
-                </td>
-                
-                <td>
-                    Order #
-                </td>
-            </tr>
-            
-            <tr class="details">
-                <td>
-                    Paypal
-                </td>
-                
-                <td>
-                    "INSERT ORDER NUMBER"
-                </td>
-            </tr>
-            
-            <tr class="heading">
-                <td>
-                    Tickets
-                </td>
-                
-                <td>
-                    Price
-                </td>
-            </tr>
-            
-            <tr class="item">
-                <td>
-                    Website design
-                </td>
-                
-                <td>
-                    $300.00
-                </td>
-            </tr>
-            
-            <tr class="item">
-                <td>
-                    Hosting (3 months)
-                </td>
-                
-                <td>
-                    $75.00
-                </td>
-            </tr>
-            
-            <tr class="item last">
-                <td>
-                    Domain name (1 year)
-                </td>
-                
-                <td>
-                    $10.00
-                </td>
-            </tr>
-            
-            <tr class="total">
-                <td></td>
-                
-                <td>
-                   Total: $385.00
-                </td>
-            </tr>
-        </table>
-        <button onClick={() => window.print()}><b>Print this page for your records.</b></button>
+        <div className="invoice-box">
+            <div className='logo'>
+                <Link to='/tickets'>
+                    <img className='invoice_image' src="https://photos.smugmug.com/photos/i-S62mzmH/0/S/i-S62mzmH-S.png" alt='lakeshow tickets'></img>
+                </Link>
+            </div>
+            <div className='confirmation_text'>
+                <h2 className='information_header'>All right, your order is confirmed!</h2><br/>
+                <p>Your tickets will be emailed shortly. We will be sending them to 'insert email address'.
+                If you have any issues at all, please contact us directly at 310-439-9904.</p>
+            </div>
+            <div className='payment_info_container flex fd_col'>
+                <div className='info_header flex fd_row space-between'>
+                    <h3>Payment Method</h3>
+                    <h3>Order #</h3>
+                </div>
+                <div className='payment_method flex fd_row space-between'>
+                    <p>Paypal</p>
+                    <p>151464897</p>
+                </div>
+                <div className='info_header flex fd_row space-between'>
+                    <h3>Tickets</h3>
+                    <h3>Price</h3>
+                </div>
+                <div className='line_items flex fd_row space-between'>
+                    <p>Lakers vs Clippers</p>
+                    <p>$354.00</p>
+                </div>
+                <div className='line_items flex fd_row space-between'>
+                    <p>Lakers vs Houston</p>
+                    <p>$700.00</p>
+                </div>
+                <div className='line_items flex fd_row space-between'>
+                    <p>Lakers vs Warriors</p>
+                    <p>$1000.00</p>
+                </div>
+                <div className='payment_total'>
+                    <h3>Total: $2054.00</h3>
+                </div>
+            </div>
+            <button onClick={() => window.print()}><b>Print this page for your records.</b></button>
         </div>
       </section>
     )

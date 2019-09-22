@@ -32,9 +32,9 @@ export class TicketProvider extends Component {
     this.setState({ ticket })
   }
 
-  /* clearTicket = () => {
-    this.setTicket(null)
-  } */
+  clearTicket = () => {
+    this.setTicket(nullTicket)
+  }
 
   render() {
     const value = {

@@ -100,7 +100,48 @@
     text-align: left;
 }
 
+.invoice-box .logo{
+    text-align: left;
+    margin: 10px 0 30px 0;
+}
+
+.confirmation_text {
+    text-align: left;
+}
+
+.confirmation_text p {
+    font-size: 16px;
+    margin-bottom: 30px;
+}
+
+.payment_info_container {
+    line-height: 38px;
+    margin: 15px 0;
+}
+
 .information_header {
     font-size: 24px;
     font-weight: bold;
+}
+
+.payment_total {
+    text-align: right;
+    font-weight: bold;
+    padding: 0 13px;
+}
+
+.info_header {
+    background-color: #eee;
+    font-weight: bold;
+    padding: 0 10px;
+}
+
+.line_items {
+    padding: 0 13px;
+    border-bottom: 2px solid #eee
+}
+
+.payment_method {
+    padding: 0 13px;
+    margin-bottom: 10px;
 }

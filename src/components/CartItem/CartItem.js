@@ -17,10 +17,10 @@ export default class CartItem extends React.Component {
         return (
             <div className="CartItem" style={{ marginBottom: "10px"}}>
                 <div className="CartItem-body">
-                    <h4 className="CartItem-title text-primary">{product.name}</h4>
-                    <h5 className="CartItem-text"><small>Price: $</small>{product.price}</h5>
+                    <h4 className="CartItem-title text-primary">{`${product.away_team} at ${product.home_team}`}</h4>
+                    <h5 className="CartItem-text"><small>Price: </small>{product.list_price_ea}</h5>
                     <span className="CartItem-text text-success">
-                        <small>Quantity: </small>2</span>
+                        <small>Quantity: </small>{product.quantity}</span>
                     <button className="btn btn-sm btn-warning float-right" onClick={() => this.props.remove(product)}>Remove</button>
                 </div>
             </div>

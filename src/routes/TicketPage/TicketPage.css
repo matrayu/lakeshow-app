@@ -82,15 +82,27 @@ width: 48%;
 
 
 
-.pricing_info > h3 {
+.pricing > h3 {
     margin: auto 5px;
-    font-size: 40px;
+    font-size: 30px;
     font-weight: bold;
 }
 
 .pricing_info > p {
     font-size: 18px;
     margin: auto 5px;
+}
+
+.pricing {
+    justify-content: center;
+}
+
+.pricing > p {
+    margin-top: 15px;
+}
+
+.ticket_pair {
+    font-size: 14px;
 }
 
 /* .pricing_info {

@@ -38,6 +38,18 @@
     flex-direction: column;
 }
 
+.space-between {
+    justify-content: space-between;
+}
+
+.space-around {
+    justify-content: space-around;
+}
+
+.space-evenly {
+    justify-content: space-evenly;
+}
+
 hr {
     display: block;
     margin-top: 0.5em;

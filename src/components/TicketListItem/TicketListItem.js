@@ -1,10 +1,14 @@
 import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
+import TicketContext from "../../contexts/TicketContext";
 import './TicketListItem.css'
 
 let moment = require("moment");
 
-class TicketListItem extends Component {
+
+export default class TicketListItem extends Component {
+    static contextType = TicketContext;
+
     render() {
         const { ticket } = this.props
         const date = moment(ticket.local_date, "YYYY-MM-DD").format("dddd, MMMM Do YYYY");
@@ -17,7 +21,7 @@ class TicketListItem extends Component {
                         <div className='game__meta'>
                             <p>{date}</p>
                             <p>{ticket.seat.length} Tickets</p>
-                            <p>${ticket.list_price_ea}</p>
+                            <p>{ticket.list_price_ea}</p>
                         </div>
                     </div>
                 </div>
@@ -25,5 +29,3 @@ class TicketListItem extends Component {
         )
     }
 }
-
-export default TicketListItem;

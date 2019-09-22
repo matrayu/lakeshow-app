@@ -10,10 +10,7 @@ export default class TicketListPage extends Component {
     componentDidMount() {
         this.context.clearError()
         TicketsApiService.getTickets()
-            .then(tickets => {
-                console.log('should be tickets', tickets)
-                return this.context.setTicketList(tickets)
-            })
+            .then(tickets => this.context.setTicketList(tickets))
             .catch(this.context.setError)
     }
 
