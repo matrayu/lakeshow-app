@@ -99,10 +99,20 @@ export default class Cart extends React.Component {
 
     render() {
     const { products, total, currency } =  this.state;
-    const onSuccess = (payment) => {
-        console.log("Payment successful!", payment);
-        CheckoutApiService.postPayment()
-        this.successfulPayment()
+    const onSuccess = () => {
+        console.log("Payment successful!", products);
+        let ticketsArr = []
+        products.forEach(product => {
+            ticketsArr.push(product.id)
+        })
+        CheckoutApiService.postPayment(ticketsArr)
+            .then(success => {
+                console.log('9999999999', success)
+            })
+            .catch(error => {
+                console.error(error)
+            })
+        //this.successfulPayment()
     }
 
     const onCancel = (data) => {
@@ -142,6 +152,7 @@ export default class Cart extends React.Component {
                     :   <div className='cart_action_btns'>
                             <button onClick={this.goBack}>Go Back</button>
                             <div className="btn btn-success float-right text-primary">
+                                <button onClick={e => onSuccess()}>Temp Button</button>
                                 <PaypalExpressBtn env={env} client={client} currency={currency} total={total} onError={onError} onSuccess={onSuccess} onCancel={onCancel} />
                             </div>
                             <Popup open={this.state.open} modal closeOnDocumentClick>

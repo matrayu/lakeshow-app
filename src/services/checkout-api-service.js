@@ -26,7 +26,7 @@ const CheckoutApiService = {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
-                /* 'authorization': `bearer ${TokenService.getAuthToken()}`, */
+                'authorization': `bearer ${TokenService.getAuthToken()}`,
             },
             body: JSON.stringify({
                 transactions
@@ -38,7 +38,7 @@ const CheckoutApiService = {
                 : res.json()
         })
         .catch(err => {
-            console.log('error after trying to post payment')
+            console.log('error after trying to post payment', err)
         })
     }
 }
