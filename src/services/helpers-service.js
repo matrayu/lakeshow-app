@@ -54,6 +54,10 @@ const HelpersService = {
             return { error: 'Please enter a valid last name' }
         }
         return { error: null }
+    },
+
+    convertMoneyToNumber(number) {
+        return Number(number.replace(/[^0-9.-]+/g,""));
     }
 }
 

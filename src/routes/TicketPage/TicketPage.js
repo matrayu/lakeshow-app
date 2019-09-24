@@ -18,7 +18,7 @@ export default class TicketPage extends Component {
   static contextType = TicketContext;
   
 
-  componentWillMount() {
+  componentDidMount() {
     const { ticketId } = this.props.match.params
     this.context.clearError()
     TicketsApiService.getTicket(ticketId)
@@ -30,25 +30,43 @@ export default class TicketPage extends Component {
     this.context.clearTicket()
   }
 
-  render() {
-    const { ticket } = this.context
-    const addToCart = () => {
-    let cart = localStorage.getItem('cart')
-      ? JSON.parse(localStorage.getItem('cart'))
-      : {};
-  
-    let id = ticket.id.toString();
-  
-    cart[id] = (cart[id]
-      ? cart[id]
-      : 0
-    );
-    //hard coding quantity to 2. if this needs to be dynamic
-    //change to 'qty'
-    //let qty = cart[id] + parseInt(ticketInfo.quantity);
-    cart[id] = 2
-    localStorage.setItem('cart', JSON.stringify(cart))
+
+  addToCart = () => {
+    const { cart, ticket } = this.context
+    let id = ticket.id
+    console.log(JSON.stringify(cart).indexOf(`"id":${id}`) != -1)
+    if (JSON.stringify(cart).indexOf(`"id":${id}`) != -1) return;
+    console.log('add to cart')
+    
+    this.context.addToCart(ticket)
   }
+
+  render() {
+    const { cart, ticket } = this.context
+    let id = ticket.id
+    let inCart = JSON.stringify(cart).indexOf(`"id":${id}`) != -1
+    console.log(JSON.stringify(cart).indexOf(`"id":${id}`) != -1)
+    /* const addToCart = () => {
+      let cart = localStorage.getItem('cart')
+        ? JSON.parse(localStorage.getItem('cart'))
+        : {};
+
+      
+    
+      let id = ticket.id.toString();
+    
+      cart[id] = (cart[id]
+        ? cart[id]
+        : 0
+      );
+      //hard coding quantity to 2. if this needs to be dynamic
+      //change to 'qty'
+      //let qty = cart[id] + parseInt(ticketInfo.quantity);
+      cart[id] = 2
+      localStorage.setItem('cart', JSON.stringify(cart))
+    } */
+
+    
 
     //const date = moment(ticket.local_date, "YYYY-MM-DD").format("dddd, MMMM Do YYYY");
     //const time = moment(ticket.local_time, 'HH mm ss').format('h:mm A')
@@ -109,33 +127,30 @@ export default class TicketPage extends Component {
                   <hr />
 
                   <div className="Ticket__data__container add_to_cart">
-                    <button onClick={addToCart}>
-                      {
-                        <Popup trigger={
-                            <button className="button" onClick={addToCart}> 
-                              Add to Cart 
-                            </button>} 
-                          modal>
-                            <div className="modal">
-                              <div className="header"> Yah! Tickets have been added to your cart!</div>
-                              <div className="actions">
-                                <div className='modal_button'>
-                                  <Link
-                                    to='/tickets'>
-                                    Find more tickets!
-                                  </Link>
+                      <button className="button"onClick={this.addToCart}>
+                        <Popup trigger={<div>Add to Cart</div>} modal>
+                          {!inCart
+                              ?<div className="modal">
+                                  <div className="header"> Yah! Tickets have been added to your cart!</div>
+                                  <div className="actions">
+                                    <div className='modal_button'>
+                                      <Link
+                                        to='/tickets'>
+                                        Find more tickets!
+                                      </Link>
+                                    </div>
+                                    <div className='modal_button'>
+                                      <Link
+                                        to='/cart'>
+                                        Checkout
+                                      </Link>
+                                    </div>
+                                  </div>
                                 </div>
-                                <div className='modal_button'>
-                                  <Link
-                                    to='/cart'>
-                                    Checkout
-                                  </Link>
-                                </div>
-                              </div>
-                            </div>
-                          </Popup>
-                        }
-                    </button> 
+                              :<button className="button"onClick={this.addToCart}>Remove From Cart</button>
+                          }
+                        </Popup> 
+                      </button> 
                   </div>
               </div>
           </div>

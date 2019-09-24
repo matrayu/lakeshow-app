@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import TIcketListContext from '../contexts/TicketListContext'
 //import tickets from './seedData';
 
 export const nullTicket = {
@@ -6,7 +7,9 @@ export const nullTicket = {
 }
 
 const TicketContext = React.createContext({
-  ticket: nullTicket
+  ticket: nullTicket,
+  cart: [],
+  addToCart: () => {}
 })
 
 export default TicketContext
@@ -16,7 +19,10 @@ export class TicketProvider extends Component {
   state = {
     ticket: nullTicket,
     error: null,
+    cart: [],
   };
+
+  static contextType = TIcketListContext
 
   setError = error => {
     console.error(error)
@@ -33,7 +39,15 @@ export class TicketProvider extends Component {
   }
 
   clearTicket = () => {
-    this.setTicket(nullTicket)
+    this.setState(nullTicket)
+  }
+
+  addToCart = ticket => {
+    console.log('added to cart context', ticket)
+    let cart = this.state.cart
+    cart.push(ticket)
+    this.setState(cart)
+    //this.context.addToCart(ticket)
   }
 
   render() {
@@ -43,7 +57,9 @@ export class TicketProvider extends Component {
       setError: this.setError,
       clearError: this.clearError,
       setTicket: this.setTicket,
-      clearTicket: this.clearTicket
+      clearTicket: this.clearTicket,
+      addToCart: this.addToCart,
+      cart: this.state.cart,
     }
     return (
       <TicketContext.Provider value={value}>

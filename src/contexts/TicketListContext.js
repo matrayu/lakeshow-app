@@ -6,12 +6,16 @@ const TicketListContext = React.createContext({
   sortedValue: null,
   error: null,
   isLoggedIn: false,
+  purchasedTickets: [],
+  cart: [],
   setFilteredList: () => {},
   setSortedList: () => {},
   setError: () => {},
   clearError: () => {},
   setTicketList: () => {},
-  setLogin: () => {}
+  setLogin: () => {},
+  setPurchasedTickets: () => {},
+  addToCart: () => {},
 })
 
 export default TicketListContext
@@ -23,11 +27,12 @@ export class TicketListProvider extends Component {
     sortedList: [],
     sortedValue: "date",
     error: null,
-    isLoggedIn: false
+    isLoggedIn: false,
+    purchasedTickets: [],
+    cart: []
   };
 
   setLogin = () => {
-    console.log('LOGIN')
     let log = !this.state.isLoggedIn
     this.setState({ isLoggedIn: log })
   }
@@ -57,6 +62,17 @@ export class TicketListProvider extends Component {
     this.setState({ error: null })
   }
 
+  setPurchasedTickets = purchasedTickets => {
+    this.setState({ purchasedTickets })
+  }
+
+  addToCart = (ticket) => {
+    let cart = this.state.cart
+    cart.push(ticket)
+    console.log(cart)
+    this.setState(cart)
+  }
+
   render() {
     const value = {
       ticketList: this.state.ticketList,
@@ -67,7 +83,11 @@ export class TicketListProvider extends Component {
       setTicketList: this.setTicketList,
       setFilteredList: this.setFilteredList,
       setSortedList: this.setSortedList,
-      setLogin: this.setLogin
+      setLogin: this.setLogin,
+      purchasedTickets: this.state.purchasedTickets,
+      setPurchasedTickets: this.setPurchasedTickets,
+      cart: this.state.cart,
+      addToCart: this.state.addToCart,
     }
 
     return (

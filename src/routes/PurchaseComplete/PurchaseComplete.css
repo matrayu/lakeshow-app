@@ -145,3 +145,19 @@
     padding: 0 13px;
     margin-bottom: 10px;
 }
+
+.line_item_info {
+    text-align: left;
+    line-height: 22px;
+}
+
+.line_item_info > h3 {
+    font-weight: bold;
+}
+
+.line_item_info > p {
+    font-size: 14px;
+    line-height: 16px;
+}
+
+

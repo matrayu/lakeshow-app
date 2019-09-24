@@ -2,9 +2,12 @@ import React, { Component } from 'react'
 import TicketListItem from '../../components/TicketListItem/TicketListItem'
 import TicketListContext from '../../contexts/TicketListContext'
 import TicketsApiService from '../../services/tickets-api-service'
+import HelpersService from '../../services/helpers-service'
 import './TicketListPage.css'
 
 export default class TicketListPage extends Component {
+
+
     static contextType = TicketListContext
 
     componentDidMount() {
@@ -15,63 +18,51 @@ export default class TicketListPage extends Component {
     }
 
     renderTickets() {
-        const filteredList = this.context.ticketList
-        return filteredList.map(ticket =>
-            <TicketListItem 
-                key={ticket.id}
-                ticket={ticket}
-            />
-        )
+        let { filteredList, ticketList } = this.context
+        if (filteredList.length === 0) {
+            return (
+                ticketList.map(ticket =>
+                    <TicketListItem key={ticket.id} ticket={ticket} />
+                )
+            )
+        } else {
+            return filteredList.map(ticket =>
+                <TicketListItem key={ticket.id} ticket={ticket} />
+            )
+        }
     }
 
     handleChange = (e) => {
-        const allTickets = this.context.ticketList
-        let currentList = [];
-		// Variable to hold the filtered list before putting into state
-        let newList = [];
-
-            // If the search bar isn't empty
-        if (e.target.value !== "") {
-                // Assign the original list to currentList
-        currentList = this.context.ticketList;
-
-                // Use .filter() to determine which items should be displayed
-                // based on the search terms
-        newList = currentList.filter(item => {
-                    // change current item to lowercase
-            const lc = item.name.toLowerCase();
-                    // change search term to lowercase
-            const filter = e.target.value.toLowerCase();
-                    // check to see if the current list item includes the search term
-                    // If it does, it will be added to newList. Using lowercase eliminates
-                    // issues with capitalization in search terms and search content
-            return lc.includes(filter)
-        });
-        } else {
-                // If the search bar is empty, set newList to original task list
-                console.log('newlist', allTickets)
-            newList = allTickets;
+        let currentList = []
+        let newList = []; // Variable to hold the filtered list before putting into state
+        if (e.target.value !== "") { // If the search bar isn't empty
+            currentList = this.context.ticketList; // Assign the original list to currentList
+            newList = currentList.filter(item => { // Use .filter() to determine which items should be displayedbased on the search terms
+                const lc = item.away_team.toLowerCase(); // change current item to lowercase
+                const filter = e.target.value.toLowerCase(); // change search term to lowercase
+                return lc.includes(filter) // check to see if the current list item includes the search term If it does, it will be added to newList. 
+            });
+            console.log('new list', newList)
+            console.log('currentlist', currentList)
+        } else { // If the search bar is empty, set newList to original task list
+            newList = this.context.ticketList;
         }
-            // Set the filtered state based on what our rules added to newList
-        /* this.setState({
-            filtered: newList
-        }); */
-        this.context.setFilteredList(newList)
+        this.context.setFilteredList(newList) // Set the filtered state based on what our rules added to newList
     }
 
     sortBy = (e) => {
         let sortby = e.target.value
         const allTickets = this.context.ticketList
         if (sortby === 'priceHigh') {
-            allTickets.sort((a, b) => (a.price < b.price) ? 1 : -1) 
+            allTickets.sort((a, b) => (HelpersService.convertMoneyToNumber(a.list_price_ea) < HelpersService.convertMoneyToNumber(b.list_price_ea)) ? 1 : -1)
         } else {
             if (sortby === 'priceLow') {
-                allTickets.sort((a, b) => (a.price > b.price) ? 1 : -1) 
+                allTickets.sort((a, b) => (HelpersService.convertMoneyToNumber(a.list_price_ea) > HelpersService.convertMoneyToNumber(b.list_price_ea)) ? 1 : -1) 
             } else {
                 if (sortby === 'team') {
-                    allTickets.sort((a, b) => (a.name > b.name) ? 1 : -1)
+                    allTickets.sort((a, b) => (a.away_team > b.away_team) ? 1 : -1)
                 } else {
-                    allTickets.sort((a, b) => (a.dates > b.dates) ? 1 : -1)
+                    allTickets.sort((a, b) => (a.local_date > b.local_date) ? 1 : -1)
                 }
             }
         }
@@ -100,6 +91,7 @@ export default class TicketListPage extends Component {
                         </div>
                         <section className='TicketListPage results'>
                             {this.renderTickets()}
+                            {/* <TicketListItem tickets={this.context.ticketList} /> */}
                         </section>
                     </div>
                 </div>
