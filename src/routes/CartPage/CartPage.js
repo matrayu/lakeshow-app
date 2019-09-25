@@ -1,15 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-//import { Tickets } from '../../contexts/seedData';
 import CartItem from '../../components/CartItem/CartItem';
 import TicketContext from '../../contexts/TicketContext';
-import TicketListContext from '../../contexts/TicketListContext';
 import PaypalExpressBtn from 'react-paypal-express-checkout';
 import Popup from 'reactjs-popup';
 import CheckoutApiService from '../../services/checkout-api-service';
-
+import TokenService from '../../services/token-service'
 import './CartPage.css';
-
 
 // Document on Paypal's currency code: https://developer.paypal.com/docs/classic/api/currency_codes/
 
@@ -47,39 +44,8 @@ export default class Cart extends React.Component {
     static contextType = TicketContext;
     
     componentDidMount() {
-        /* let cart = JSON.parse(localStorage.getItem('cart'));
-        if (!cart) return;
-        
-        let products = this.context.ticketList
-
-        let cartProducts = [], id = null
-
-        for (let i = 0; i < products.length; i++) {
-            id = products[i].id.toString();
-            if (cart.hasOwnProperty(id)) {
-                console.log('has own')
-                products[i].qty = cart[id]
-                cartProducts.push(products[i]);
-            }
-        }
-
-        let total = 0;
-        for (let i = 0; i < cartProducts.length; i++) {
-            let currency = cartProducts[i].list_price_ea
-            let number = Number(currency.replace(/[^0-9.-]+/g,""));
-            total += number * cartProducts[i].qty;
-        }
-
-        console.log(cartProducts)
-
-        this.setState({ products: cartProducts, total });
-        */
-
         let products = this.context.cart
-        
         if (!products) return;
-
-
         let total = 0
 
         products.forEach(ticket => {
@@ -88,22 +54,40 @@ export default class Cart extends React.Component {
             total += subtotal
             this.setState({ total })
         })
-
         this.setState({ products, total });
     };
-    
+
     removeFromCart = (product) => {
-        let products = this.state.products.filter((item) => item.id !== product.id);
-        let cart = JSON.parse(localStorage.getItem('cart'));
-        delete cart[product.id.toString()];
-        localStorage.setItem('cart', JSON.stringify(cart));
-        let total = this.state.total - (product.qty * product.price) 
-        this.setState({products, total});
+        let filtered = this.context.cart.filter(tix => tix.id != product.id)
+        this.context.removeFromCart(filtered)
+        this.setState({ products: filtered })
+        
+        let total = 0
+
+        filtered.forEach(ticket => {
+            let currency = Number(ticket.list_price_ea.replace(/[^0-9.-]+/g,""))
+            let subtotal = currency * ticket.quantity
+            total += subtotal
+            this.setState({ total })
+        })
+
+        console.log(total)
+
     }
 
-    clearCart = () => {
-        localStorage.removeItem('cart');
-        this.setState({products: []});
+    calculateTotal = () => {
+        let products = this.context.cart
+        console.log(products)
+        if (!products) return;
+        let total = 0
+
+        products.forEach(ticket => {
+            let currency = Number(ticket.list_price_ea.replace(/[^0-9.-]+/g,""))
+            let subtotal = currency * ticket.quantity
+            total += subtotal
+            this.setState({ total })
+        })
+        this.setState({ products, total });
     }
 
     goBack = () => {
@@ -126,6 +110,10 @@ export default class Cart extends React.Component {
             CheckoutApiService.postPayment(ticketsArr)
                 .then(res => {
                     this.successfulPayment()
+                })
+                .then(res => {
+                    this.setState({ products: []})
+                    this.context.clearCart()
                 })
                 .catch(error => {
                     console.error(error)
@@ -170,8 +158,14 @@ export default class Cart extends React.Component {
                         :   <div className='cart_action_btns'>
                                 <button onClick={this.goBack}>Go Back</button>
                                 <div className="btn btn-success float-right text-primary">
-                                    <button onClick={e => onSuccess()}>Temp Button</button>
-                                    <PaypalExpressBtn env={env} client={client} currency={currency} total={total} onError={onError} onSuccess={onSuccess} onCancel={onCancel} />
+                                    {/* <button onClick={e => onSuccess()}>Temp Button</button> */}
+                                    {TokenService.hasAuthToken() 
+                                        ? <PaypalExpressBtn env={env} client={client} currency={currency} total={total} onError={onError} onSuccess={onSuccess} onCancel={onCancel} /> 
+                                        : <div className='login__needed'>
+                                            <span>Please <Link to='/login' className='link'>login</Link> or <Link to='/signup' className='link'>signup</Link> to complete purchase</span>
+                                        </div>
+                                    }
+                                    
                                 </div>
                                 <Popup open={this.state.open} modal closeOnDocumentClick>
                                     <div className='modal'>

@@ -1,6 +1,4 @@
 import React, { Component } from 'react'
-import TIcketListContext from '../contexts/TicketListContext'
-//import tickets from './seedData';
 
 export const nullTicket = {
   ticket: {}
@@ -9,7 +7,12 @@ export const nullTicket = {
 const TicketContext = React.createContext({
   ticket: nullTicket,
   cart: [],
-  addToCart: () => {}
+  purchasedTickets: [],
+  addToCart: () => {},
+  removeFromCart: () => {},
+  setPurchasedTickets: () => {},
+  clearCart: () => {},
+  clearPurchasedTickets: () => {},
 })
 
 export default TicketContext
@@ -20,9 +23,8 @@ export class TicketProvider extends Component {
     ticket: nullTicket,
     error: null,
     cart: [],
+    purchasedTickets: [],
   };
-
-  static contextType = TIcketListContext
 
   setError = error => {
     console.error(error)
@@ -34,7 +36,6 @@ export class TicketProvider extends Component {
   }
 
   setTicket = ticket => {
-    console.log(ticket)
     this.setState({ ticket })
   }
 
@@ -43,11 +44,25 @@ export class TicketProvider extends Component {
   }
 
   addToCart = ticket => {
-    console.log('added to cart context', ticket)
     let cart = this.state.cart
     cart.push(ticket)
     this.setState(cart)
-    //this.context.addToCart(ticket)
+  }
+
+  removeFromCart = (cart) => {
+    this.setState({ cart: cart })
+  }
+
+  clearCart = () => {
+    this.setState({ cart: [] })
+  }
+
+  clearPurchasedTickets = () => {
+    this.setState({ purchasedTickets: [] })
+  }
+
+  setPurchasedTickets = purchasedTickets => {
+    this.setState({ purchasedTickets })
   }
 
   render() {
@@ -60,6 +75,11 @@ export class TicketProvider extends Component {
       clearTicket: this.clearTicket,
       addToCart: this.addToCart,
       cart: this.state.cart,
+      removeFromCart: this.removeFromCart,
+      purchasedTickets: this.state.purchasedTickets,
+      setPurchasedTickets: this.setPurchasedTickets,
+      clearCart: this.clearCart,
+      clearPurchasedTickets: this.clearPurchasedTickets,
     }
     return (
       <TicketContext.Provider value={value}>

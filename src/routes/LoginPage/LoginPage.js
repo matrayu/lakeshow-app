@@ -12,11 +12,15 @@ export default class LoginPage extends Component {
 
     handleLoginSuccess = () => {
         const { location, history } = this.props
-        const destination = (location.state || {}).from || '/tickets'
-        history.push(destination)
+        //const destination = (location.state || {}).from || '/tickets'
+        //history.push(destination)
+        history.goBack()
     }
 
     render() {
+        const { location, history } = this.props
+        console.log(location)
+        console.log(history)
         return (
         <div className='LoginPage'>
             <div className='LoginPage form_container'>
