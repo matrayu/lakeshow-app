@@ -98,83 +98,87 @@ export default class Cart extends React.Component {
         this.props.history.push('/success')
     }
 
+    onSuccess = (data) => {
+        const { products } =  this.state;
+        console.log("Payment successful!", products);
+        let ticketsArr = []
+        this.context.setPurchasedTickets(products)
+        this.context.setPaymentReceipt(data)
+
+        products.forEach(product => {
+            ticketsArr.push(product.id)
+        })
+        CheckoutApiService.postPayment(ticketsArr)
+            .then(res => {
+                this.successfulPayment()
+            })
+            .then(res => {
+                this.setState({ products: []})
+                this.context.clearCart()
+            })
+            .catch(error => {
+                console.error(error)
+            })
+    }
+
+    onCancel = (data) => {
+        console.log('Payment cancelled!', data);
+        this.setState({ open: true })
+    }
+
+    onError = (err) => {
+        console.log("Error!", err);
+        // Because the Paypal's main script is loaded asynchronously from "https://www.paypalobjects.com/api/checkout.js"
+        // => sometimes it may take about 0.5 second for everything to get set, or for the button to appear
+    }
+
+
+
     render() {
         const { products, total, currency } =  this.state;
-        const onSuccess = () => {
-            console.log("Payment successful!", products);
-            let ticketsArr = []
-            this.context.setPurchasedTickets(products)
-            products.forEach(product => {
-                ticketsArr.push(product.id)
-            })
-            CheckoutApiService.postPayment(ticketsArr)
-                .then(res => {
-                    this.successfulPayment()
-                })
-                .then(res => {
-                    this.setState({ products: []})
-                    this.context.clearCart()
-                })
-                .catch(error => {
-                    console.error(error)
-                })
-            
-        }
-
-        const onCancel = (data) => {
-            console.log('Payment cancelled!', data);
-            this.setState({ open: true })
-        }
-
-        const onError = (err) => {
-            console.log("Error!", err);
-            // Because the Paypal's main script is loaded asynchronously from "https://www.paypalobjects.com/api/checkout.js"
-            // => sometimes it may take about 0.5 second for everything to get set, or for the button to appear
-        }
-        
-            return (
-                <div className="CartPage">
-                    <h2 className="page_title">Cart</h2>
-                    <hr/>
-                    {products.map((product, index) => 
-                        <CartItem 
-                            product={product} 
-                            remove={this.removeFromCart} 
-                            key={index}
-                        />
-                    )} 
-                    
-                    { products.length 
-                        ?   <div className='cart_total'>
-                                <hr/>
-                                <h4><small>Total Amount: </small><span className="float-right text-primary">${total}</span> </h4>
-                                <hr/>
-                            </div>
-                        : ''
-                    }
-                    
-                    { !products.length 
-                        ?   <h3 className="text-warning">Your cart is empty. Let's go add some <span className='purple text-primary'><Link to='/tickets'>tickets!</Link></span></h3>
-                        :   <div className='cart_action_btns'>
-                                <button onClick={this.goBack}>Go Back</button>
-                                <div className="btn btn-success float-right text-primary">
-                                    {/* <button onClick={e => onSuccess()}>Temp Button</button> */}
-                                    {TokenService.hasAuthToken() 
-                                        ? <PaypalExpressBtn env={env} client={client} currency={currency} total={total} onError={onError} onSuccess={onSuccess} onCancel={onCancel} /> 
-                                        : <div className='login__needed'>
-                                            <span>Please <Link to='/login' className='link'>login</Link> or <Link to='/signup' className='link'>signup</Link> to complete purchase</span>
-                                        </div>
-                                    }
-                                    
-                                </div>
-                                <Popup open={this.state.open} modal closeOnDocumentClick>
-                                    <div className='modal'>
-                                        <div className="cancel_header">Oh no! <br/> It looks like the purchase was canceled.</div>
+        return (
+            <div className="CartPage">
+                <h2 className="page_title">Cart</h2>
+                <hr/>
+                {products.map((product, index) => 
+                    <CartItem 
+                        product={product} 
+                        remove={this.removeFromCart} 
+                        key={index}
+                    />
+                )} 
+                
+                { products.length 
+                    ?   <div className='cart_total'>
+                            <hr/>
+                            <h4><small>Total Amount: </small><span className="float-right text-primary">${total}</span> </h4>
+                            <hr/>
+                        </div>
+                    : ''
+                }
+                
+                { !products.length 
+                    ?   <h3 className="text-warning">Your cart is empty. Let's go add some <span className='purple text-primary'><Link to='/tickets'>tickets!</Link></span></h3>
+                    :   <div className='cart_action_btns'>
+                            <button onClick={this.goBack}>Back</button>
+                            <div className="btn btn-success float-right text-primary">
+                                /* <button onClick={this.onSuccess}>Temp Button</button> */
+                                {TokenService.hasAuthToken() 
+                                    ? <PaypalExpressBtn env={env} client={client} currency={currency} total={total} onError={this.onError} onSuccess={this.onSuccess} onCancel={this.onCancel} /> 
+                                    : <div className='login__needed'>
+                                        <span>Please <Link to='/login' className='link'>login</Link> or <Link to='/signup' className='link'>signup</Link> to complete purchase</span>
                                     </div>
-                                </Popup>
+                                }
+                                
                             </div>
-                    }
-                </div>
-            );
-        }
+                            <Popup open={this.state.open} modal closeOnDocumentClick>
+                                <div className='modal'>
+                                    <div className="cancel_header">Oh no! <br/> It looks like the purchase was canceled.</div>
+                                </div>
+                            </Popup>
+                        </div>
+                }
+            </div>
+        );
+    }
 }

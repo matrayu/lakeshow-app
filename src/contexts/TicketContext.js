@@ -8,6 +8,7 @@ const TicketContext = React.createContext({
   ticket: nullTicket,
   cart: [],
   purchasedTickets: [],
+  paymentReceipt: [],
   addToCart: () => {},
   removeFromCart: () => {},
   setPurchasedTickets: () => {},
@@ -24,6 +25,7 @@ export class TicketProvider extends Component {
     error: null,
     cart: [],
     purchasedTickets: [],
+    paymentReceipt: []
   };
 
   setError = error => {
@@ -65,6 +67,10 @@ export class TicketProvider extends Component {
     this.setState({ purchasedTickets })
   }
 
+  setPaymentReceipt = paymentReceipt => {
+    this.setState({ paymentReceipt })
+  }
+
   render() {
     const value = {
       ticket: this.state.ticket,
@@ -80,6 +86,8 @@ export class TicketProvider extends Component {
       setPurchasedTickets: this.setPurchasedTickets,
       clearCart: this.clearCart,
       clearPurchasedTickets: this.clearPurchasedTickets,
+      paymentReceipt: this.state.paymentReceipt,
+      setPaymentReceipt: this.setPaymentReceipt,
     }
     return (
       <TicketContext.Provider value={value}>

@@ -13,13 +13,17 @@ export default class PurchaseComplete extends Component {
     static contextType = TicketListContext;
 
     renderPurchases() {
-        const { purchasedTickets } = this.context
-        return purchasedTickets.map(ticket =>
-            <PurchasedItems 
-                key={ticket.id}
-                ticket={ticket}
-            />
-        )
+        const { purchasedTickets, paymentReceipt } = this.context
+        console.log(paymentReceipt)
+        return purchasedTickets.map(ticket => {
+            return (
+                <PurchasedItems 
+                    key={ticket.id}
+                    ticket={ticket}
+                />
+            )
+        })
+    
     }
 
     render() {
