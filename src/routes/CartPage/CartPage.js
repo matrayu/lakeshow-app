@@ -165,7 +165,6 @@ export default class Cart extends React.Component {
                     :   <div className='cart_action_btns'>
                             <button onClick={this.goBack}>Back</button>
                             <div className="btn btn-success float-right text-primary">
-                                /* <button onClick={this.onSuccess}>Temp Button</button> */
                                 {TokenService.hasAuthToken() 
                                     ? <PaypalExpressBtn env={env} client={client} currency={currency} total={total} onError={this.onError} onSuccess={this.onSuccess} onCancel={this.onCancel} /> 
                                     : <div className='login__needed'>

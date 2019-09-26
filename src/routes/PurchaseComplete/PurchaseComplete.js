@@ -41,8 +41,7 @@ export default class PurchaseComplete extends Component {
     }
 
     renderPurchases() {
-        const { purchasedTickets, paymentReceipt } = this.context
-        console.log(paymentReceipt)
+        const { purchasedTickets } = this.context
         return purchasedTickets.map(ticket => {
             return (
                 <PurchasedItems 
