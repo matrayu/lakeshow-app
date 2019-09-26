@@ -103,6 +103,7 @@
 .invoice-box .logo{
     text-align: left;
     margin: 10px 0 30px 0;
+    width: 50%;
 }
 
 .confirmation_text {
@@ -128,6 +129,8 @@
     text-align: right;
     font-weight: bold;
     padding: 0 13px;
+    font-size: 20px;
+    padding: 4px 0px;
 }
 
 .info_header {
@@ -158,6 +161,18 @@
 .line_item_info > p {
     font-size: 14px;
     line-height: 16px;
+}
+
+.tickets_link {
+    text-align: right;
+    width: 50%;
+    margin-left: 331px;
+    margin-top: -79px;
+    margin-bottom: 110px;
+}
+
+p.payment {
+    margin-bottom: 28px;
 }
 
 

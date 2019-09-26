@@ -103,6 +103,7 @@ export default class Cart extends React.Component {
         console.log("Payment successful!", products);
         let ticketsArr = []
         this.context.setPurchasedTickets(products)
+        data.total = this.state.total
         this.context.setPaymentReceipt(data)
 
         products.forEach(product => {
@@ -110,11 +111,13 @@ export default class Cart extends React.Component {
         })
         CheckoutApiService.postPayment(ticketsArr)
             .then(res => {
-                this.successfulPayment()
+                this.context.clearCart()
+                //this.setState({ products: []})
             })
             .then(res => {
-                this.setState({ products: []})
-                this.context.clearCart()
+                console.log(this.context.purchasedTickets)
+                console.log(this.context.paymentReceipt)
+                this.successfulPayment()
             })
             .catch(error => {
                 console.error(error)

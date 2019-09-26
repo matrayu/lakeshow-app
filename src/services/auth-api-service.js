@@ -31,6 +31,22 @@ const AuthApiService = {
                 return res
             })
     },
+
+    getUser(userId) {
+        return fetch(`${config.API_ENDPOINT}/users/${userId}`, {
+            method: 'GET',
+            headers: {
+                'content-type': 'application/json',
+                'authorization': `bearer ${TokenService.getAuthToken()}`,
+            }
+        })
+            .then(res => {
+                return (!res.ok)
+                    ? res.json().then(e => Promise.reject(e))
+                    : res.json()
+                }
+        )
+    },
     
     postUser(user) {
         return fetch(`${config.API_ENDPOINT}/users`, {

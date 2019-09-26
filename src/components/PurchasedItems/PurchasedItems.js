@@ -21,7 +21,7 @@ export default class PurchasedItem extends Component {
                     <p>{date}</p>
                     <p>{ticket.quantity} {(ticket.quantity <= 1) ? 'ticket' : 'tickets'}</p>
                 </div>
-                <p>${total}.00</p>
+                <p className='payment'>${total}.00</p>
             </div>
         )
     }

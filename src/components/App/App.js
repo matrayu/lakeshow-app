@@ -49,10 +49,6 @@ class App extends Component {
     }
   }
 
-  /* componentWillMount() {
-    
-  } */
-
   logoutFromIdle = () => {
     TokenService.clearAuthToken()
     TokenService.clearCallbackBeforeExpiry()
