@@ -18,10 +18,10 @@ export default class TicketListItem extends Component {
                     <img src={ticket.away_logo} alt={ticket.away_team}></img>
                     <div className='game__info'>
                         <p className='game__title'>{`${ticket.away_team} vs ${ticket.home_team}`}</p>
+                        <p id='ticket_price'>{ticket.list_price_ea} <span id='each'>ea</span></p>
                         <div className='game__meta'>
-                            <p>{date}</p>
+                            <p id='game_date'>{date}</p>
                             <p>{ticket.seat.length} Tickets</p>
-                            <p>{ticket.list_price_ea}</p>
                         </div>
                     </div>
                 </div>

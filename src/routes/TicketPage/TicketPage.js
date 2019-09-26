@@ -78,14 +78,14 @@ export default class TicketPage extends Component {
                       <div className="pricing_info flex fd_col">
                           <h4>Our Price</h4>
                           <div className='flex fd_row pricing'>  
-                            <h3>{ticket.list_price_ea}</h3><p>ea</p>
+                            <h3 id='ourPrice'>{ticket.list_price_ea}</h3><p>ea</p>
                           </div>
                           <p>No Fees OR Taxes</p>
                       </div>
                       <div className="pricing_info flex fd_col">
                           <h4>Stubhub</h4>
                           <div className='flex fd_row pricing'>
-                            <h3>{ticket.stubhub_price_ea}</h3><p>ea</p>
+                            <h3 id='compPrice'>{ticket.stubhub_price_ea}</h3><p>ea</p>
                           </div>
                           <p>+ Fees / + Taxes</p>
                       </div>

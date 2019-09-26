@@ -80,7 +80,7 @@ export default class TicketListPage extends Component {
                                 <input type="text" className='input' placeholder="Search..." onChange={(e) => this.handleChange(e)}></input>
                             </div>
                             <div className='sort_by'>
-                                Sort By:
+                                <span id='sortby'>Sort By:</span>
                                 <select onChange={(e) => this.sortBy(e)}>
                                     <option value='date' id='date'>Date</option>
                                     <option value='priceHigh' id='priceHigh'>Price High to Low</option>

@@ -141,8 +141,10 @@ export default class Cart extends React.Component {
         const { products, total, currency } =  this.state;
         return (
             <div className="CartPage">
-                <h2 className="page_title">Cart</h2>
-                <hr/>
+                {this.context.cart.length === 0 
+                    ? ''
+                    : <h2 className="page_title">Cart</h2>
+                }
                 {products.map((product, index) => 
                     <CartItem 
                         product={product} 

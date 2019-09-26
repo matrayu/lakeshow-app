@@ -8,6 +8,10 @@
     align-items: center;
 }
 
+header.App__header {
+    border-bottom: 5px solid #FDB927;
+}
+
 .MainHeader>a {
     margin: auto 0;
 }

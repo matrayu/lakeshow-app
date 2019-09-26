@@ -101,6 +101,14 @@ width: 48%;
     margin-top: 15px;
 }
 
+#compPrice {
+    color: rgb(152, 21, 21);
+}
+
+#ourPrice {
+    color: rgb(9, 94, 9);
+}
+
 .ticket_pair {
     font-size: 14px;
 }

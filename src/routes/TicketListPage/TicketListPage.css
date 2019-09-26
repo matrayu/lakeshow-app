@@ -1,11 +1,12 @@
 .TicketListPage {
     margin: 0;
-    background: #FDB927;
+    background: white;
     padding: 9px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
+    
 }
 
 .TicketListPage.search_functions {
@@ -17,3 +18,9 @@
 div.search_functions, div.search_functions > * {
     margin: 0 40px;
 }
+
+#sortby {
+    margin-right: 10px;
+}
+
+

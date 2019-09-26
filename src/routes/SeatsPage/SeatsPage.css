@@ -1,9 +1,10 @@
 .SeatsPage {
-    background: #FDB927;
+    background: white;
 }
 
 .SeatsPage.main_text {
     padding: 20px;
+    margin-left: 30px;
 }
 
 .SeatsPage>h2 {

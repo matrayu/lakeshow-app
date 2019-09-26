@@ -2,6 +2,7 @@
     height: 70px;
     background: white;
     text-align: center;
+    border-top: 5px solid #FDB927;
 }
 
 .MainFooter>p {
