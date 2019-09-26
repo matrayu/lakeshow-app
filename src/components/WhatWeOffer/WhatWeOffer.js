@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTicketAlt, faChair, faHandshake } from '@fortawesome/free-solid-svg-icons';
 import './WhatWeOffer.css'
+
 
 class WhatWeOffer extends Component {
     render() {
@@ -16,24 +19,31 @@ class WhatWeOffer extends Component {
                     <div className='WhatWeOffer right__container'>
                         <div className='offers__container'>
                             <div className='offer__grp'>
-                                <div className='offer image'></div>
+                                <div className='offer image'>
+                                    <FontAwesomeIcon icon={faTicketAlt} size='4x' color='white'/>
+                                </div>
+                                <div className='offer text_grp'>
+                                    <h2>Ah-Mazing Location</h2>
+                                    <p>Seats located in the lower bowl 100’s and across from the Lakers bench.</p>
+                                    
+                                </div>
+                            </div>
+                            <div className='offer__grp'>
+                                <div className='offer image'>
+                                    <FontAwesomeIcon icon={faChair} size='4x' color='white'/>
+                                </div>
                                 <div className='offer text_grp'>
                                     <h2>Ah-Mazing Seats</h2>
-                                    <p>Deserunt sunt exercitation sunt .</p>
+                                    <p>Plush, moveable, fold-out chairs with no one in front or behind you!</p>
                                 </div>
                             </div>
                             <div className='offer__grp'>
-                                <div className='offer image'></div>
-                                <div className='offer text_grp'>
-                                    <h2>Direct No-Hassle Pricing</h2>
-                                    <p>Deserunt sunt exercitation sunt do in enim veniam .</p>
+                                <div className='offer image'>
+                                    <FontAwesomeIcon icon={faHandshake} size='4x' color='white'/>
                                 </div>
-                            </div>
-                            <div className='offer__grp'>
-                                <div className='offer image'></div>
                                 <div className='offer text_grp'>
-                                    <h2>Additional Discounts</h2>
-                                    <p>Deserunt sunt exercitation sunt do in enim veniam .</p>
+                                    <h2>Ah-Mazing Prices</h2>
+                                    <p>The prices you see on our site are the prices you pay. No fees, no taxes, no b.s.</p>
                                 </div>
                             </div>
                         </div>

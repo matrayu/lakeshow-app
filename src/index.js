@@ -7,6 +7,12 @@ import App from './components/App/App';
 import './index.css';
 import 'normalize.css';
 
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fab } from '@fortawesome/free-brands-svg-icons'
+import { faCheckSquare, faCoffee, faTicketAlt, faChair } from '@fortawesome/free-solid-svg-icons'
+
+library.add(fab, faCheckSquare, faCoffee, faTicketAlt, faChair)
+
 require('dotenv').config()
 
 ReactDOM.render(

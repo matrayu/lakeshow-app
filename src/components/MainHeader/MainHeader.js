@@ -2,11 +2,13 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
 import TokenService from '../../services/token-service'
 import IdleService from '../../services/idle-service'
-import TicketListContext from '../../contexts/TicketListContext'
+import TicketContext from '../../contexts/TicketContext'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faShoppingCart, faCartPlus } from '@fortawesome/free-solid-svg-icons';
 import './MainHeader.css';
 
 export default class MainHeader extends Component {
-    static contextType = TicketListContext
+    static contextType = TicketContext
 
     state = {
         loggedIn: this.context.isLoggedIn
@@ -42,7 +44,14 @@ export default class MainHeader extends Component {
                         <li><Link id='seats' to='/seats'>Seats</Link></li>
                         <li><Link id='faq' to='/FAQ'>FAQ</Link></li>
                         <li>{TokenService.hasAuthToken() ? this.renderLogoutLink() : this.renderLoginLink()}</li>
-                        <li><Link id='cart' to='/cart'>Cart</Link></li>
+                        <li>
+                            <Link id='cart' to='/cart'>
+                                {this.context.cart.length === 0 
+                                    ? <FontAwesomeIcon icon={faShoppingCart} size='lg' color='#552583'/>
+                                    : <FontAwesomeIcon icon={faCartPlus} size='lg' color='#552583' />
+                                }
+                            </Link>
+                        </li>
                     </ul>
                 </nav>
             </header>
