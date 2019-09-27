@@ -158,7 +158,18 @@ export default class Cart extends React.Component {
                                 {TokenService.hasAuthToken() 
                                     ? <PaypalExpressBtn env={env} client={client} currency={currency} total={total} onError={this.onError} onSuccess={this.onSuccess} onCancel={this.onCancel} /> 
                                     : <div className='login__needed'>
-                                        <span>Please <Link to='/login' className='link'>login</Link> or <Link to='/signup' className='link'>signup</Link> to complete purchase</span>
+                                        <span>Please 
+                                            <Link to={{
+                                                pathname: '/login', 
+                                                state: { from: this.props.location.pathname }
+                                                }} className='link'>login
+                                            </Link> or 
+                                            <Link to={{ 
+                                                pathname: '/signup', 
+                                                state: { from: this.props.location.pathname }
+                                                }} className='link'>signup
+                                            </Link> to complete purchase
+                                        </span>
                                     </div>
                                 }
                                 
