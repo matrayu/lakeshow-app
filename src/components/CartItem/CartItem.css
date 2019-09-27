@@ -5,6 +5,8 @@
 .CartItem-body {
     margin: 30px auto;
     max-width: 560px;
+    box-shadow: 0 2px 9px 0 rgba(0,0.3,0,0.26), 0 0 0.7px 0 rgba(0, 1, 4, 1);
+    padding: 20px;
 }
 
 

@@ -20,8 +20,9 @@
 .Ticket__data {
     display: flex;
     flex-direction: column;
-    margin: 0 auto 30px auto;
+    margin: 64px auto 30px auto;
     background-color: white;
+    box-shadow: 0 2px 9px 0 rgba(0,0.3,0,0.26), 0 0 0.7px 0 rgba(0, 1, 4, 1);
 }
 
 .Ticket__data__container {

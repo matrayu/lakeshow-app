@@ -146,13 +146,10 @@ export default class Cart extends React.Component {
                 
                 { products.length 
                     ?   <div className='cart_total'>
-                            <hr/>
-                            <h4><small>Total Amount: </small><span className="float-right text-primary">${total}</span> </h4>
-                            <hr/>
+                            <h4><small></small><span className="float-right text-primary">Total Amount: ${total}</span> </h4><br></br>
                         </div>
                     : ''
                 }
-                
                 { !products.length 
                     ?   <h3 className="text-warning">Your cart is empty. Let's go add some <span className='purple text-primary'><Link to='/tickets'>tickets!</Link></span></h3>
                     :   <div className='cart_action_btns'>

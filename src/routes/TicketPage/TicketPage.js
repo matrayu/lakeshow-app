@@ -70,7 +70,7 @@ export default class TicketPage extends Component {
                       <p>{moment(ticket.local_time, 'HH mm ss').format('h:mm A')} Tip-Off</p>
                   </div>
               </div>
-              <hr />
+             {/*  <hr /> */}
 
               <div className="Ticket__data__container pricing flex fd_row">
                   <div className="pricing_container flex fd_row">
@@ -91,7 +91,7 @@ export default class TicketPage extends Component {
                   </div>
               </div>
 
-              <hr />
+              {/* <hr /> */}
 
               <div className="Ticket__data__container quantity flex fd_row">
                   <div className="section3">
@@ -104,7 +104,7 @@ export default class TicketPage extends Component {
                       </div>
                   </div>
               </div>
-              <hr />
+              {/* <hr /> */}
               {this.state.inCart 
                 ? <PopupRemove onClick={this.removeFromCart} />
                 : <PopupAdded onClick={this.addToCart} />
