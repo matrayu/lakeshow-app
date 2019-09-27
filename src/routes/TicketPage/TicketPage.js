@@ -99,12 +99,6 @@ export default class TicketPage extends Component {
                       <div className="section3 sub_section">
                           <p>Quantity Available: {ticket.quantity}</p>
                           <p className='ticket_pair'>Tickets sold as a pair</p>
-                          {/* <select>
-                              <option value="1">1</option>
-                              <option value="2">2</option>
-                              <option value="3">3</option>
-                              <option value="4">4</option>
-                          </select> */}
                       </div>
                   </div>
               </div>

@@ -6,9 +6,7 @@ import HelpersService from '../../services/helpers-service'
 import './TicketListPage.css'
 
 export default class TicketListPage extends Component {
-
-
-    static contextType = TicketListContext
+     static contextType = TicketListContext
 
     componentDidMount() {
         this.context.clearError()
@@ -19,6 +17,7 @@ export default class TicketListPage extends Component {
 
     renderTickets() {
         let { filteredList, ticketList } = this.context
+        console.log(ticketList)
         if (filteredList.length === 0) {
             return (
                 ticketList.map(ticket =>

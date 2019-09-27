@@ -1,39 +1,39 @@
 import React, { Component } from 'react';
+import UpcomingGame from '../UpcomingGame/UpcomingGame';
+import TicketListContext from "../../contexts/TicketListContext";
+import TicketsApiService from '../../services/tickets-api-service'
 import './UpcomingGames.css'
 
-class UpcomingGames extends Component {
+export default class UpcomingGames extends Component {
+    static contextType = TicketListContext;
+
+    componentDidMount() {
+        this.context.clearError()
+        TicketsApiService.getTickets()
+            .then(tickets => this.context.setTicketList(tickets))
+            .then(res => {
+                this.context.ticketList.sort((a, b) => (a.local_date > b.local_date) ? 1 : -1)
+            })
+            .catch(this.context.setError)
+    }
+
+    renderGames() {
+        let { ticketList } = this.context
+        if (ticketList.length !== 0) {
+            return (
+                ticketList.slice(0, 3).map(ticket =>
+                    <UpcomingGame key={ticket.id} ticket={ticket} />
+                )
+            )
+        }
+    }
+
     render() {
         return (
             <section className='UpcomingGames'>
                 <div className='UpcomingGames left__container'>
                     <div className='UpcomingGames container'>
-                        <div className='UpcomingGames grp'>
-                            <div className='UpcomingGames image'></div>
-                            <div className='UpcomingGames text__grp'>
-                                <h2>Lakers vs Hawks</h2>
-                                <p>12/8/2019</p>
-                                <p>Staples Center</p>
-                                <p>7:30p Tip-Off</p>
-                            </div>
-                        </div>
-                        <div className='UpcomingGames grp'>
-                            <div className='UpcomingGames image'></div>
-                            <div className='UpcomingGames text__grp'>
-                                <h2>Lakers vs Utah</h2>
-                                <p>12/15/2019</p>
-                                <p>Staples Center</p>
-                                <p>7:30p Tip-Off</p>
-                            </div>
-                        </div>
-                        <div className='UpcomingGames grp'>
-                            <div className='UpcomingGames image'></div>
-                            <div className='UpcomingGames text__grp'>
-                                <h2>Lakers vs Warriors</h2>
-                                <p>12/21/2019</p>
-                                <p>Staples Center</p>
-                                <p>7:30p Tip-Off</p>
-                            </div>
-                        </div>
+                        {this.renderGames()}
                     </div>
                     <div className='image__bottom'></div>
                 </div>
@@ -47,5 +47,3 @@ class UpcomingGames extends Component {
         )
     }
 }
-
-export default UpcomingGames;

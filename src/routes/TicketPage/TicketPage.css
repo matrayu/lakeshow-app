@@ -1,10 +1,6 @@
 .Ticket {
     display: flex;
     flex-direction: row;
-    /* height: 600px; */
-    border-top: 10px solid #FDB927;
-    border-bottom: 10px solid #FDB927;
-    /* padding: 0 38px; */
     min-width: 332px;
 }
 

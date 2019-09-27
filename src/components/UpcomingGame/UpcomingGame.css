@@ -1,0 +1,12 @@
+#upcoming_game {
+    font-size: 20px;
+}
+
+#upcoming_game_image {
+    background: center;
+    width: 102px;
+    height: 86px;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
