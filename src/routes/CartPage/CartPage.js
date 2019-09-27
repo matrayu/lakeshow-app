@@ -58,7 +58,7 @@ export default class Cart extends React.Component {
     };
 
     removeFromCart = (product) => {
-        let filtered = this.context.cart.filter(tix => tix.id != product.id)
+        let filtered = this.context.cart.filter(tix => tix.id !== product.id)
         this.context.removeFromCart(filtered)
         this.setState({ products: filtered })
         
@@ -70,14 +70,10 @@ export default class Cart extends React.Component {
             total += subtotal
             this.setState({ total })
         })
-
-        console.log(total)
-
     }
 
     calculateTotal = () => {
         let products = this.context.cart
-        console.log(products)
         if (!products) return;
         let total = 0
 
@@ -100,7 +96,6 @@ export default class Cart extends React.Component {
 
     onSuccess = (data) => {
         const { products } =  this.state;
-        console.log("Payment successful!", products);
         let ticketsArr = []
         this.context.setPurchasedTickets(products)
         data.total = this.state.total
@@ -112,11 +107,8 @@ export default class Cart extends React.Component {
         CheckoutApiService.postPayment(ticketsArr)
             .then(res => {
                 this.context.clearCart()
-                //this.setState({ products: []})
             })
             .then(res => {
-                console.log(this.context.purchasedTickets)
-                console.log(this.context.paymentReceipt)
                 this.successfulPayment()
             })
             .catch(error => {
@@ -125,12 +117,11 @@ export default class Cart extends React.Component {
     }
 
     onCancel = (data) => {
-        console.log('Payment cancelled!', data);
         this.setState({ open: true })
     }
 
     onError = (err) => {
-        console.log("Error!", err);
+        console.error("Error!", err);
         // Because the Paypal's main script is loaded asynchronously from "https://www.paypalobjects.com/api/checkout.js"
         // => sometimes it may take about 0.5 second for everything to get set, or for the button to appear
     }
@@ -143,7 +134,7 @@ export default class Cart extends React.Component {
             <div className="CartPage">
                 {this.context.cart.length === 0 
                     ? ''
-                    : <h2 className="page_title">Cart</h2>
+                    : <h2 className="page_title">Checkout</h2>
                 }
                 {products.map((product, index) => 
                     <CartItem 

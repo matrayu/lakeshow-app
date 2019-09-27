@@ -15,7 +15,9 @@ export default class TicketListItem extends Component {
         return (
             <Link to={`/ticket/${ticket.id}`} className='TicketListItem'>
                 <div className='game__container'>
-                    <img src={ticket.away_logo} alt={ticket.away_team}></img>
+                    <div id='game_comtainer_logo'> 
+                        <div className='UpcomingGames image' id='ticketlist_game_image' style={{ backgroundImage: `url(${ticket.away_logo})`}}></div>
+                    </div>
                     <div className='game__info'>
                         <p className='game__title'>{`${ticket.away_team} vs ${ticket.home_team}`}</p>
                         <p id='ticket_price'>{ticket.list_price_ea} <span id='each'>ea</span></p>

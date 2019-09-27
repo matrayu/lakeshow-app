@@ -17,7 +17,6 @@ export default class TicketListPage extends Component {
 
     renderTickets() {
         let { filteredList, ticketList } = this.context
-        console.log(ticketList)
         if (filteredList.length === 0) {
             return (
                 ticketList.map(ticket =>
@@ -41,8 +40,6 @@ export default class TicketListPage extends Component {
                 const filter = e.target.value.toLowerCase(); // change search term to lowercase
                 return lc.includes(filter) // check to see if the current list item includes the search term If it does, it will be added to newList. 
             });
-            console.log('new list', newList)
-            console.log('currentlist', currentList)
         } else { // If the search bar is empty, set newList to original task list
             newList = this.context.ticketList;
         }

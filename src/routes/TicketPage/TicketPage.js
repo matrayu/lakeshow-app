@@ -31,7 +31,7 @@ export default class TicketPage extends Component {
     TicketsApiService.getTicket(ticketId)
       .then(ticket => this.context.setTicket(ticket))
       .then(res => {
-        this.context.cart.some(tix => tix.id == ticketId)
+        this.context.cart.some(tix => tix.id === ticketId)
           ? this.setState({ inCart: true })
           : this.setState({ inCart: false })
       })
@@ -48,9 +48,8 @@ export default class TicketPage extends Component {
   }
 
   removeFromCart = () => {
-    let filtered = this.context.cart.filter(tix => tix.id != this.context.ticket.id)
+    let filtered = this.context.cart.filter(tix => tix.id !== this.context.ticket.id)
     this.context.removeFromCart(filtered)
-    //this.setState({ inCart: false })
   }
 
   render() {
@@ -97,8 +96,11 @@ export default class TicketPage extends Component {
               <div className="Ticket__data__container quantity flex fd_row">
                   <div className="section3">
                       <div className="section3 sub_section">
-                          <p>Quantity Available: {ticket.quantity}</p>
-                          <p className='ticket_pair'>Tickets sold as a pair</p>
+                      <p>Quantity Available: {ticket.quantity}</p>
+                        {ticket.quantity === 1
+                          ? <p className='ticket_pair'>Single Seat Only</p>
+                          : <p className='ticket_pair'>Tickets sold as a pair</p>
+                        }
                       </div>
                   </div>
               </div>

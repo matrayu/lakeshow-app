@@ -19,7 +19,6 @@ export default class MainHeader extends Component {
         /* when logging out, clear the callbacks to the refresh api and idle auto logout */
         TokenService.clearCallbackBeforeExpiry()
         IdleService.unRegisterIdleResets()
-        this.context.setLogin()
     }
 
     renderLogoutLink() {

@@ -74,4 +74,19 @@
 }
 
 
+#game_comtainer_logo {
+    width: 200px;
+    height: 200px;;
+}
+
+#ticketlist_game_image {
+    background: center;
+    width: 192px;
+    height: 131px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 44px;
+
+}
+
 

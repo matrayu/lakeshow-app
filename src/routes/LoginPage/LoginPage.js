@@ -18,9 +18,6 @@ export default class LoginPage extends Component {
     }
 
     render() {
-        const { location, history } = this.props
-        console.log(location)
-        console.log(history)
         return (
         <div className='LoginPage'>
             <div className='LoginPage form_container'>
