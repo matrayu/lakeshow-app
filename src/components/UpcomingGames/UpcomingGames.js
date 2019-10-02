@@ -19,6 +19,7 @@ export default class UpcomingGames extends Component {
 
     renderGames() {
         let { ticketList } = this.context
+        ticketList.sort((a, b) => (a.local_date > b.local_date) ? 1 : -1)
         if (ticketList.length !== 0) {
             return (
                 ticketList.slice(0, 3).map(ticket =>

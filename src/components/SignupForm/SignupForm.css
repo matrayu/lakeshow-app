@@ -11,3 +11,18 @@
     align-items: center;
     justify-content: space-around;
 }
+
+.birthdate {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: center;
+}
+
+#birthdate {
+    padding-top: 25px;
+}
+
+#dob {
+    width: 277px;
+}

@@ -205,17 +205,19 @@ export default class SignupForm extends Component {
                         required
                     />
                     <div className='error'>{this.state.errorConfirmPass}</div>
-
-                    <label htmlFor="dob"></label>
-                    <input
-                        className="form-control"
-                        id="dob"
-                        name="dob"
-                        type="date"
-                        value={props.dob}
-                        onChange={this.handleChange}
-                        required
-                    />
+                    <div className='birthdate'>
+                        <label id='birthdate' htmlFor="dob">Birth Date</label>
+                        <input
+                            className="form-control"
+                            id="dob"
+                            name="dob"
+                            type="date"
+                            value={props.dob}
+                            onChange={this.handleChange}
+                            required
+                        />
+                    </div>
+                    
 
                     <label htmlFor="gender"></label>
                     <div className='gender_grp'>
