@@ -76,7 +76,7 @@ export default class TicketListPage extends Component {
                     <div className='TicketListPage container'>
                         <div className='TicketListPage search_functions'>
                             <div className='search_by'>
-                                <input type="text" className='input' placeholder="Search..." onChange={(e) => this.handleChange(e)}></input>
+                                <input type="text" className='input' placeholder="Search By Team..." onChange={(e) => this.handleChange(e)}></input>
                             </div>
                             <div className='sort_by'>
                                 <span id='sortby'>Sort By:</span>
