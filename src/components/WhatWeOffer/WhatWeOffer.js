@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { Link } from 'react-router-dom';
 import { faTicketAlt, faChair, faHandshake } from '@fortawesome/free-solid-svg-icons';
 import './WhatWeOffer.css'
 
@@ -18,7 +19,7 @@ class WhatWeOffer extends Component {
                     </div>
                     <div className='WhatWeOffer right__container'>
                         <div className='offers__container'>
-                            <div className='offer__grp'>
+                            <Link to='/seats' className='offer__grp'>
                                 <div className='offer image'>
                                     <FontAwesomeIcon icon={faTicketAlt} size='4x' color='white'/>
                                 </div>
@@ -27,8 +28,8 @@ class WhatWeOffer extends Component {
                                     <p>Seats located in the lower bowl 100’s and across from the Lakers bench.</p>
                                     
                                 </div>
-                            </div>
-                            <div className='offer__grp'>
+                            </Link>
+                            <Link to='/seats' className='offer__grp'>
                                 <div className='offer image'>
                                     <FontAwesomeIcon icon={faChair} size='4x' color='white'/>
                                 </div>
@@ -36,8 +37,8 @@ class WhatWeOffer extends Component {
                                     <h2>Ah-Mazing Seats</h2>
                                     <p>Plush, moveable, fold-out chairs with no one in front or behind you!</p>
                                 </div>
-                            </div>
-                            <div className='offer__grp'>
+                            </Link>
+                            <Link to='/tickets'  className='offer__grp'>
                                 <div className='offer image'>
                                     <FontAwesomeIcon icon={faHandshake} size='4x' color='white'/>
                                 </div>
@@ -45,7 +46,7 @@ class WhatWeOffer extends Component {
                                     <h2>Ah-Mazing Prices</h2>
                                     <p>The prices you see on our site are the prices you pay. No fees, no taxes, no b.s.</p>
                                 </div>
-                            </div>
+                            </Link>
                         </div>
                         
                     </div>
