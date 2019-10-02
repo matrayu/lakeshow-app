@@ -1,68 +1,106 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<p align="center">
+  <a href="https://gitpoint.co/">
+    <img alt="LakeshowTickets" title="LakeshowTickets" src="src/images/Logo/LakeshowLogov2_crop.png" width="400">
+  </a>
+</p>
 
-## Available Scripts
+<p align="center">
+  An app developed to provide Laker fans direct access to season ticket holders.
+</p>
 
-In the project directory, you can run:
 
-### `npm start`
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+## Table of Contents
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+- [Introduction](#introduction)
+- [Links](#links)
+- [Features](#features)
+- [Screenshots](#screenshots)
+- [Feedback](#feedback)
+- [How To Use](#how-to-use)
+- [Scripts](#scripts)
+- [Technology](#technology)
 
-### `npm test`
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+<hr>
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Introduction
 
-### `npm run build`
+With the rise of ticket fees for both sellers and buyers in the secondary marketplace for event tickets, this app was designed to connect Laker fans with Laker season ticket holders directly. Cutting out the middle man marketplace, by not charging buyers or sellers fees, the ticket prices are inherintely lower then any other other site the buyer chooses to post their tickets.
+<hr>
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Links
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+#### Live App: https://lakeshowtix.now.sh/
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Client Github Repo: https://github.com/matrayu/lakeshow-app
+Server Github Repo: https://github.com/matrayu/lakeshow-server
+<hr>
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Features
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+A few of the things you can do with Lakeshow Tickets:
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+* Set up an account
+* View all available tickets for the current NBA season 
+* Search all available tickets by NBA Team 
+* Sort all available ticket by Team, Date of Game or by Price 
+* Purchase tickets directly using Paypal
+<hr>
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Screenshots
 
-## Learn More
+<p align="center" >
+  <img src = "src/images/screenshots/ls-sh-01.png" width=400 border="5px solid black">
+  <img src = "src/images/screenshots/ls-sh-02.png" width=400 border="5px solid black">
+  <img src = "src/images/screenshots/ls-sh-03.png" width=400 border="5px solid black">
+  <img src = "src/images/screenshots/ls-sh-04.png" width=400 border="5px solid black">
+  <img src = "src/images/screenshots/ls-sh-05.png" width=400 border="5px solid black">
+  <img src = "src/images/screenshots/ls-sh-08.png" width=400 border="5px solid black">
+  <img src = "src/images/screenshots/ls-sh-06.png" width=400 border="5px solid black">
+  <img src = "src/images/screenshots/ls-sh-07.png" width=400 border="5px solid black">
+  
+</p>
+<hr>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Feedback
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Feel free to send us feedback or [file an issue](https://github.com/matrayu/lakeshow-app/issues/new). Feature requests are always welcome. 
+<hr>
 
-### Code Splitting
+## How To Use
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+To clone and run this application, you'll need [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)) installed on your computer. From your command line:
 
-### Analyzing the Bundle Size
+```bash
+# Clone this repository
+$ git clone https://github.com/matrayu/lakeshow-app
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+# Go into the repository
+$ cd lakeshow-app
 
-### Making a Progressive Web App
+# Install dependencies
+$ npm install
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+# Run the app
+$ npm start
+```
+<hr>
 
-### Advanced Configuration
+## Scripts
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+- `npm run dev` to start nodemon
+- `npm t` to run tests
+- `ndb start` to run debugging experience
+<hr>
 
-### Deployment
+## Technology
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+- React
+- HTML
+- CSS
+- Enzyme
+- Jest
