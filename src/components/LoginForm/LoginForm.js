@@ -45,7 +45,7 @@ export default class LoginForm extends Component {
     }
 
     handleDemoLogin = () => {
-        const username = 'kobe24'
+        const username = 'kbryant'
         const password = 'Tester12#'
         this.setState({
             username: username,

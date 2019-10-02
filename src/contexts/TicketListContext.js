@@ -69,7 +69,6 @@ export class TicketListProvider extends Component {
   addToCart = (ticket) => {
     let cart = this.state.cart
     cart.push(ticket)
-    console.log(cart)
     this.setState(cart)
   }
 

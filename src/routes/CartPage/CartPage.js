@@ -134,7 +134,7 @@ export default class Cart extends React.Component {
             <div className="CartPage">
                 {this.context.cart.length === 0 
                     ? ''
-                    : <h2 className="page_title">Checkout</h2>
+                    : <h1 className="page_headings">Checkout</h1>
                 }
                 {products.map((product, index) => 
                     <CartItem 
@@ -162,12 +162,12 @@ export default class Cart extends React.Component {
                                             <Link to={{
                                                 pathname: '/login', 
                                                 state: { from: this.props.location.pathname }
-                                                }} className='link'>login
+                                                }} className='link'> login
                                             </Link> or 
                                             <Link to={{ 
                                                 pathname: '/signup', 
                                                 state: { from: this.props.location.pathname }
-                                                }} className='link'>signup
+                                                }} className='link'> signup
                                             </Link> to complete purchase
                                         </span>
                                     </div>

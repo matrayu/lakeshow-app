@@ -63,11 +63,9 @@ export default class PurchaseComplete extends Component {
                             <img className='invoice_image' src="https://photos.smugmug.com/photos/i-S62mzmH/0/S/i-S62mzmH-S.png" alt='lakeshow tickets'></img>
                         </Link>
                     </div>
-                    <div className='tickets_link'>
-                        <Link to='/tickets'>
+                        <Link to='/tickets' className='tickets_link'>
                             Back To Tickets
                         </Link>
-                    </div>
                 </div>
                 <div className='confirmation_text'>
                     <h2 className='information_header'>All right {this.state.first_name}, your order is confirmed!</h2><br/>

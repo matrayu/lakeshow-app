@@ -11,7 +11,10 @@ export default class TicketListPage extends Component {
     componentDidMount() {
         this.context.clearError()
         TicketsApiService.getTickets()
-            .then(tickets => this.context.setTicketList(tickets))
+            .then(tickets => {
+                tickets.sort((a, b) => (a.local_date > b.local_date) ? 1 : -1)
+                this.context.setTicketList(tickets)
+            })
             .catch(this.context.setError)
     }
 
@@ -72,7 +75,7 @@ export default class TicketListPage extends Component {
                 <div className='TicketListPage'>
                     <div className='TicketListPage container'>
                         <div className='TicketListPage search_functions'>
-                            <div>
+                            <div className='search_by'>
                                 <input type="text" className='input' placeholder="Search..." onChange={(e) => this.handleChange(e)}></input>
                             </div>
                             <div className='sort_by'>

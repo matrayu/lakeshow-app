@@ -39,7 +39,7 @@
 .main_text > h2 {
     font-size: 30px;
     font-weight: bold;
-    margin: 10px auto;
+    margin: 10px 10px;
 }
 
 .Ticket__data__meta_text {
@@ -71,6 +71,14 @@
     border-radius: 10px;
     text-align: center;
     margin: 0 auto;
+}
+
+.game_note_ticket {
+    font-size: 25px;
+    font-weight: bold;
+    color: #FDB927;
+    text-align: center;
+    margin: 15px 0 -29px 0;
 }
 
 

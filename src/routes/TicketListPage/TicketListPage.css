@@ -15,12 +15,21 @@
     /* margin: 0 30px; */
 }
 
-div.search_functions, div.search_functions > * {
+/* div.search_functions, div.search_functions > * {
     margin: 0 40px;
-}
+} */
 
 #sortby {
-    margin-right: 10px;
+    margin-right: 12px;
+}
+
+.sort_by {
+    margin-left: 12px;
+}
+
+@media screen and (max-width: 560px) {
+    
+
 }
 
 

@@ -21,7 +21,6 @@ const CheckoutApiService = {
     },
 
     postPayment(transactions) {
-        console.log('going to post payment', transactions)
         return fetch(`${config.API_ENDPOINT}/pay`, {
             method: 'POST',
             headers: {
