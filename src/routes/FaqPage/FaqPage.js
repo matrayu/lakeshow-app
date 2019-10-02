@@ -9,7 +9,7 @@ export default class FaqPage extends Component {
         return (
         <div className='FaqPage'>
             <div className='FaqPage_container'>
-                <h2>Frequently Asked Questions</h2>
+                <h1 className='page_headings'>Frequently Asked Questions</h1>
             </div>
             <div className='FaqPage questions'>
                 <h4>Do you charge any fees?</h4>

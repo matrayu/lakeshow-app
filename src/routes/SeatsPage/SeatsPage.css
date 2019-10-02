@@ -2,11 +2,12 @@
     background: white;
 }
 
-.SeatsPage.main_text {
+/* .SeatsPage.main_text {
     padding: 20px;
     margin-left: 30px;
-}
+} */
 
-.SeatsPage>h2 {
-    font-size: 30px;
+
+#subheading {
+    text-align: center;
 }

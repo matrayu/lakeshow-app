@@ -8,8 +8,8 @@ export default class SeatsPage extends Component {
         return (
             <section className='SeatsPage'>
                 <div className='SeatsPage main_text'>
-                    <h2>Seats Photos</h2>
-                    <p>These are all pictures taken of the section, of the seats, and of the view! You can get some great selfies from here.</p>
+                    <h1 className='page_headings'>Seat Photos</h1>
+                    <p id='subheading'>These are all pictures taken of the section, of the seats, and of the view! You can get some great selfies from here.</p>
                 </div>
                 <Seats />
             </section>

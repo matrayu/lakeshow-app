@@ -64,7 +64,7 @@ export default class TicketPage extends Component {
           </div>
           <div className="Ticket__data">
               <div className="Ticket__data__container main_text flex fd_col">
-                  <h2 className="f1">{`${ticket.away_team} vs ${ticket.home_team}`}</h2>
+                  <h2 className="f1">{`${ticket.away_team} at ${ticket.home_team}`}</h2>
                   <div className="Ticket__data__meta_text flex fd_row">
                       <p>{moment(ticket.local_date, "YYYY-MM-DD").format("dddd, MMMM Do YYYY")}</p>
                       <p>{moment(ticket.local_time, 'HH mm ss').format('h:mm A')} Tip-Off</p>
