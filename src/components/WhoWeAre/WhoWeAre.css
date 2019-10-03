@@ -14,6 +14,10 @@ section.WhoWeAre{
     z-index: 1;
 }
 
+.whoWeAreText_container {
+    margin: auto auto;
+}
+
 .WhoWeAre>h1 {
     color: #FDB927;
     padding-left: 20px;
@@ -80,6 +84,12 @@ section.WhoWeAre{
 .right__container {
     width: 50%;
     text-align: center;
+}
+
+p#who_we_are_p {
+    text-align: left;
+    margin: 149px 10%;
+    max-width: 490px;
 }
 
 @media screen and (max-width: 560px) {
