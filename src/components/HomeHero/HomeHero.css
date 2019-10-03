@@ -9,6 +9,11 @@
     background-color: #552583;
 }
 
+.home_logo {
+    max-width: 400px;
+    width: 100%
+}
+
 .HomeHero.bg_text_block{
     display: block;
     position: absolute;
