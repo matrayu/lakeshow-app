@@ -21,14 +21,15 @@ export default class TicketListItem extends Component {
                     <div className='game__info'>
                         <p className='game__title'>{`${ticket.away_team}`} <br/> at {`${ticket.home_team}`}</p>
                         <p id='ticket_price'>{ticket.list_price_ea} <span id='each'>ea</span></p>
-                        <div className='game__meta'>
-                            <p id='game_date'>{date}</p>
-                            <p>{ticket.seat.length} <br/> Tickets</p>
-                        </div>
+                        <br/>
                         {!ticket.game_note
                             ? ''
                             : <div className='game_note'>** {ticket.game_note} **</div>
                         }
+                        <div className='game__meta'>
+                            <p id='game_date'>{date}</p>
+                            <p>{ticket.seat.length} <br/> Tickets</p>
+                        </div>
                         
                     </div>
                 </div>

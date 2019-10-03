@@ -2,11 +2,17 @@
     margin: 0;
     background: white;
     padding: 9px;
+    justify-content: center;
+}
+
+.TicketListPage.results {
+    margin: 0;
+    background: white;
+    padding: 9px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    
 }
 
 .TicketListPage.search_functions {

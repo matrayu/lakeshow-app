@@ -56,13 +56,22 @@ class App extends Component {
     this.forceUpdate()
   }
 
+  appHeader() {
+    return (
+      <header className='App__header'>
+        <MainHeader />
+      </header>
+    )
+  }
+
 
   render() {
     return (
       <div className='App'>
-        <header className='App__header'>
-          {(this.props.location.pathname === '/' || this.props.location.pathname === '/success') ? '' : <MainHeader />}
-        </header>
+        {(this.props.location.pathname === '/' || this.props.location.pathname === '/success') 
+          ? '' 
+          : this.appHeader()
+        }
         <main className='App__main'>
           <Switch>
             <Route exact path={'/'} component={HomeSplash} />
