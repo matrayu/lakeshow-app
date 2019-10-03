@@ -1,13 +1,75 @@
 section.WhoWeAre{
+    display: flex;
     height: 600px;
     background-color: #FDB927;
-    margin-top: -22px;
 }
 
-.WhoWeAre.image__container {
+.WhoWeAre.title__bg {
+    margin: 68px auto 0 auto;
+    text-align: left;
+    background: #552583;
     position: absolute;
-    width: 200px;
-    height: 200px;
+    right: 0;
+    width: 42%;
+    z-index: 1;
+}
+
+.WhoWeAre>h1 {
+    color: #FDB927;
+    padding-left: 20px;
+    font-weight: bold;
+}
+
+.WhoWeAre.container {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 80%;
+    
+}
+
+.WhoWeAre.grp {
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+    padding: 0;
+    padding: 60px 15px 0 0;
+    margin: 5px 0 0 0px;
+}
+
+.WhoWeAre.text__grp {
+    margin-right: 5px;
+}
+
+.WhoWeAre.image {
+    width: 100px;
+    height: 100px;
+    background-color: #552583;
+    margin-right: 20px;
+}
+
+.WhoWeAre>h2 {
+    color: #552583;
+    font-size: 24px;
+    margin-bottom: 7px;
+}
+
+.WhoWeAre>p {
+    color: white;
+    font-size: 17px;
+    width: 100%;
+    padding: 60px;
+    text-align: left;
+    color: #552583;
+}
+
+#WhoWeAre_bk_img {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 96.3%;
+    opacity: .5;
+    background-image: url('../../images/LakeshowTickets/IMG_20170719_164743.jpg')
 }
 
 .left__container {
@@ -19,6 +81,65 @@ section.WhoWeAre{
     width: 50%;
     text-align: center;
 }
+
+@media screen and (max-width: 560px) {
+    #WhoWeAre {
+        display: none;
+    }
+
+    .WhoWeAre>p {
+        margin-top: 100px;
+    }
+    
+    .WhoWeAre.title__bg {
+        width: 80%;
+        margin-top: 30px;
+    }
+
+    .WhoWeAre.left__container {
+        width: 100%;
+    }
+
+    .WhoWeAre.right__container {
+        width: 0;
+    }
+
+    .WhoWeAre.container {
+        display: flex;
+        flex-direction: column;
+        margin-top: 176px; 
+    }
+
+    .WhoWeAre.grp {
+        padding: 5px;
+        margin: 6px 0;
+        flex-direction: row-reverse;
+        text-align: right;
+    }
+    .WhoWeAre.image {
+        margin-left: 10px;
+        margin-right: 6px;
+    }
+}
+
+
+
+
+
+
+/* section.WhoWeAre{
+    height: 600px;
+    background-color: #FDB927;
+    margin-top: -22px;
+}
+
+.WhoWeAre.image__container {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+}
+
+
 
 #who_we_are_image_top {
     margin: 40px auto 10px 0px;
@@ -66,6 +187,15 @@ section.WhoWeAre{
     padding: 20px;
 }
 
+#whoWeAre_bk_image {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    opacity: .5;
+    background-image: url('../../images/LakeshowTickets/2018-1004_DSC7120.jpg')
+}
+
 
 @media screen and (max-width: 560px) {
     #who_we_are_image_top {
@@ -95,4 +225,4 @@ section.WhoWeAre{
         top: 712px;
     }
 
-}
+} */

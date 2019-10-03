@@ -5,13 +5,17 @@ section.UpcomingGames{
 }
 
 .UpcomingGames.title__bg {
-    margin: 0 auto 0 auto;
+    margin: 68px auto 0 auto;
     text-align: left;
     background: #552583;
     position: absolute;
     right: 0;
-    top: 1860px;
     width: 42%;
+    z-index: 1;
+}
+
+.image_logo_container {
+    margin-top: -8px;
 }
 
 .UpcomingGames>h1 {
@@ -74,7 +78,7 @@ section.UpcomingGames{
     }
     
     .UpcomingGames.title__bg {
-        top: 1793px;
+        margin-top: 30px;
         width: 80%;
     }
 
@@ -101,7 +105,7 @@ section.UpcomingGames{
     }
     .UpcomingGames.image {
         margin-left: 10px;
-        margin-right: 6px;
+        margin-right: -9px;
     }
 }
 

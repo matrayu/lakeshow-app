@@ -39,10 +39,10 @@ export default class UpcomingGames extends Component {
                     <div className='image__bottom'></div>
                 </div>
                 <div className='UpcomingGames right__container'>
-                    <div id='UpcomingGames_bk_img'></div>
                     <div className='UpcomingGames title__bg'>
                         <h1 className='splash_title'>Upcoming Games</h1>
                     </div>
+                    <div id='UpcomingGames_bk_img'></div>
                 </div>
             </section>
         )

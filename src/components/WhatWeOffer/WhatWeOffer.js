@@ -10,11 +10,12 @@ class WhatWeOffer extends Component {
         return (
             <section className='WhatWeOffer'>
                     <div className='WhatWeOffer left__container'>
+                        <div className='WhatWeOffer title__bg'>
+                            <h1 className='splash_title'>What We Offer</h1>
+                        </div>
                         <div id='WhatWeOffer_bk_img'></div>
                         <div className='WhatWeOffer title__bg'>
-                            <div className='WhatWeOffer text_grp'>
-                                <h1 className='splash_title'>What We Offer</h1>
-                            </div>
+                            
                         </div>
                     </div>
                     <div className='WhatWeOffer right__container'>

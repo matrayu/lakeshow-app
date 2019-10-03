@@ -14,7 +14,9 @@ export default class UpcomingGame extends Component {
         const date = moment(ticket.local_date, "YYYY-MM-DD").format("dddd, MMMM Do YYYY");
         return (
             <Link to={`/ticket/${ticket.id}`} className='UpcomingGames grp'>
-                <div className='UpcomingGames image' id='upcoming_game_image' style={{ backgroundImage: `url(${ticket.away_logo})`}}></div>
+                <div className='image_logo_container'>
+                    <div className='UpcomingGames image' id='upcoming_game_image' style={{ backgroundImage: `url(${ticket.away_logo})`}}></div>
+                </div>
                 <div className='UpcomingGames text__grp'>
                     <h2 id='upcoming_game'>{`${ticket.away_team} vs ${ticket.home_team}`}</h2>
                     <p>{date}</p>

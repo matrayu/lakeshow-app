@@ -4,7 +4,9 @@
     background-repeat: no-repeat;
     background-size: cover;
     margin-left: -40px;
-    background-image: url('../../images/LakeshowTickets/HomePageImage_lg.png');
+    opacity: 1;
+    background-image: url('../../images/LakeshowTickets/HomePageImage_noblend.png');
+    background-color: #552583;
 }
 
 .HomeHero.bg_text_block{
