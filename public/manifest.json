@@ -1,15 +1,24 @@
 {
-  "short_name": "Lakeshow Tickets",
   "name": "Lakeshow Tickets",
+  "short_name": "Lakeshow",
+  "dir": "ltr",
+  "lang": "en-US",
+  "orientation": "any",
+  "start_url": ".",
+  "background_color": "#fff",
+  "theme_color": "#fff",
+  "display": "standalone",
+  "description": "A Lakers Season Tickets Direct To You",
   "icons": [
     {
-      "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
-    }   
-  ],
-  "start_url": ".",
-  "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
 }

@@ -15,7 +15,7 @@ section.UpcomingGames{
 }
 
 .image_logo_container {
-    margin-top: -8px;
+    margin-top: 10px;
 }
 
 .UpcomingGames>h1 {
@@ -28,7 +28,7 @@ section.UpcomingGames{
     display: flex;
     flex-direction: column;
     margin: 0 auto;
-    width: 80%;
+    width: 87%;
     
 }
 
@@ -93,7 +93,7 @@ section.UpcomingGames{
     .UpcomingGames.container {
         display: flex;
         flex-direction: column;
-        margin-top: 176px;
+        margin-top: 115px;
         
     }
 
