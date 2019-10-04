@@ -36,6 +36,7 @@ With the rise of ticket fees for both sellers and buyers in the secondary market
 #### Live App: https://lakeshowtix.now.sh/
 
 Client Github Repo: https://github.com/matrayu/lakeshow-app
+
 Server Github Repo: https://github.com/matrayu/lakeshow-server
 <hr>
 
