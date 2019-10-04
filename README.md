@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://gitpoint.co/">
+  <a href="https://lakeshowtix.now.sh/">
     <img alt="LakeshowTickets" title="LakeshowTickets" src="src/images/Logo/LakeshowLogov2_crop.png" width="400">
   </a>
 </p>
