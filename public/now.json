@@ -12,9 +12,22 @@
           "dest": "/favicon.ico"
         },
         {
+          "src": "^/192.png$",
+          "dest": "/192.png"
+        },
+        {
+          "src": "^/512.png$",
+          "dest": "/512.png"
+        },
+        {
+          "src": "^/manifest.json$",
+          "dest": "/manifest.json"
+        },
+        {
           "src": ".*",
           "dest": "/index.html"
         }
+        
     ]
   }
   
