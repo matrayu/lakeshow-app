@@ -29,6 +29,24 @@ export default class MainHeader extends Component {
         return <Link id='login' to='/login'>Log in</Link>
     }
 
+    renderCartEmpty() {
+        return (
+            <div title='Empty Shopping Cart' aria-hidden='true' role='img' aria-label='Empty Shopping Cart'>
+                <FontAwesomeIcon icon={faShoppingCart} size='lg' color='#552583'/>
+                <span class='sr-only'>Empty Shopping Cart</span>
+            </div>
+        )
+    }
+
+    renderCartItems() {
+        return (
+            <div title='Shopping Cart With Items' aria-hidden='true' role='img' aria-label='Empty Shopping Cart With Items'>
+                <FontAwesomeIcon icon={faCartPlus} size='lg' color='#552583' />
+                <span class='sr-only'>Shopping Cart With Items</span>
+            </div>
+        )
+    }
+
     render() {
         return(
             <header className='MainHeader'>
@@ -47,8 +65,8 @@ export default class MainHeader extends Component {
                         <li>
                             <Link id='cart' to='/cart'>
                                 {this.context.cart.length === 0 
-                                    ? <FontAwesomeIcon icon={faShoppingCart} size='lg' color='#552583'/>
-                                    : <FontAwesomeIcon icon={faCartPlus} size='lg' color='#552583' />
+                                    ? this.renderCartEmpty()
+                                    : this.renderCartItems()
                                 }
                             </Link>
                         </li>
