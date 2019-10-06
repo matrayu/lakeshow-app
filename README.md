@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-  An app developed to provide Laker fans direct access to season ticket holders.
+  Lakeshow Tickets is a secondary market ticket portal to buy & sell LA Lakers season tickets without middle man markups.
 </p>
 
 
