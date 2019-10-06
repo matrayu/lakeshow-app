@@ -40,6 +40,16 @@ Client Github Repo: https://github.com/matrayu/lakeshow-app
 Server Github Repo: https://github.com/matrayu/lakeshow-server
 <hr>
 
+## Demo Credentials
+
+##### Login U/N: kbryant
+##### Login P/W: Tester12#
+
+##### Paypal U/N: sb-muxzd184753@personal.example.com
+##### Paypal P/W: <d5LB5dl
+
+<hr>
+
 
 ## Features
 
