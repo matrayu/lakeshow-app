@@ -94,3 +94,9 @@ hr {
 .subheading {
     font-size: 20px;
 }
+
+.sr-only {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+}
