@@ -32,9 +32,10 @@ export default class MainHeader extends Component {
     render() {
         return(
             <header className='MainHeader'>
-                <a href='/'>
+                <a href='/' title='Lakeshow Tickets Logo'>
                     <div className='site_identity'>
-                        <div className='lakeshow_logo'></div>
+                        <div className='lakeshow_logo' aria-hidden='true' role='img' aria-label='Lakeshow Tickets Logo'></div>
+                        <span class='sr-only'>Lakeshow Tickets Logo</span>
                     </div>
                 </a>
                 <nav className='MainHeader nav_options'>
