@@ -16,6 +16,7 @@
 
 - [Introduction](#introduction)
 - [Links](#links)
+- [Demo Credentials](#demo-credentials)
 - [Features](#features)
 - [Screenshots](#screenshots)
 - [Feedback](#feedback)
