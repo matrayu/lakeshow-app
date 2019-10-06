@@ -11,7 +11,6 @@ class HomeHero extends Component {
                     <div className='HomeHero bg_text_block'>
                         <div className='HomeHero text__grouping'>
                             <img className='home_logo' src={logo} alt='lakeshow_tickets'></img>
-                            {/* <h1>Lakeshow Tickets</h1> */}
                             <p>Season Tickets Direct To You</p>
                         </div>
                     </div>
