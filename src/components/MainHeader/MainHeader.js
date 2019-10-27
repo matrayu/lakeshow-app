@@ -33,7 +33,7 @@ export default class MainHeader extends Component {
         return (
             <div title='Empty Shopping Cart' aria-hidden='true' role='img' aria-label='Empty Shopping Cart'>
                 <FontAwesomeIcon icon={faShoppingCart} size='lg' color='#552583'/>
-                <span class='sr-only'>Empty Shopping Cart</span>
+                <span className='sr-only'>Empty Shopping Cart</span>
             </div>
         )
     }
@@ -42,7 +42,7 @@ export default class MainHeader extends Component {
         return (
             <div title='Shopping Cart With Items' aria-hidden='true' role='img' aria-label='Empty Shopping Cart With Items'>
                 <FontAwesomeIcon icon={faCartPlus} size='lg' color='#552583' />
-                <span class='sr-only'>Shopping Cart With Items</span>
+                <span className='sr-only'>Shopping Cart With Items</span>
             </div>
         )
     }
@@ -53,7 +53,7 @@ export default class MainHeader extends Component {
                 <a href='/' title='Lakeshow Tickets Logo'>
                     <div className='site_identity'>
                         <div className='lakeshow_logo' aria-hidden='true' role='img' aria-label='Lakeshow Tickets Logo'></div>
-                        <span class='sr-only'>Lakeshow Tickets Logo</span>
+                        <span className='sr-only'>Lakeshow Tickets Logo</span>
                     </div>
                 </a>
                 <nav className='MainHeader nav_options'>

@@ -69,7 +69,7 @@ section.UpcomingGames{
     background-size: cover;
     height: 100%;
     opacity: .5;
-    background-image: url('../../images/site_pngs/2018-1004_DSC7294_lebron.jpg')
+    background-image: url('https://res.cloudinary.com/matrayu/image/upload/v1572151338/Lakers/2018-1004_DSC7294_lebron_xhfmul.jpg')
 }
 
 @media screen and (max-width: 560px) {

@@ -5,7 +5,7 @@
     background-size: cover;
     margin-left: -40px;
     opacity: 1;
-    background-image: url('../../images/LakeshowTickets/HomePageImage_noblend.jpg');
+    background-image: url('https://res.cloudinary.com/matrayu/image/upload/v1572151254/Lakers/HomePageImage_noblend_gup69m.png');
     background-color: #552583;
 }
 
@@ -19,7 +19,7 @@
     position: absolute;
     margin: 0 auto 0 auto;
     text-align: center;
-    width: 70%;
+    width: 395px;
     background: #FDB927;
     top: 0;
     left: 50%;

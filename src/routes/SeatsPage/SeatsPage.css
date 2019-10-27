@@ -2,12 +2,14 @@
     background: white;
 }
 
-/* .SeatsPage.main_text {
+.SeatsPage.main_text {
     padding: 20px;
     margin-left: 30px;
-} */
+    text-align: left;
+}
 
 
 .subheading {
-    text-align: center;
+    text-align: left;
+    margin-top: -22px;
 }

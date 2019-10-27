@@ -8,7 +8,7 @@ class WhoWeAre extends Component {
                 <div className='WhoWeAre left__container'>
                     <div className='whoWeAreText_container'>
                         <p id='who_we_are_p'>
-                            <b>First and foremost, we are Lakers fans!</b> 
+                            <span className="large-text"><b>First and foremost, we are Lakers fans!</b> </span>
                             <br/><br/> 
                             We have been season ticket holders for years and while we love going to 
                             every game we can, it’s just not possible. So we’ve decided 

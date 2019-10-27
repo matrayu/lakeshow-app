@@ -72,7 +72,7 @@ section.WhatWeOffer{
     background-size: cover;
     height: 100%;
     opacity: .5;
-    background-image: url('../../images/LakeshowTickets/2018-1004_DSC7120.jpg')
+    background-image: url('https://res.cloudinary.com/matrayu/image/upload/v1572150983/Lakers/2018-1004_DSC7120_waaiev.jpg')
 }
 
 @media screen and (max-width: 560px) {
@@ -88,7 +88,7 @@ section.WhatWeOffer{
         background-size: cover;
         height: 100%;
         opacity: .5;
-        background-image: url('../../images/LakeshowTickets/2018-1004_DSC7120.jpg')
+        background-image: url('https://res.cloudinary.com/matrayu/image/upload/v1572150983/Lakers/2018-1004_DSC7120_waaiev.jpg')
     }
 
     .WhatWeOffer.right__container {

@@ -73,7 +73,7 @@ section.WhoWeAre{
     background-size: cover;
     height: 96.3%;
     opacity: .5;
-    background-image: url('../../images/site_pngs/trophy.jpg')
+    background-image: url('https://res.cloudinary.com/matrayu/image/upload/v1572151115/Lakers/IMG_20170719_164743_zlh006.jpg')
 }
 
 .left__container {
@@ -90,6 +90,10 @@ p#who_we_are_p {
     text-align: left;
     margin: 149px 10%;
     max-width: 490px;
+}
+
+.large-text {
+    font-size: 24px;
 }
 
 @media screen and (max-width: 560px) {
