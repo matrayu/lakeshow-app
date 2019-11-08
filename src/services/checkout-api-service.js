@@ -10,7 +10,7 @@ const CheckoutApiService = {
                 'authorization': `bearer ${TokenService.getAuthToken}`
             },
             body: JSON.stringify({
-                
+                //ADD CODE HERE
             })
         })
             .then(res =>
@@ -32,12 +32,33 @@ const CheckoutApiService = {
             }),
         })
         .then(res => {
+            return (!res.ok)
+                ? res.json().then(e => Promise.reject(e))
+                : res.json()
+        })
+        .then(data => {
+            return data
+        })
+        .catch(err => {
+            console.log('error after trying to post payment', err)
+        })
+    },
+
+    sendEmailConfirmation(purchase) {
+        return fetch(`${config.API_ENDPOINT}/send_email`, {
+            method: 'GET',
+            headers: {
+                'content-type': 'application/json',
+            },
+        })
+        .then(res => {
+            console.log(res)
             (!res.ok)
                 ? res.json().then(e => Promise.reject(e))
                 : res.json()
         })
         .catch(err => {
-            console.log('error after trying to post payment', err)
+            console.log('error after trying to send email', err)
         })
     }
 }
