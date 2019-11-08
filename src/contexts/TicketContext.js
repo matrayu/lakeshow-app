@@ -70,7 +70,9 @@ export class TicketProvider extends Component {
   }
 
   setPaymentReceipt = paymentReceipt => {
-    this.setState({ paymentReceipt })
+    let receipt = this.state.paymentReceipt
+    receipt.push(paymentReceipt)
+    this.setState({ receipt })
   }
 
   setUserInfo = (user) => {
