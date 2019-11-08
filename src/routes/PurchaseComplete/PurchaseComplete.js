@@ -4,6 +4,7 @@ import TicketContext from '../../contexts/TicketContext';
 import PurchasedItems from '../../components/PurchasedItems/PurchasedItems';
 import TokenService from '../../services/token-service';
 import AuthApiService from '../../services/auth-api-service'
+import CheckoutApiService from '../../services/checkout-api-service'
 
 import './PurchaseComplete.css'
 
@@ -38,7 +39,34 @@ export default class PurchaseComplete extends Component {
                     email: res.email
                 })
             })
+            /* .then(res => {
+                const purchase = {
+                    firstName: this.state.first_name,
+                    email: this.state.email,
+                    receipt: this.context.paymentReceipt,
+                    purchase: this.context.purchasedTickets
+                }
+                console.log(purchase)
+                CheckoutApiService.sendEmailConfirmation(purchase)
+            }) */
     }
+
+    /* handleButton() {
+        const { purchasedTickets, paymentReceipt } = this.context
+        const { first_name, email } = this.state
+        
+        const purchase = {
+            first_name, 
+            email,
+            purchasedTickets,
+            paymentReceipt
+        }
+
+        console.log(purchase)
+
+        CheckoutApiService.sendEmailConfirmation(purchase)
+
+    } */
 
     renderPurchases() {
         const { purchasedTickets } = this.context
@@ -79,7 +107,7 @@ export default class PurchaseComplete extends Component {
                     </div>
                     <div className='payment_method flex fd_row space-between'>
                         <p>Paypal</p>
-                        <p>{this.context.paymentReceipt.paymentID}</p>
+                        <p>{this.context.paymentReceipt[1].id}</p>
                     </div>
                     <div className='info_header flex fd_row space-between'>
                         <h3>Tickets</h3>
@@ -87,10 +115,11 @@ export default class PurchaseComplete extends Component {
                     </div>
                     {this.renderPurchases()}
                     <div className='payment_total'>
-                        <h3>Total: ${this.context.paymentReceipt.total}</h3>
+                        <h3>Total: ${this.context.paymentReceipt[0].total}</h3>
                     </div>
                 </div>
                 <button onClick={() => window.print()}><b>Print this page for your records.</b></button>
+                {/* <button onClick={() => this.handleButton()}><b>Send Receipt</b></button> */}
             </div>
         </section>
         )
