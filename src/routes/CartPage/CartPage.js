@@ -5,8 +5,13 @@ import TicketContext from '../../contexts/TicketContext';
 import PaypalExpressBtn from 'react-paypal-express-checkout';
 import Popup from 'reactjs-popup';
 import CheckoutApiService from '../../services/checkout-api-service';
-import TokenService from '../../services/token-service'
+import MailjetApiService from '../../services/mailjet-api-service';
+import TokenService from '../../services/token-service';
+import AuthApiService from '../../services/auth-api-service';
 import './CartPage.css';
+
+const moment = require("moment")
+
 
 // Document on Paypal's currency code: https://developer.paypal.com/docs/classic/api/currency_codes/
 
@@ -99,12 +104,38 @@ export default class Cart extends React.Component {
         let ticketsArr = []
         this.context.setPurchasedTickets(products)
         data.total = this.state.total
+        let { total } = this.state
         this.context.setPaymentReceipt(data)
+        let userData = []
+        let user = TokenService.readJwtToken()
+        let orderId = ''
 
         products.forEach(product => {
             ticketsArr.push(product.id)
+            let gameDay = moment(product.local_date).format('MMMM Do, YYYY')
+            product.gameDay = gameDay
         })
+
+            
+        AuthApiService.getUser(user.user_id)
+            .then(user => {
+                userData.push(user.first_name, user.email)
+            })
+            .catch(error => {
+                console.error(error)
+            })
+
         CheckoutApiService.postPayment(ticketsArr)
+            .then(data => {
+                let newDate = moment(data.date_order_placed).format("M/D/YYYY")
+                data.dateFormatted = newDate
+                data.orderTotal = total
+                return data
+            })
+            .then(order => {
+                this.context.setPaymentReceipt(order)
+                return MailjetApiService.sendEmail(userData, products, order)
+            })
             .then(res => {
                 this.context.clearCart()
             })
@@ -126,12 +157,26 @@ export default class Cart extends React.Component {
         // => sometimes it may take about 0.5 second for everything to get set, or for the button to appear
     }
 
+    handleButton() {
+        this.onSuccess()
+        /* console.log('Button Push')
+        const purchase = {
+            name: "Matt",
+            email: "matt.friedberg@gmail.com",
+            bought: "tickets",
+            receipt: "my receipt"
+            
+        }
+        MailjetApiService.sendEmail(purchase) */
+    }
+
 
 
     render() {
         const { products, total, currency } =  this.state;
         return (
             <div className="CartPage">
+                <button onClick={() => this.handleButton()}>CLICK ME</button>
                 {this.context.cart.length === 0 
                     ? ''
                     : <h1 className="page_headings">Checkout</h1>
