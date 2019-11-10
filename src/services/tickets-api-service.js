@@ -2,7 +2,7 @@ import config from '../config'
 
 const TicketsApiService = {
     getTickets() {
-        return fetch("https://lakeshow.herokuapp.com/api/tickets", {
+        return fetch(`${config.API_ENDPOINT}/tickets"`, {
            headers: {
             'content-type': 'application/json',
            },
