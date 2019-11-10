@@ -26,6 +26,7 @@
     "start": "react-scripts start",
     "prebuild": "CI=true react-scripts test --colors",
     "build": "react-scripts build",
+    "buildtest": "npx serve -s build/",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
