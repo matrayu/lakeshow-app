@@ -2,7 +2,7 @@
   "name": "lakeshow-app",
   "version": "0.1.1",
   "private": true,
-  "homepage": "https://lakeshowtix.now.sh/",
+  "homepage": "https://lakeshowtix.com",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.25",
     "@fortawesome/free-brands-svg-icons": "^5.11.2",
@@ -30,7 +30,7 @@
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
     "deploy": "now ./build",
-    "postdeploy": "now alias -A ./build/now.json"
+    "postdeploy": "now --target production -A ./build/now.json"
   },
   "eslintConfig": {
     "extends": "react-app"
