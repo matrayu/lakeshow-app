@@ -2,7 +2,7 @@ import config from '../config'
 
 const TicketsApiService = {
     getTickets() {
-        return fetch(`${config.API_ENDPOINT}/tickets"`, {
+        return fetch(`${config.API_ENDPOINT}/tickets`, {
            headers: {
             'content-type': 'application/json',
            },
