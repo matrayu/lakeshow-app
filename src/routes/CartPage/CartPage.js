@@ -29,7 +29,7 @@ const client = {
 	production: PP_CID_PROD,
 }
 
-const env = 'sandbox'; // you can set this string to 'production'
+const env = 'production'; // you can set this string to 'production' v 'sandbox'
 
 export default class Cart extends React.Component {
     constructor(props) {
