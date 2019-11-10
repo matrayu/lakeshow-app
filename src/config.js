@@ -5,6 +5,4 @@ module.exports = {
     PP_CID: process.env.REACT_APP_PP_CID,
     PP_CID_PROD: process.env.REACT_APP_PP_CID_PROD,
     NODE_ENV: process.env.REACT_APP_NODE_ENV,
-    CLOUDINARY_API_KEY: process.env.REACT_APP_CLOUDINARY_API_KEY,
-    CLOUDINARY_API_SECRET: process.env.REACT_APP_CLOUDINARY_API_SECRET,
 };
