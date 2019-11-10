@@ -11,7 +11,10 @@ export default class UpcomingGames extends Component {
     componentDidMount() {
         this.context.clearError()
         TicketsApiService.getTickets()
-            .then(tickets => this.context.setTicketList(tickets))
+            .then(tickets => {
+                console.log("hello", tickets)
+                this.context.setTicketList(tickets)
+            })
             .then(res => {
                 this.context.ticketList.sort((a, b) => (a.local_date > b.local_date) ? 1 : -1)
             })
