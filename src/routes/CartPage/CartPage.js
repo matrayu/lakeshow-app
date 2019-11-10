@@ -29,12 +29,12 @@ const client = {
 	production: PP_CID_PROD,
 }
 
-const env = 'production'; // you can set this string to 'production' v 'sandbox'
+const env = 'sandbox'; // you can set this string to 'production' v 'sandbox'
 
 export default class Cart extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { 
+        this.state = {
             products: [], 
             total: 0,
             currency: 'USD',
@@ -111,7 +111,7 @@ export default class Cart extends React.Component {
 
         products.forEach(product => {
             ticketsArr.push(product.id)
-            let gameDay = moment(product.local_date).format('MMMM Do, YYYY')
+            let gameDay = moment(product.local_date).add(1, 'day').format('MMMM Do, YYYY')
             product.gameDay = gameDay
         })
 
