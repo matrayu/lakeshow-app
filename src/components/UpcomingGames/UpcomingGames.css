@@ -4,6 +4,13 @@ section.UpcomingGames{
     background-color: #FDB927;
 }
 
+.UpcomingGames-image {
+    height: 100%;
+    opacity: .5;
+    max-width: 100%;
+    object-fit: cover;
+}
+
 .UpcomingGames.title__bg {
     margin: 68px auto 0 auto;
     text-align: left;
@@ -24,11 +31,17 @@ section.UpcomingGames{
     font-weight: bold;
 }
 
+.UpcomingGames .left__container {
+    display: flex;
+}
+
 .UpcomingGames.container {
     display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
     margin: 0 auto;
     width: 87%;
+    justify-content: space-evenly;
     
 }
 
@@ -37,8 +50,7 @@ section.UpcomingGames{
     flex-direction: row;
     text-align: left;
     padding: 0;
-    padding: 60px 15px 0 0;
-    margin: 5px 0 0 0px;
+    margin: 15px 0 0 0px;
 }
 
 .UpcomingGames.text__grp {
@@ -64,15 +76,11 @@ section.UpcomingGames{
 }
 
 #UpcomingGames_bk_img {
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
     height: 100%;
     opacity: .5;
-    background-image: url('https://res.cloudinary.com/matrayu/image/upload/v1572151338/Lakers/2018-1004_DSC7294_lebron_xhfmul.jpg')
-}
+} 
 
-@media screen and (max-width: 560px) {
+@media screen and (max-width: 615px) {
     #UpcomingGames_bk_img {
         display: none;
     }

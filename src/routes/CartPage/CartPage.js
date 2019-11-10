@@ -108,7 +108,6 @@ export default class Cart extends React.Component {
         this.context.setPaymentReceipt(data)
         let userData = []
         let user = TokenService.readJwtToken()
-        let orderId = ''
 
         products.forEach(product => {
             ticketsArr.push(product.id)
@@ -157,26 +156,10 @@ export default class Cart extends React.Component {
         // => sometimes it may take about 0.5 second for everything to get set, or for the button to appear
     }
 
-    handleButton() {
-        this.onSuccess()
-        /* console.log('Button Push')
-        const purchase = {
-            name: "Matt",
-            email: "matt.friedberg@gmail.com",
-            bought: "tickets",
-            receipt: "my receipt"
-            
-        }
-        MailjetApiService.sendEmail(purchase) */
-    }
-
-
-
     render() {
         const { products, total, currency } =  this.state;
         return (
             <div className="CartPage">
-                <button onClick={() => this.handleButton()}>CLICK ME</button>
                 {this.context.cart.length === 0 
                     ? ''
                     : <h1 className="page_headings">Checkout</h1>

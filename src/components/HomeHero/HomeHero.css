@@ -1,12 +1,13 @@
-.HomeHero.bg_image {
-    height: 600px;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    margin-left: -40px;
-    opacity: 1;
-    background-image: url('https://res.cloudinary.com/matrayu/image/upload/v1572151254/Lakers/HomePageImage_noblend_gup69m.png');
+.bg_image {
     background-color: #552583;
+}
+
+.HomeHero-background {
+    height: 600px;
+    width: 100%;
+    object-fit: cover;
+    margin-bottom: -5px;
+    opacity: .3;
 }
 
 .home_logo {

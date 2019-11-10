@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import UpcomingGame from '../UpcomingGame/UpcomingGame';
 import TicketListContext from "../../contexts/TicketListContext";
-import TicketsApiService from '../../services/tickets-api-service'
+import TicketsApiService from '../../services/tickets-api-service';
+import {Image} from 'cloudinary-react';
 import './UpcomingGames.css'
 
 export default class UpcomingGames extends Component {
@@ -42,7 +43,20 @@ export default class UpcomingGames extends Component {
                     <div className='UpcomingGames title__bg'>
                         <h1 className='splash_title'>Upcoming Games</h1>
                     </div>
-                    <div id='UpcomingGames_bk_img'></div>
+                    <div id='UpcomingGames_bk_img'>
+                        <Image
+                            cloudName="matrayu"
+                            publicId="v1572136906/Lakers/LakeshowTix2020-26_idzvkk.png"
+                            drp="auto"
+                            width="2000"
+                            height="600"
+                            crop="fill"
+                            gravity="east"
+                            title="Lebron shoots a three pointer"
+                            alt="Lebron shoots a three pointer"
+                            className="UpcomingGames-image"
+                        />
+                    </div>
                 </div>
             </section>
         )

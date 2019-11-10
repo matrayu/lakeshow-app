@@ -2,7 +2,6 @@ section.WhatWeOffer{
     display: flex;
     height: 600px;
     background-color: #552583;
-    margin-top: -22px;
 }
 
 .WhatWeOffer.title__bg {
@@ -23,17 +22,21 @@ section.WhatWeOffer{
 .WhatWeOffer.right__container {
     /* width: 50%; */
     height: 100%;
+    display: flex;
 }
 
 .offers__container {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 0 10%;
 }
 
 .offer__grp {
     display: flex;
     text-align: left;
-    padding: 11px 19px 0 36px;
-    margin: 60px 0;
+    width: 100%;
 }
 
 .WhatWeOffer>h1 {
@@ -64,15 +67,11 @@ section.WhatWeOffer{
     width: 50%;
 }
 
-
-
-#WhatWeOffer_bk_img {
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+.offering-image {
     height: 100%;
     opacity: .5;
-    background-image: url('https://res.cloudinary.com/matrayu/image/upload/v1572150983/Lakers/2018-1004_DSC7120_waaiev.jpg')
+    max-width: 100%;
+    object-fit: cover;
 }
 
 @media screen and (max-width: 560px) {
@@ -83,12 +82,6 @@ section.WhatWeOffer{
 
     #WhatWeOffer_bk_img {
         display: none;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        height: 100%;
-        opacity: .5;
-        background-image: url('https://res.cloudinary.com/matrayu/image/upload/v1572150983/Lakers/2018-1004_DSC7120_waaiev.jpg')
     }
 
     .WhatWeOffer.right__container {

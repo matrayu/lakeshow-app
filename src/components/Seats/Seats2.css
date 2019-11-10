@@ -1,49 +1,57 @@
-ul {
+.Seats {
+  width: 85%;
+  margin: auto auto;
+  display: flex;
+  flex-wrap: wrap;
+  flex-flow: column wrap;
+}
+
+/* .Seats ul {
     display: flex;
     flex-wrap: wrap;
-  }
+}
   
-  li {
-    height: 45vh;
-    flex-grow: 1;
-  }
-  
-  li:last-child {
-    flex-grow: 10;
-  }
+.seat_photos li {
+  height: 45vh;
+  flex-grow: 1;
+}
 
-  li > img {
-    border: solid 2px white;
-    border-style: solid;
-  }
-  
-  img {
-    max-height: 100%;
-    min-width: 100%;
-    object-fit: cover;
-    vertical-align: bottom;
-  }
+.seat_photos li:last-child {
+  flex-grow: 10;
+}
+
+li > img {
+  border: solid 2px white;
+  border-style: solid;
+}
+
+img {
+  max-height: 100%;
+  min-width: 100%;
+  object-fit: cover;
+  vertical-align: bottom;
+}
 
   
   @media (max-aspect-ratio: 1/1) {
-    li {
+    .seat_photos li {
       height: 21vh;
     }
   }
   
  
   @media (max-height: 480px) {
-    li {
+    .seat_photos li {
       height: 80vh;
     }
   }
 
   @media (max-aspect-ratio: 1/1) and (max-width: 480px) {
-    ul {
+    .seat_photos {
       flex-direction: row;
     }
   
-    li {
+    .seat_photos li {
       height: auto;
       width: 100%;
     }
@@ -52,4 +60,4 @@ ul {
       max-height: 75vh;
       min-width: 0;
     }
-  }
+  } */

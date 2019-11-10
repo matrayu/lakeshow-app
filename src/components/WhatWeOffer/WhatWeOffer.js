@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Link } from 'react-router-dom';
+import {Image} from 'cloudinary-react';
 import { faTicketAlt, faChair, faHandshake } from '@fortawesome/free-solid-svg-icons';
 import './WhatWeOffer.css'
 
@@ -13,10 +14,17 @@ class WhatWeOffer extends Component {
                         <div className='WhatWeOffer title__bg'>
                             <h1 className='splash_title'>What We Offer</h1>
                         </div>
-                        <div id='WhatWeOffer_bk_img'></div>
-                        <div className='WhatWeOffer title__bg'>
-                            
-                        </div>
+                        <Image
+                            cloudName="matrayu"
+                            publicId="v1572136829/Lakers/LakeshowTix2020-2_irntio.png"
+                            drp="auto"
+                            width="2000"
+                            height="600"
+                            responsive
+                            title="Lebron shoots a three pointer"
+                            alt="Lebron shoots a three pointer"
+                            className="offering-image"
+                        />
                     </div>
                     <div className='WhatWeOffer right__container'>
                         <div className='offers__container'>

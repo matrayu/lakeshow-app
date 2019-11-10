@@ -4,7 +4,6 @@ import TicketContext from '../../contexts/TicketContext';
 import PurchasedItems from '../../components/PurchasedItems/PurchasedItems';
 import TokenService from '../../services/token-service';
 import AuthApiService from '../../services/auth-api-service'
-import CheckoutApiService from '../../services/checkout-api-service'
 
 import './PurchaseComplete.css'
 
@@ -39,34 +38,7 @@ export default class PurchaseComplete extends Component {
                     email: res.email
                 })
             })
-            /* .then(res => {
-                const purchase = {
-                    firstName: this.state.first_name,
-                    email: this.state.email,
-                    receipt: this.context.paymentReceipt,
-                    purchase: this.context.purchasedTickets
-                }
-                console.log(purchase)
-                CheckoutApiService.sendEmailConfirmation(purchase)
-            }) */
     }
-
-    /* handleButton() {
-        const { purchasedTickets, paymentReceipt } = this.context
-        const { first_name, email } = this.state
-        
-        const purchase = {
-            first_name, 
-            email,
-            purchasedTickets,
-            paymentReceipt
-        }
-
-        console.log(purchase)
-
-        CheckoutApiService.sendEmailConfirmation(purchase)
-
-    } */
 
     renderPurchases() {
         const { purchasedTickets } = this.context
@@ -115,7 +87,7 @@ export default class PurchaseComplete extends Component {
                     </div>
                     {this.renderPurchases()}
                     <div className='payment_total'>
-                        <h3>Total: ${this.context.paymentReceipt[0].total}</h3>
+                        <h3>Total: ${this.context.paymentReceipt[0].total}.00</h3>
                     </div>
                 </div>
                 <button onClick={() => window.print()}><b>Print this page for your records.</b></button>
