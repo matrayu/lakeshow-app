@@ -6,6 +6,16 @@
   flex-flow: column wrap;
 }
 
+.flex-img {
+  width: 100%;
+}
+
+.seat-images {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
 /* .Seats ul {
     display: flex;
     flex-wrap: wrap;
