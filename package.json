@@ -2,7 +2,7 @@
   "name": "lakeshow-app",
   "version": "0.1.1",
   "private": true,
-  "homepage": "https://lakeshowtix.com",
+  "homepage": "https://www.lakeshowtix.com",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.25",
     "@fortawesome/free-brands-svg-icons": "^5.11.2",
