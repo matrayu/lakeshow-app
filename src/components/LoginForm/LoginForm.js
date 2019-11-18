@@ -44,16 +44,6 @@ export default class LoginForm extends Component {
         this.setState({ [name]: value })
     }
 
-    handleDemoLogin = () => {
-        const username = 'kbryant'
-        const password = 'Tester12#'
-        this.setState({
-            username: username,
-            password: password,
-            error: null
-        })
-    }
-
     render() {
         const state = this.state
         const { error } = this.state
@@ -86,11 +76,10 @@ export default class LoginForm extends Component {
                     />
                 </div>
                 <div className='forgot-pw'>
-                    <a href='/password-reset'>Forgot Password?</a>
+                    <a href='/forgot_password'>Forgot Password?</a>
                 </div>
                 <div className='form__btns'>
                     <button className="btn btn-success btn-block">Login</button>
-                    <button className="btn btn-success btn-block" onClick={this.handleDemoLogin}>Demo Login</button>
                 </div>
                 
             </form>

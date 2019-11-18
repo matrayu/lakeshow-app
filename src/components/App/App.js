@@ -15,8 +15,10 @@ import { withRouter } from "react-router";
 import TokenService from '../../services/token-service';
 import AuthApiService from '../../services/auth-api-service';
 import IdleService from '../../services/idle-service.js';
-import TicketListContext from '../../contexts/TicketListContext'
-import PurchaseComplete from '../../routes/PurchaseComplete/PurchaseComplete'
+import TicketListContext from '../../contexts/TicketListContext';
+import PurchaseComplete from '../../routes/PurchaseComplete/PurchaseComplete';
+import ForgotPasswordPage from '../../routes/ForgotPassword/ForgotPasswordPage';
+import ResetPasswordPage from '../../routes/ResetPasswordPage/ResetPasswordPage';
 import './App.css';
 
 
@@ -83,6 +85,8 @@ class App extends Component {
             <Route path={'/faq'} component={FaqPage} />
             <Route path={'/cart'} component={CartPage} />
             <Route path={'/success'} component={PurchaseComplete} />
+            <Route path={'/forgot_password/'} component={ForgotPasswordPage} />
+            <Route path={'/reset_password/:resetId'} component={ResetPasswordPage} />
             <Route component={NotFoundPage} />
           </Switch>
         </main>

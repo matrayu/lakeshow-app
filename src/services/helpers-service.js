@@ -58,7 +58,7 @@ const HelpersService = {
 
     convertMoneyToNumber(number) {
         return Number(number.replace(/[^0-9.-]+/g,""));
-    }
+    },
 }
 
 export default HelpersService;

@@ -32,6 +32,22 @@ const AuthApiService = {
             })
     },
 
+    postForgotPassword(email) {
+        return fetch(`${config.API_ENDPOINT}/password/forgot`, {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(email),
+        })
+        .then(res => {
+            return (!res.ok)
+                ? res.json().then(e => Promise.reject(e))
+                : res.json()
+            }
+        )
+    },
+
     getUser(userId) {
         return fetch(`${config.API_ENDPOINT}/users/${userId}`, {
             method: 'GET',
@@ -40,11 +56,11 @@ const AuthApiService = {
                 'authorization': `bearer ${TokenService.getAuthToken()}`,
             }
         })
-            .then(res => {
-                return (!res.ok)
-                    ? res.json().then(e => Promise.reject(e))
-                    : res.json()
-                }
+        .then(res => {
+            return (!res.ok)
+                ? res.json().then(e => Promise.reject(e))
+                : res.json()
+            }
         )
     },
     
