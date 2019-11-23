@@ -51,6 +51,21 @@ class App extends Component {
     }
   }
 
+  componentWillUpdate({ location, history }) {
+    const gtag = window.gtag
+    
+    if  (location.pathname = this.props.location.pathname) {
+      return
+    }
+
+    if (history.action === 'PUSH' && typeof(gtag) === 'function') {
+      gtag('config', 'UA-126240273-2', {
+        'page_location': window.location.href,
+        'page_path': location.pathname
+      })
+    }
+  }
+
   logoutFromIdle = () => {
     TokenService.clearAuthToken()
     TokenService.clearCallbackBeforeExpiry()
