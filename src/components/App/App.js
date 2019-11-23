@@ -51,10 +51,10 @@ class App extends Component {
     }
   }
 
-  componentWillUpdate({ location, history }) {
+  componentDidUpdate({ location, history }) {
     const gtag = window.gtag
     
-    if  (location.pathname = this.props.location.pathname) {
+    if (location.pathname === this.props.location.pathname) {
       return
     }
 
