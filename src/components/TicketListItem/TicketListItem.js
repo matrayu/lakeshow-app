@@ -12,7 +12,6 @@ export default class TicketListItem extends Component {
     render() {
         const { ticket } = this.props
         const date = moment(ticket.local_date, "YYYY-MM-DD").format("dddd, MMMM Do YYYY");
-        console.log(ticket)
         return (
             <Link to={`/ticket/${ticket.id}`} className='TicketListItem'>
                 <div className='game__container'>
