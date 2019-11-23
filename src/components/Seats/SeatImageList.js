@@ -3,10 +3,10 @@ const SeatImageList = [
         publicId: "rvxhgpfctcbrfbil76g2.png",
         urlSuffix: "lakers-staples-center-section-114-wide"
     },
-    {
+    /* {
         publicId: "rie56zhvuhmu1hzvveiq.png",
         urlSuffix: "lakers-staples-center-section-114-close"
-    },
+    }, */
     {
         publicId: "LakeshowTix2020-8_mzupnh.png",
         urlSuffix: "lakers-court-warm-ups"
