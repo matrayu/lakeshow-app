@@ -12,6 +12,7 @@ export default class TicketListPage extends Component {
         this.context.clearError()
         TicketsApiService.getTickets()
             .then(tickets => {
+                console.log(tickets)
                 tickets.sort((a, b) => (a.local_date > b.local_date) ? 1 : -1)
                 this.context.setTicketList(tickets)
             })
