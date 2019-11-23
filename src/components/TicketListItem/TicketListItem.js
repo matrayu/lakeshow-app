@@ -12,6 +12,7 @@ export default class TicketListItem extends Component {
     render() {
         const { ticket } = this.props
         const date = moment(ticket.local_date, "YYYY-MM-DD").format("dddd, MMMM Do YYYY");
+        console.log(ticket)
         return (
             <Link to={`/ticket/${ticket.id}`} className='TicketListItem'>
                 <div className='game__container'>
@@ -26,10 +27,19 @@ export default class TicketListItem extends Component {
                             ? ''
                             : <div className='game_note'>** {ticket.game_note} **</div>
                         }
+                        <br/>
+                        <p id='game_date'>{date}</p>
                         <div className='game__meta'>
-                            <p id='game_date'>{date}</p>
-                            <p>{ticket.seat.length} <br/> Tickets</p>
+                            <p>{ticket.seat.length} Tickets</p>
+                            <div className='game__seat_date'>
+                                <div>
+                                    <p>Section {ticket.section}</p>
+                                    <p>Row {ticket.seat_row}</p>
+                                </div>
+                            </div>
                         </div>
+
+                        
                         
                     </div>
                 </div>

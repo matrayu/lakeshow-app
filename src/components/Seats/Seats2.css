@@ -16,6 +16,10 @@
   justify-content: center;
 }
 
+.seat-images img{
+  padding: 5px 0;
+}
+
 /* .Seats ul {
     display: flex;
     flex-wrap: wrap;

@@ -99,6 +99,7 @@ export default class TicketPage extends Component {
               <div className="Ticket__data__container quantity flex fd_row">
                   <div className="section3">
                       <div className="section3 sub_section">
+                      <p><b>Section {ticket.section} / Row {ticket.seat_row}</b></p>
                       <p>Quantity Available: {ticket.quantity}</p>
                         {ticket.quantity === 1
                           ? <p className='ticket_pair'>Single Seat Only</p>

@@ -1,10 +1,10 @@
 const SeatImageList = [
     {
-        publicId: "ydylowurpmi6h5bhw797.png",
+        publicId: "rvxhgpfctcbrfbil76g2.png",
         urlSuffix: "lakers-staples-center-section-114-wide"
     },
     {
-        publicId: "yscltlez6vbegzj9xqbk.png",
+        publicId: "rie56zhvuhmu1hzvveiq.png",
         urlSuffix: "lakers-staples-center-section-114-close"
     },
     {

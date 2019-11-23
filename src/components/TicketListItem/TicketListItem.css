@@ -48,7 +48,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 36px 0;
+    padding: 12px 0;
     align-items: center;
 }
 
@@ -70,10 +70,6 @@
 
 #each {
     font-size: 14px
-}
-
-#game_date {
-    margin-right: 30px;
 }
 
 

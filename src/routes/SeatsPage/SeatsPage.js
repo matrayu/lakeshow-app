@@ -8,7 +8,7 @@ export default class SeatsPage extends Component {
         return (
             <section className='SeatsPage'>
                 <div className='SeatsPage main_text'>
-                    <h1 className='page_headings'>Seat Photos</h1>
+                    <h1 className='page_headings'>Seat Photos - Section 114</h1>
                     <p className='subheading'>All photos are taken of the section, of the seats, and of the view!</p>
                     <br/>
                 </div>
