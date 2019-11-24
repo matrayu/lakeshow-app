@@ -44,7 +44,13 @@ export default class TicketPage extends Component {
 
 
   addToCart = () => {
+    let { cart } = this.context
+    let { ticket } = this.context
+    if (cart.includes(ticket)) {
+      return
+    }
     this.context.addToCart(this.context.ticket)
+    
   }
 
   removeFromCart = () => {

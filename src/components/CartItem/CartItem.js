@@ -14,7 +14,6 @@ export default class CartItem extends React.Component {
     render(){
         const { product } = this.props
         
-        console.log(product)
         return (
             <div className="CartItem" style={{ marginBottom: "10px"}}>
                 <div className="CartItem-body">
