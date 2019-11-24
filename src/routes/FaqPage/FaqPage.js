@@ -40,6 +40,9 @@ export default class FaqPage extends Component {
 
                 <h4>What if I want physical tickets?</h4>
                 <p>No problem! We're local to Los Angeles and you are more then welcome to come pick up. Otherwise, we can always arrange to ship them to you.</p>
+
+                <h4>More Questions?</h4>
+                <p>Email Us! <a href = "mailto: info@lakeshowtix.com" target="_blank" rel="noopener noreferrer">info@lakeshowtix.com</a></p>
             </div>
         </div>
         )
