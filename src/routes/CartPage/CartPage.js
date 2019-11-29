@@ -39,6 +39,7 @@ export default class Cart extends React.Component {
             total: 0,
             currency: 'USD',
             open: false,
+            discount_code: ""
         }
     }
 
@@ -156,7 +157,13 @@ export default class Cart extends React.Component {
         // => sometimes it may take about 0.5 second for everything to get set, or for the button to appear
     }
 
+    handleChange = event => {
+        const {name, value} = event.target
+        this.setState({ [name]: value })
+    }
+
     render() {
+        let props = this.props
         const { products, total, currency } =  this.state;
         return (
             <div className="CartPage">
@@ -175,6 +182,16 @@ export default class Cart extends React.Component {
                 { products.length 
                     ?   <div className='cart_total'>
                             <h4><small></small><span className="float-right text-primary">Total Amount: ${total}</span> </h4><br></br>
+                            <label htmlFor="discount_code"></label>
+                            <input
+                                className="form-control"
+                                id="discount_code"
+                                name="discount_code"
+                                type="text"
+                                placeholder="Discount Code"
+                                value={props.discount}
+                                onChange={this.handleChange}
+                            />
                         </div>
                     : ''
                 }
