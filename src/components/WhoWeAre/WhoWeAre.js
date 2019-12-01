@@ -12,7 +12,7 @@ class WhoWeAre extends Component {
                             <span className="large-text"><b>First and foremost, we are Lakers fans!</b> </span>
                             <br/><br/> 
                             We have been season ticket holders for years and while we love going to 
-                            every game we can, it’s just not possible. So we’ve decided 
+                            every game, it’s just not possible. So we’ve decided 
                             to create a portal and bring our season seats directly to you.
                             <br/><br/>
                             Without the middleman marketplace, we can offer our great seats at a deep discount.  
