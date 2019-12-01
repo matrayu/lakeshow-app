@@ -39,7 +39,9 @@ export default class Cart extends React.Component {
             total: 0,
             currency: 'USD',
             open: false,
-            discount_code: ""
+            discount_code: "",
+            discount_message: "",
+            error: ""
         }
     }
 
@@ -61,6 +63,9 @@ export default class Cart extends React.Component {
             this.setState({ total })
         })
         this.setState({ products, total });
+        if (this.context.discount) {
+            this.setState({ discount_message: "10% Discount Applied" })
+        }
     };
 
     removeFromCart = (product) => {
@@ -157,14 +162,57 @@ export default class Cart extends React.Component {
         // => sometimes it may take about 0.5 second for everything to get set, or for the button to appear
     }
 
-    handleChange = event => {
-        const {name, value} = event.target
+    handleChange = ev => {
+        const {name, value} = ev.target
         this.setState({ [name]: value })
+    }
+
+    handleCheckDiscount = ev => {
+        ev.preventDefault()
+
+        this.setState({ error: null })
+        const { discount_code } = ev.target
+
+        if (discount_code.value.toLowerCase() === "lakeshow10dec") {
+            this.context.setDiscount()
+            this.setState({
+                discount_code: "",
+                discount_message: "10% Discount Applied"
+            })
+            return
+        }
+
+        this.setState({ error: "Invalid Discount Code"})
+        return
+        
+        /* AuthApiService.postLogin({
+            username: username.value,
+            password: password.value,
+        })
+        .then(res => {
+            this.context.setLogin()
+            username.value = ''
+            password.value = ''
+            this.props.onLoginSuccess()
+        })
+        .catch(res => {
+            console.error(res.error)
+            this.setState({ error: res.error })
+        }) */
+    }
+
+    checkTotal = () => {
+        let { total } = this.state
+        if (this.context.discount) {
+            let subTotal = total - total * .10
+            return subTotal
+        }
+        return total
     }
 
     render() {
         let props = this.props
-        const { products, total, currency } =  this.state;
+        const { products, currency, error, discount_message } =  this.state;
         return (
             <div className="CartPage">
                 {this.context.cart.length === 0 
@@ -181,9 +229,14 @@ export default class Cart extends React.Component {
                 
                 { products.length 
                     ?   <div className='cart_total'>
-                            <h4><small></small><span className="float-right text-primary">Total Amount: ${total}</span> </h4><br></br>
+                            <div className="cart_total_grp">
+                                <h4><small></small><span className="text-primary" id="cart_total">Total Amount: ${this.checkTotal()}</span> </h4>
+                                <div role='alert'>
+                                        {discount_message && <p className='red'>{discount_message}</p>}
+                                </div>
+                            </div>
                             <div className="discount_code_form">
-                                <form className="form-group" onSubmit={this.handleSubmit}>
+                                <form className="form-group" onSubmit={this.handleCheckDiscount}>
                                     <div className="form_ertires_group">
                                         <label htmlFor="discount_code"></label>
                                         <input
@@ -200,6 +253,9 @@ export default class Cart extends React.Component {
                                         </div>
                                     </div>
                                 </form>
+                                <div role='alert'>
+                                    {error && <p className='red'>{error}</p>}
+                                </div>
                             </div>
                         </div>
                     : ''
@@ -208,9 +264,9 @@ export default class Cart extends React.Component {
                     ?   <h3 className="text-warning">Your cart is empty. Let's go add some <span className='purple text-primary'><Link to='/tickets'>tickets!</Link></span></h3>
                     :   <div className='cart_action_btns'>
                             <button id='back' onClick={this.goBack}>Back</button>
-                            <div className="btn btn-success float-right text-primary">
+                            <div className="btn btn-success text-primary paypal-btn">
                                 {TokenService.hasAuthToken() 
-                                    ? <PaypalExpressBtn env={env} client={client} currency={currency} total={total} onError={this.onError} onSuccess={this.onSuccess} onCancel={this.onCancel} /> 
+                                    ? <PaypalExpressBtn env={env} client={client} currency={currency} total={this.checkTotal()} onError={this.onError} onSuccess={this.onSuccess} onCancel={this.onCancel} /> 
                                     : <div className='login__needed'>
                                         <span>Please 
                                             <Link to={{

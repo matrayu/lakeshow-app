@@ -6,6 +6,7 @@ export const nullTicket = {
 
 const TicketContext = React.createContext({
   ticket: nullTicket,
+  discount: false,
   cart: [],
   purchasedTickets: [],
   paymentReceipt: [],
@@ -23,6 +24,7 @@ export default TicketContext
 export class TicketProvider extends Component {
   state = {
     ticket: nullTicket,
+    discount: false,
     error: null,
     cart: [],
     purchasedTickets: [],
@@ -83,9 +85,15 @@ export class TicketProvider extends Component {
     })
   }
 
+  setDiscount = () => {
+    this.setState({ discount: true })
+  }
+
   render() {
     const value = {
       ticket: this.state.ticket,
+      discount: this.state.discount,
+      setDiscount: this.setDiscount,
       error: this.state.error,
       setError: this.setError,
       clearError: this.clearError,

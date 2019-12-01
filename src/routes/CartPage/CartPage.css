@@ -12,7 +12,7 @@
 .cancel_header {
     font-size: 24px;
     text-align: center;
-    margin: 75px 0;
+    margin: 30px 0;
 }
 
 .link {
@@ -56,12 +56,25 @@
     justify-content: space-between;
 }
 
+.red {
+    color: red;
+}
+
+.paypal-btn {
+    float: right;
+}
+
 @media screen and (max-width: 420px) {
     .form_ertires_group{
         display: flex;
         flex-direction: row;
         margin-top: -27px;
         justify-content: unset;
+    }
+
+    #cart_total {
+        font-size: 24px;
+        text-align: center;
     }
 
     .form__btns {
@@ -90,5 +103,10 @@
         border: 1px solid black;
         border-radius: 5px;
         height: 51px;
+    }
+
+    .paypal-btn {
+        margin: 20px 0;
+        float: none;
     }
 }
