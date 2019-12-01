@@ -152,7 +152,8 @@ margin: auto 5px;
     color: black;
     height: 230px;
     border: 9px solid #FDB927;
-  }
+}
+
 .modal > .header {
     width: 100%;
     border-bottom: 1px solid gray;
@@ -164,6 +165,11 @@ margin: auto 5px;
     width: 100%;
     padding: 10px 5px;
 }
+
+.popup-overlay > .popup-content {
+    width: 65%
+}
+
 .modal > .actions {
     width: 100%;
     padding: 35px 5px;
@@ -203,10 +209,11 @@ margin: auto 5px;
     .Ticket {
         flex-direction: column;
         padding: 0;
+        margin: 5px;
     }
 
     .Ticket__image_container {
-        height: 300px;
+        height: 175px;
         width: auto;
     }
 

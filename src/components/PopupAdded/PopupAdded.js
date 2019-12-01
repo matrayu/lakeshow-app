@@ -16,7 +16,7 @@ export default class PopupAdded extends React.Component {
                             <div className='modal_button'>
                                 <Link
                                 to='/tickets'>
-                                Find more tickets!
+                                Find more!
                                 </Link>
                             </div>
                             <div className='modal_button'>

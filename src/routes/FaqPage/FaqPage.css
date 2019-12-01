@@ -15,15 +15,14 @@
     border-radius: 20px;
 }
 
-.FaqPage.questions>h4 {
+.FaqPage h4 {
     font-size: 30px;
     color: #552583;
     font-weight: bold;
 }
 
-.FaqPage.questions>p {
+.FaqPage p {
     font-size: 20px;
-    margin-bottom: 30px;
 }
 
 .faGrinWink {
@@ -32,4 +31,11 @@
 
 .hr{
     width: 50%;
+}
+
+.question {
+    margin: 10px 0;
+    border-radius: 25px;
+    padding: 20px;
+    box-shadow: 0 2px 9px 0 rgba(0,0.3,0,0.26), 0 0 0.7px 0 rgba(0, 1, 4, 1);
 }

@@ -169,7 +169,7 @@ export default class Cart extends React.Component {
             <div className="CartPage">
                 {this.context.cart.length === 0 
                     ? ''
-                    : <h1 className="page_headings">Checkout</h1>
+                    : <h1 className="page_headings">CHECKOUT</h1>
                 }
                 {products.map((product, index) => 
                     <CartItem 
@@ -182,23 +182,32 @@ export default class Cart extends React.Component {
                 { products.length 
                     ?   <div className='cart_total'>
                             <h4><small></small><span className="float-right text-primary">Total Amount: ${total}</span> </h4><br></br>
-                            <label htmlFor="discount_code"></label>
-                            <input
-                                className="form-control"
-                                id="discount_code"
-                                name="discount_code"
-                                type="text"
-                                placeholder="Discount Code"
-                                value={props.discount}
-                                onChange={this.handleChange}
-                            />
+                            <div className="discount_code_form">
+                                <form className="form-group" onSubmit={this.handleSubmit}>
+                                    <div className="form_ertires_group">
+                                        <label htmlFor="discount_code"></label>
+                                        <input
+                                            className="form-control"
+                                            id="discount_code"
+                                            name="discount_code"
+                                            type="text"
+                                            placeholder="Discount Code"
+                                            value={props.discount}
+                                            onChange={this.handleChange}
+                                        />
+                                        <div className='form__btns'>
+                                            <button id='apply__btn' className="btn btn-success btn-block apply__btn">Apply</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
                         </div>
                     : ''
                 }
                 { !products.length 
                     ?   <h3 className="text-warning">Your cart is empty. Let's go add some <span className='purple text-primary'><Link to='/tickets'>tickets!</Link></span></h3>
                     :   <div className='cart_action_btns'>
-                            <button onClick={this.goBack}>Back</button>
+                            <button id='back' onClick={this.goBack}>Back</button>
                             <div className="btn btn-success float-right text-primary">
                                 {TokenService.hasAuthToken() 
                                     ? <PaypalExpressBtn env={env} client={client} currency={currency} total={total} onError={this.onError} onSuccess={this.onSuccess} onCancel={this.onCancel} /> 
