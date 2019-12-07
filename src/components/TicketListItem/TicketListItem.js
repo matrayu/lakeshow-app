@@ -13,7 +13,7 @@ export default class TicketListItem extends Component {
         const { ticket } = this.props
         const date = moment(ticket.local_date, "YYYY-MM-DD").format("dddd, MMMM Do YYYY");
         return (
-            <Link to={`/ticket/${ticket.id}`} className='TicketListItem'>
+            <Link to={`/ticket/${ticket.listing_id}`} className='TicketListItem'>
                 <div className='game__container'>
                     <div id='game_comtainer_logo'> 
                         <div className='UpcomingGames image' id='ticketlist_game_image' style={{ backgroundImage: `url(${ticket.away_logo})`}}></div>
@@ -29,7 +29,7 @@ export default class TicketListItem extends Component {
                         <br/>
                         <p id='game_date'>{date}</p>
                         <div className='game__meta'>
-                            <p>{ticket.seat.length} Tickets</p>
+                            <p>{ticket.quantity} Tickets</p>
                             <div className='game__seat_date'>
                                 <div>
                                     <p>Section {ticket.section}</p>
