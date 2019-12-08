@@ -26,7 +26,6 @@ export default class TicketPage extends Component {
   
 
   componentDidMount() {
-    console.log("COMPONENT DID MOUNT")
     let {ticketId} = this.props.match.params
     this.context.clearError()
     ListingsApiService.getListing(ticketId)
@@ -61,68 +60,68 @@ export default class TicketPage extends Component {
 
   render() {
     const { ticket } = this.context
-    console.log("RENDER", ticket)
-    return null /* (
+    
+    return (
       <div className="Ticket">
-          <div className="Ticket__image_container">
-              <div
-              className="Ticket__image"
-              style={{ backgroundImage: `url(${ticket.images.awayLogo})` }}
-              />
-          </div>
-          <div className="Ticket__data">
-              <div className="Ticket__data__container main_text flex fd_col">
-                  <h2 className="f1">{`${ticket.event.teams.away}`} <br/> at {`${ticket.event.teams.home}`}</h2>
-                  <div className="Ticket__data__meta_text flex fd_row">
-                      <p>{moment(ticket.event.dates.localDate, "YYYY-MM-DD").format("dddd, MMMM Do YYYY")}</p>
-                      <p>{moment(ticket.event.dates.localTime, 'HH mm ss').format('h:mm A')} Tip-Off</p>
-                  </div>
-                  {!ticket.event.note
-                    ? ''
-                    : <div className='game_note_ticket'>** {ticket.event.note} **</div>
-                  }
-              </div>
+        <div className="Ticket__image_container">
+            <div
+            className="Ticket__image"
+            style={{backgroundImage: `url(${ticket.away_logo})`}}
+            />
+        </div>
+        <div className="Ticket__data">
+            <div className="Ticket__data__container main_text flex fd_col">
+                <h2 className="f1">{`${ticket.away_team}`} <br/> at {`${ticket.home_team}`}</h2>
+                <div className="Ticket__data__meta_text flex fd_row">
+                    <p>{moment(ticket.local_date, "YYYY-MM-DD").format("dddd, MMMM Do YYYY")}</p>
+                    <p>{moment(ticket.local_time, 'HH mm ss').format('h:mm A')} Tip-Off</p>
+                </div>
+                {!ticket.game_note
+                  ? ''
+                  : <div className='game_note_ticket'>** {ticket.game_note} **</div>
+                }
+            </div>
 
-              
+            
 
-              <div className="Ticket__data__container pricing flex fd_row">
-                  <div className="pricing_container flex fd_row">
-                      <div className="pricing_info flex fd_col">
-                          <h4>Our Price</h4>
-                          <div className='flex fd_row pricing'>  
-                            <h3 id='ourPrice'>{ticket.prices.listPriceEa}</h3><p>ea</p>
-                          </div>
-                          <p>No Fees OR Taxes</p>
-                      </div>
-                      <div className="pricing_info flex fd_col">
-                          <h4>Stubhub</h4>
-                          <div className='flex fd_row pricing'>
-                            <h3 id='compPrice'>{ticket.prices.compPriceEa}</h3><p>ea</p>
-                          </div>
-                          <p>+ Fees / + Taxes</p>
-                      </div>
-                  </div>
-              </div>
+            <div className="Ticket__data__container pricing flex fd_row">
+                <div className="pricing_container flex fd_row">
+                    <div className="pricing_info flex fd_col">
+                        <h4>Our Price</h4>
+                        <div className='flex fd_row pricing'>  
+                          <h3 id='ourPrice'>{ticket.list_price_ea}</h3><p>ea</p>
+                        </div>
+                        <p>No Fees OR Taxes</p>
+                    </div>
+                    <div className="pricing_info flex fd_col">
+                        <h4>Stubhub</h4>
+                        <div className='flex fd_row pricing'>
+                          <h3 id='compPrice'>{ticket.stubhub_price_ea}</h3><p>ea</p>
+                        </div>
+                        <p>+ Fees / + Taxes</p>
+                    </div>
+                </div>
+            </div>
 
-              <div className="Ticket__data__container quantity flex fd_row">
-                  <div className="section3">
-                      <div className="section3 sub_section">
-                      <p><b>Section {ticket.seatData.section} / Row {ticket.seatData.row}</b></p>
-                      <p>Quantity Available: {ticket.qty}</p>
-                        {ticket.qty === 1
-                          ? <p className='ticket_pair'>Single Seat Only</p>
-                          : <p className='ticket_pair'>Tickets sold as a pair</p>
-                        }
-                      </div>
-                  </div>
-              </div>
-              {this.state.inCart 
-                ? <PopupRemove onClick={this.removeFromCart} />
-                : <PopupAdded onClick={this.addToCart} />
-              }
-          </div>
+            <div className="Ticket__data__container quantity flex fd_row">
+                <div className="section3">
+                    <div className="section3 sub_section">
+                    <p><b>Section {ticket.section} / Row {ticket.seat_row}</b></p>
+                    <p>Quantity Available: {ticket.quantity}</p>
+                      {ticket.quantity === 1
+                        ? <p className='ticket_pair'>Single Seat Only</p>
+                        : <p className='ticket_pair'>Tickets sold as a pair</p>
+                      }
+                    </div>
+                </div>
+            </div>
+            {this.state.inCart 
+              ? <PopupRemove onClick={this.removeFromCart} />
+              : <PopupAdded onClick={this.addToCart} />
+            }
+        </div>
       </div>
-    ) */
+    )
   }
 }
 
