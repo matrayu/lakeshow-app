@@ -10,30 +10,31 @@ export default class TicketListItem extends Component {
     static contextType = TicketContext;
 
     render() {
-        const { ticket } = this.props
-        const date = moment(ticket.local_date, "YYYY-MM-DD").format("dddd, MMMM Do YYYY");
+        const listing = this.props.ticket
+        console.log("RENDER TICKET LIST ITEM")
+        const date = moment(listing.event.dates.localDate, "YYYY-MM-DD").format("dddd, MMMM Do YYYY");
         return (
-            <Link to={`/ticket/${ticket.listing_id}`} className='TicketListItem'>
+            <Link to={`/ticket/${listing.id}`} className='TicketListItem'>
                 <div className='game__container'>
                     <div id='game_comtainer_logo'> 
-                        <div className='UpcomingGames image' id='ticketlist_game_image' style={{ backgroundImage: `url(${ticket.away_logo})`}}></div>
+                        <div className='UpcomingGames image' id='ticketlist_game_image' style={{ backgroundImage: `url(${listing.images.awayLogo})`}}></div>
                     </div>
                     <div className='game__info'>
-                        <p className='game__title'>{`${ticket.away_team}`} <br/> at {`${ticket.home_team}`}</p>
-                        <p id='ticket_price'>{ticket.list_price_ea} <span id='each'>ea</span></p>
+                        <p className='game__title'>{`${listing.event.teams.away}`} <br/> at {`${listing.event.teams.home}`}</p>
+                        <p id='ticket_price'>{listing.prices.listPriceEa} <span id='each'>ea</span></p>
                         <br/>
-                        {!ticket.game_note
+                        {!listing.event.note
                             ? ''
-                            : <div className='game_note'>** {ticket.game_note} **</div>
+                            : <div className='game_note'>** {listing.event.note} **</div>
                         }
                         <br/>
                         <p id='game_date'>{date}</p>
                         <div className='game__meta'>
-                            <p>{ticket.quantity} Tickets</p>
+                            <p>{listing.qty} Tickets</p>
                             <div className='game__seat_date'>
                                 <div>
-                                    <p>Section {ticket.section}</p>
-                                    <p>Row {ticket.seat_row}</p>
+                                    <p>Section {listing.seatInfo.section}</p>
+                                    <p>Row {listing.seatInfo.row}</p>
                                 </div>
                             </div>
                         </div>

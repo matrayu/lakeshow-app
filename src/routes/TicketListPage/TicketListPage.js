@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import TicketListItem from '../../components/TicketListItem/TicketListItem'
 import TicketListContext from '../../contexts/TicketListContext'
 import TicketsApiService from '../../services/tickets-api-service'
+import ListingsApiService from '../../services/listings-api-service'
 import HelpersService from '../../services/helpers-service'
 import './TicketListPage.css'
 
@@ -9,16 +10,18 @@ export default class TicketListPage extends Component {
      static contextType = TicketListContext
 
     componentDidMount() {
+        console.log("COMPONENT DID MOUNT")
         this.context.clearError()
-        TicketsApiService.getTickets()
-            .then(tickets => {
-                tickets.sort((a, b) => (a.local_date > b.local_date) ? 1 : -1)
-                this.context.setTicketList(tickets)
+        ListingsApiService.getListings()
+            .then(listings => {
+                listings.sort((a, b) => (a.local_date > b.local_date) ? 1 : -1)
+                this.context.setTicketList(listings)
             })
             .catch(this.context.setError)
     }
 
     renderTickets() {
+        console.log('RENDER TICKETS')
         let { filteredList, ticketList } = this.context
         if (filteredList.length === 0) {
             return (
@@ -39,6 +42,7 @@ export default class TicketListPage extends Component {
         if (e.target.value !== "") { // If the search bar isn't empty
             currentList = this.context.ticketList; // Assign the original list to currentList
             newList = currentList.filter(item => { // Use .filter() to determine which items should be displayedbased on the search terms
+                console.log(item)
                 const lc = item.away_team.toLowerCase(); // change current item to lowercase
                 const filter = e.target.value.toLowerCase(); // change search term to lowercase
                 return lc.includes(filter) // check to see if the current list item includes the search term If it does, it will be added to newList. 
@@ -70,6 +74,7 @@ export default class TicketListPage extends Component {
     }
     
     render() {
+        console.log('RENDER')
         return (
             <React.Fragment>
                 <div className='TicketListPage'>
