@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import UpcomingGame from '../UpcomingGame/UpcomingGame';
 import TicketListContext from "../../contexts/TicketListContext";
-import TicketsApiService from '../../services/tickets-api-service';
+import ListingsApiService from '../../services/listings-api-service';
 import {Image} from 'cloudinary-react';
 import './UpcomingGames.css'
 
@@ -10,8 +10,9 @@ export default class UpcomingGames extends Component {
 
     componentDidMount() {
         this.context.clearError()
-        TicketsApiService.getTickets()
+        ListingsApiService.getListings()
             .then(tickets => {
+                console.log(tickets)
                 this.context.setTicketList(tickets)
             })
             .then(res => {

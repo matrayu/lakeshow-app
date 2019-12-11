@@ -11,17 +11,18 @@ export default class UpcomingGame extends Component {
 
     render() {
         const { ticket } = this.props
-        const date = moment(ticket.local_date, "YYYY-MM-DD").format("dddd, MMMM Do YYYY");
+        const date = moment(ticket.event.dates.localDate, "YYYY-MM-DD").format("dddd, MMMM Do YYYY");
+        const tipOff = moment(ticket.event.dates.localTime, "HH:mm:ss").format("hh:mm A")
         return (
             <Link to={`/ticket/${ticket.id}`} className='UpcomingGames grp'>
                 <div className='image_logo_container'>
-                    <div className='UpcomingGames image' id='upcoming_game_image' style={{ backgroundImage: `url(${ticket.away_logo})`}}></div>
+                    <div className='UpcomingGames image' id='upcoming_game_image' style={{ backgroundImage: `url(${ticket.images.awayLogo})`}}></div>
                 </div>
                 <div className='UpcomingGames text__grp'>
-                    <h2 id='upcoming_game'>{`${ticket.away_team} vs ${ticket.home_team}`}</h2>
+                    <h2 id='upcoming_game'>{`${ticket.event.teams.away} vs ${ticket.event.teams.home}`}</h2>
                     <p>{date}</p>
-                    <p>Staples Center</p>
-                    <p>7:30p Tip-Off</p>
+                    <p>{ticket.venue}</p>
+                    <p>{`${tipOff} Tip-Off`}</p>
                 </div>
             </Link>
         )
