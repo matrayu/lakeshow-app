@@ -57,8 +57,8 @@ export default class Cart extends React.Component {
         let total = 0
 
         products.forEach(ticket => {
-            let currency = Number(ticket.list_price_ea.replace(/[^0-9.-]+/g,""))
-            let subtotal = currency * ticket.quantity
+            let currency = Number(ticket.prices.listPriceEa.replace(/[^0-9.-]+/g,""))
+            let subtotal = currency * ticket.qty
             total += subtotal
             this.setState({ total })
         })
@@ -76,8 +76,8 @@ export default class Cart extends React.Component {
         let total = 0
 
         filtered.forEach(ticket => {
-            let currency = Number(ticket.list_price_ea.replace(/[^0-9.-]+/g,""))
-            let subtotal = currency * ticket.quantity
+            let currency = Number(ticket.prices.listPriceEa.replace(/[^0-9.-]+/g,""))
+            let subtotal = currency * ticket.qty
             total += subtotal
             this.setState({ total })
         })
@@ -89,8 +89,8 @@ export default class Cart extends React.Component {
         let total = 0
 
         products.forEach(ticket => {
-            let currency = Number(ticket.list_price_ea.replace(/[^0-9.-]+/g,""))
-            let subtotal = currency * ticket.quantity
+            let currency = Number(ticket.prices.listPriceEa.replace(/[^0-9.-]+/g,""))
+            let subtotal = currency * ticket.qty
             total += subtotal
             this.setState({ total })
         })
@@ -117,7 +117,7 @@ export default class Cart extends React.Component {
 
         products.forEach(product => {
             ticketsArr.push(product.id)
-            let gameDay = moment(product.local_date).add(1, 'day').format('MMMM Do, YYYY')
+            let gameDay = moment(product.event.dates.localDate).add(1, 'day').format('MMMM Do, YYYY')
             product.gameDay = gameDay
         })
 

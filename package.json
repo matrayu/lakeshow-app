@@ -24,7 +24,7 @@
     "typy": "^3.3.0"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "PORT=3000 react-scripts start",
     "prebuild": "CI=true react-scripts test --colors",
     "build": "react-scripts build",
     "buildtest": "npx serve -s build/",

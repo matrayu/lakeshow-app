@@ -17,12 +17,12 @@ export default class CartItem extends React.Component {
         return (
             <div className="CartItem" style={{ marginBottom: "10px"}}>
                 <div className="CartItem-body">
-                    <h4 className="CartItem-title text-primary">{`${product.away_team} at ${product.home_team}`}</h4>
-                    <h5 className="CartItem-date"><small></small>{moment(product.local_date, "YYYY-MM-DD").format("dddd, MMMM Do YYYY")}</h5>
-                    <h5 className="CartItem-section"><small></small>Section {product.section} / Row {product.seat_row}</h5>
-                    <h5 className="CartItem-text"><small>Price: </small>{product.list_price_ea}</h5>
+                    <h4 className="CartItem-title text-primary">{`${product.event.teams.away} at ${product.event.teams.home}`}</h4>
+                    <h5 className="CartItem-date"><small></small>{moment(product.event.dates.localDate, "YYYY-MM-DD").format("dddd, MMMM Do YYYY")}</h5>
+                    <h5 className="CartItem-section"><small></small>Section {product.seatInfo.section} / Row {product.seatInfo.row}</h5>
+                    <h5 className="CartItem-text"><small>Price: </small>{product.prices.listPriceEa}</h5>
                     <span className="CartItem-text text-success">
-                        <small>Quantity: </small>{product.quantity}</span>
+                        <small>Quantity: </small>{product.qty}</span>
                     <button className="btn btn-sm btn-warning float-right" onClick={() => this.props.remove(product)}>Remove</button>
                 </div>
             </div>
