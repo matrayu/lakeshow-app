@@ -12,7 +12,6 @@ export default class UpcomingGames extends Component {
         this.context.clearError()
         ListingsApiService.getListings()
             .then(tickets => {
-                console.log(tickets)
                 this.context.setTicketList(tickets)
             })
             .then(res => {

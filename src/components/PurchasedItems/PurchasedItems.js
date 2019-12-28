@@ -10,16 +10,16 @@ export default class PurchasedItem extends Component {
     render() {
         let total = null
         const { ticket } = this.props
-        const date = moment(ticket.local_date, "YYYY-MM-DD").format("dddd, MMMM Do YYYY");
-        let currency = ticket.list_price_ea
+        const date = moment(ticket.event.dates.localDate, "YYYY-MM-DD").format("dddd, MMMM Do YYYY");
+        let currency = ticket.prices.listPriceEa
         let number = Number(currency.replace(/[^0-9.-]+/g,""));
-        total += number * ticket.quantity;
+        total += number * ticket.qty;
         return (
             <div className='line_items flex fd_row space-between'>
                 <div className='line_item_info'>
-                    <h3>{`${ticket.home_team} vs ${ticket.away_team}`}</h3>
+                    <h3>{`${ticket.event.teams.home} vs ${ticket.event.teams.away}`}</h3>
                     <p>{date}</p>
-                    <p>{ticket.quantity} {(ticket.quantity <= 1) ? 'ticket' : 'tickets'}</p>
+                    <p>{ticket.qty} {(ticket.qty <= 1) ? 'ticket' : 'tickets'}</p>
                 </div>
                 <p className='payment'>${total}.00</p>
             </div>

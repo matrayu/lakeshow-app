@@ -29,7 +29,11 @@ const client = {
 	production: PP_CID_PROD,
 }
 
-const env = 'production'; // you can set this string to 'production' v 'sandbox'
+//const env = 'sandbox'; // you can set this string to 'production' v 'sandbox'
+
+const env = process.env.NODE_ENV === 'production'
+  ? 'production'
+  : 'sandbox';
 
 export default class Cart extends React.Component {
     constructor(props) {
@@ -66,6 +70,7 @@ export default class Cart extends React.Component {
         if (this.context.discount) {
             this.setState({ discount_message: "10% Discount Applied" })
         }
+        
     };
 
     removeFromCart = (product) => {
@@ -104,6 +109,7 @@ export default class Cart extends React.Component {
     successfulPayment = () => {
         this.props.history.push('/success')
     }
+
 
     onSuccess = (data) => {
         const { products } =  this.state;
@@ -211,6 +217,7 @@ export default class Cart extends React.Component {
     }
 
     render() {
+
         let props = this.props
         const { products, currency, error, discount_message } =  this.state;
         return (
@@ -265,6 +272,7 @@ export default class Cart extends React.Component {
                     :   <div className='cart_action_btns'>
                             <button id='back' onClick={this.goBack}>Back</button>
                             <div className="btn btn-success text-primary paypal-btn">
+                            
                                 {TokenService.hasAuthToken() 
                                     ? <PaypalExpressBtn env={env} client={client} currency={currency} total={this.checkTotal()} onError={this.onError} onSuccess={this.onSuccess} onCancel={this.onCancel} /> 
                                     : <div className='login__needed'>

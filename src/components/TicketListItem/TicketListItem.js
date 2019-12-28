@@ -11,7 +11,6 @@ export default class TicketListItem extends Component {
 
     render() {
         const listing = this.props.ticket
-        console.log("RENDER TICKET LIST ITEM")
         const date = moment(listing.event.dates.localDate, "YYYY-MM-DD").format("dddd, MMMM Do YYYY");
         return (
             <Link to={`/ticket/${listing.id}`} className='TicketListItem'>
@@ -38,9 +37,6 @@ export default class TicketListItem extends Component {
                                 </div>
                             </div>
                         </div>
-
-                        
-                        
                     </div>
                 </div>
             </Link>

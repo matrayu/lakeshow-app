@@ -1,13 +1,20 @@
 import React, { Component } from 'react'
 import TicketListItem from '../../components/TicketListItem/TicketListItem'
 import TicketListContext from '../../contexts/TicketListContext'
-import TicketsApiService from '../../services/tickets-api-service'
+//import TicketsApiService from '../../services/tickets-api-service'
 import ListingsApiService from '../../services/listings-api-service'
 import HelpersService from '../../services/helpers-service'
 import './TicketListPage.css'
 
 export default class TicketListPage extends Component {
-     static contextType = TicketListContext
+    constructor(props) {
+        super(props);
+        this.state = { 
+          loaded: false
+        }
+    }
+
+    static contextType = TicketListContext
 
     componentDidMount() {
         this.context.clearError()
@@ -15,6 +22,9 @@ export default class TicketListPage extends Component {
             .then(listings => {
                 listings.sort((a, b) => (a.event.dates.localDate > b.event.dates.localDate) ? 1 : -1)
                 this.context.setTicketList(listings)
+            })
+            .then(res => {
+                this.setState({ loaded: true })
             })
             .catch(this.context.setError)
     }
@@ -67,34 +77,39 @@ export default class TicketListPage extends Component {
             }
         }
         this.context.setTicketList(allTickets)
+    }
 
+    content() {
+        return (
+            <div className='TicketListPage'>
+                <div className='TicketListPage container'>
+                    <div className='TicketListPage search_functions'>
+                        <div className='search_by'>
+                            <input type="text" className='input' placeholder="Search By Team..." onChange={(e) => this.handleChange(e)}></input>
+                        </div>
+                        <div className='sort_by'>
+                            <span id='sortby'>Sort By:</span>
+                            <select onChange={(e) => this.sortBy(e)}>
+                                <option value='date' id='date'>Date</option>
+                                <option value='priceHigh' id='priceHigh'>Price High to Low</option>
+                                <option value='priceLow' id='priceLow'>Price Low to High</option>
+                                <option value='team' id='team'>Team</option>
+                            </select>
+                        </div>
+                    </div>
+                    <section className='TicketListPage results'>
+                        {this.renderTickets()}
+                    </section>
+                </div>
+            </div>
+        )
     }
     
     render() {
         return (
-            <React.Fragment>
-                <div className='TicketListPage'>
-                    <div className='TicketListPage container'>
-                        <div className='TicketListPage search_functions'>
-                            <div className='search_by'>
-                                <input type="text" className='input' placeholder="Search By Team..." onChange={(e) => this.handleChange(e)}></input>
-                            </div>
-                            <div className='sort_by'>
-                                <span id='sortby'>Sort By:</span>
-                                <select onChange={(e) => this.sortBy(e)}>
-                                    <option value='date' id='date'>Date</option>
-                                    <option value='priceHigh' id='priceHigh'>Price High to Low</option>
-                                    <option value='priceLow' id='priceLow'>Price Low to High</option>
-                                    <option value='team' id='team'>Team</option>
-                                </select>
-                            </div>
-                        </div>
-                        <section className='TicketListPage results'>
-                            {this.renderTickets()}
-                        </section>
-                    </div>
-                </div>
-            </React.Fragment>
+            <div>
+                {this.state.loaded ? this.content() : null}
+            </div>
         )
     }
 }
