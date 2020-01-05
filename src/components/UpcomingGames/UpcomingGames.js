@@ -15,14 +15,14 @@ export default class UpcomingGames extends Component {
                 this.context.setTicketList(tickets)
             })
             .then(res => {
-                this.context.ticketList.sort((a, b) => (a.local_date > b.local_date) ? 1 : -1)
+                this.context.ticketList.sort((a, b) => (a.event.dates.localDate > b.event.dates.localDate) ? 1 : -1)
             })
             .catch(this.context.setError)
     }
 
     renderGames() {
         let { ticketList } = this.context
-        ticketList.sort((a, b) => (a.local_date > b.local_date) ? 1 : -1)
+        ticketList.sort((a, b) => (a.event.dates.localDate > b.event.dates.localDate) ? 1 : -1)
         if (ticketList.length !== 0) {
             return (
                 ticketList.slice(0, 3).map(ticket =>
