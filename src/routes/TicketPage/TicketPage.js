@@ -89,14 +89,14 @@ export default class TicketPage extends Component {
                     <div className="pricing_info flex fd_col">
                         <h4>Our Price</h4>
                         <div className='flex fd_row pricing'>  
-                          <h3 id='ourPrice'>{Math.round(ticket.prices.listPriceEa)}</h3><p>ea</p>
+                          <h3 id='ourPrice'>{ticket.prices.listPriceEa}</h3><p>ea</p>
                         </div>
                         <p>No Fees OR Taxes</p>
                     </div>
                     <div className="pricing_info flex fd_col">
                         <h4>Stubhub</h4>
                         <div className='flex fd_row pricing'>
-                          <h3 id='compPrice'>{`$${Math.round(ticket.prices.listPriceEa.split("$")[1] * 1.284)}`}</h3><p>ea</p>
+                          <h3 id='compPrice'>{`$${Math.round(ticket.prices.listPriceEa.split("$")[1] * 1.284)}.00`}</h3><p>ea</p>
                         </div>
                         <p>+ Fees / + Taxes</p>
                     </div>
