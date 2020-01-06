@@ -59,10 +59,10 @@ export default class TicketPage extends Component {
     let filtered = this.context.cart.filter(tix => tix.id !== this.context.ticket.id)
     this.context.removeFromCart(filtered)
   }
-
+  
   content() {
     const { ticket } = this.context
-
+    
     return (
       <div className="Ticket">
         <div className="Ticket__image_container">
@@ -96,7 +96,7 @@ export default class TicketPage extends Component {
                     <div className="pricing_info flex fd_col">
                         <h4>Stubhub</h4>
                         <div className='flex fd_row pricing'>
-                          <h3 id='compPrice'>{ticket.prices.compPriceEa}</h3><p>ea</p>
+                          <h3 id='compPrice'>{`$${Math.round(ticket.prices.listPriceEa.split("$")[1] * 1.284)}`}</h3><p>ea</p>
                         </div>
                         <p>+ Fees / + Taxes</p>
                     </div>
